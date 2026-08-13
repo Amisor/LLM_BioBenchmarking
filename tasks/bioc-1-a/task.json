@@ -1,0 +1,15 @@
+{
+    "id": "bioc-1-a",
+    "question": "Using the provided RNA-seq gene-level SummarizedExperiment dataset (gse.rds), construct a DESeqDataSet object with design formula '~ cell + dex' (renaming donor to cell, condition to dex, setting levels 'untrt' and 'trt' with 'untrt' as reference). Pre-filter to retain genes with counts >= 10 in at least 4 samples, apply variance stabilizing transformation (vst) with blind=FALSE, and compute the Euclidean sample-to-sample distance matrix. Save the distance matrix with row names formatted as '<dex> - <cell>' and column names set to NULL.",
+    "input_files": [
+        "data/gse.rds"
+    ],
+    "expected_output": [
+        {
+            "file": "sample_dist_matrix.csv",
+            "type": "csv",
+            "description": "Euclidean sample distance matrix (8x8) computed from VST-transformed counts with rownames formatted as '<dex> - <cell>' (e.g. 'untrt - N61311') and without column names."
+        }
+    ],
+    "timeout_seconds": 3600
+}
