@@ -1,0 +1,15 @@
+{
+    "id": "b-9-2",
+    "question": "Fit a Cox model to assess the effect of gene signature score (low/medium/high) on progression-free survival, adjusting for age and sex, using low as the reference category. Report hazard ratios, 95% CIs, and p-values.",
+    "input_files": [
+        "data/simulated_cox_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "cox_regression_results.csv",
+            "type": "csv",
+            "description": "rows as gene score contrasts, columns should include Gene_Score, Hazard_Ratio, CI_Lower_95, CI_Upper_95, P_value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

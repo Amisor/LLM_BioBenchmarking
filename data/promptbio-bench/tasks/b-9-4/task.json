@@ -1,0 +1,15 @@
+{
+    "id": "b-9-4",
+    "question": "Perform Cox regression with LASSO penalization on the provided dataset to select features. Use 5-fold cross-validation to tune the regularization penalty. Identify features with non-zero LASSO coefficients, then refit an unpenalized multivariable Cox model on those features. Report their hazard ratios, 95% CIs, and p-values.",
+    "input_files": [
+        "data/simulated_survival_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "cox_lasso_results.tsv",
+            "type": "tsv",
+            "description": "rows as selected features, columns should include variable, logHR, HR, p_value, HR_lower_95, HR_upper_95"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "b-8-8",
+    "question": "Fit a Generalized Additive Model (GAM) using the pygam library to predict blood pressure as a smooth function of age, BMI, and exercise minutes/week. Use penalized splines (20 splines per term) with GCV-based smoothing parameter selection. Use an 80-20 train-test split (random_state=42). Report test R^2 and test adjusted R^2 (using 3 predictors in the adjustment formula).",
+    "ref_answer": [
+        "ref_answer/gam_performance.csv"
+    ],
+    "ref_script": [
+        "ref_script/gam_regression.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gam_performance.csv",
+                "guidelines": "Both Test_R^2 and Test_Adjusted_R^2 must agree within +/-0.05 of reference; metric naming and column order may differ."
+            }
+        ]
+    }
+}

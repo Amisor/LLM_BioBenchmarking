@@ -1,0 +1,18 @@
+{
+    "id": "b-9-3",
+    "question": "Perform univariable Cox proportional hazards regression on the provided dataset (with time-to-event and censoring indicators) - fit one Cox model per feature. Apply Benjamini-Hochberg FDR correction. Identify features significantly associated with survival (FDR < 0.05).",
+    "ref_answer": [
+        "ref_answer/cox_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/cox_fdr.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "cox_results.csv",
+                "guidelines": "Each feature row's HR must match the reference within 1% relative absolute error; p-value and FDR must match within +/-0.001; Significant flag must match exactly; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

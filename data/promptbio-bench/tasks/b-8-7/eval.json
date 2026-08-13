@@ -1,0 +1,18 @@
+{
+    "id": "b-8-7",
+    "question": "Build a stacked ensemble model using LASSO (alpha=0.1), Random Forest (n_estimators=100, max_depth=10), and XGBoost (n_estimators=100, max_depth=5) as base learners and Ridge (alpha=1.0) as meta-learner to predict patient length of stay from EHR data. Use an 80-20 train-test split (random_state=42). Generate out-of-fold predictions using 5-fold cross-validation (random_state=42) as meta-features for the Ridge meta-learner. Train each base learner on the full training set to evaluate on the test set. Report test MAE for each base learner and the stacked ensemble.",
+    "ref_answer": [
+        "ref_answer/ensemble_performance.csv"
+    ],
+    "ref_script": [
+        "ref_script/stacked_ensemble.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "ensemble_performance.csv",
+                "guidelines": "All four model rows (LASSO, Random Forest, XGBoost, Stacked Ensemble) must be present; each Test_MAE must be within 10% relative absolute error of the reference; row/column order and label phrasing may differ."
+            }
+        ]
+    }
+}

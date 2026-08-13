@@ -1,0 +1,15 @@
+{
+    "id": "b-8-9",
+    "question": "Fit a multiple regression model predicting drug clearance (mL/min) with age, weight, and their interaction, plus age^2. Report the coefficients and p-values for all terms.",
+    "input_files": [
+        "data/clinical_comprehensive_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "regression_results.csv",
+            "type": "csv",
+            "description": "rows as model terms, columns should include Term, Coefficient, P_Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}
