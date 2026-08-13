@@ -1,0 +1,16 @@
+{
+    "id": "a-6-8",
+    "question": "Count aligned reads per gene from the provided BAM file using featureCounts with the provided GFF annotation file.",
+    "input_files": [
+        "data/SAMPLE1_PE.sorted.bam",
+        "data/spades_prodigal_format.gff"
+    ],
+    "expected_output": [
+        {
+            "file": "SAMPLE1_PE.featureCounts.tsv",
+            "type": "tsv",
+            "description": "rows as genes, columns should include Geneid, SAMPLE1_PE.sorted.bam"
+        }
+    ],
+    "timeout_seconds": 3600
+}

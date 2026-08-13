@@ -1,0 +1,15 @@
+{
+    "id": "b-10-5",
+    "question": "Combine predictions from a Random Forest (n_estimators=100, random_state=42), SVM (probability=True, random_state=42), and Logistic Regression (max_iter=1000, random_state=42) using soft voting. Use a 70/30 stratified train-test split (random_state=42). Compare the ensemble's accuracy and AUC to each individual model.",
+    "input_files": [
+        "data/classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "ensemble_results.csv",
+            "type": "csv",
+            "description": "rows as models, columns should include Model, Accuracy, AUC"
+        }
+    ],
+    "timeout_seconds": 3600
+}

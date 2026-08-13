@@ -1,0 +1,18 @@
+{
+    "id": "b-7-10",
+    "question": "Implement self-training with SVM to classify cell types. Use a 70/30 train-test split, then treat only 20% of the training set as labeled and the remaining 80% as unlabeled. Iteratively add predictions with confidence >= 0.8 back to the labeled pool and retrain, for up to 10 iterations. Report the initial test accuracy (before self-training) and the final test accuracy.",
+    "ref_answer": [
+        "ref_answer/self_training_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/self_training_svm.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "self_training_results.csv",
+                "guidelines": "Initial and final test accuracy must each be within +/-0.05 of the reference; final accuracy should be greater than or equal to the initial accuracy; row and column order may differ."
+            }
+        ]
+    }
+}

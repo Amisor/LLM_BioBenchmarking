@@ -1,0 +1,18 @@
+{
+    "id": "a-1-4",
+    "question": "Please merge the two input FASTQ files into a single merged FASTQ file.",
+    "ref_answer": [
+        "ref_answer/merged.fastq.gz"
+    ],
+    "ref_script": [
+        "ref_script/merge_fastq.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "merged.fastq.gz",
+                "guidelines": "Read records must match the reference; record order and gzip byte layout may differ."
+            }
+        ]
+    }
+}

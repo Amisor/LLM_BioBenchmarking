@@ -1,0 +1,23 @@
+{
+    "id": "a-9-2",
+    "question": "Analyze the TCR sequencing data and identify the top 5 TRB clonotypes by clone count.",
+    "ref_answer": [
+        "ref_answer/Sequences_cloneCount_top5.png",
+        "ref_answer/analysis.clonotypes.TRB.txt"
+    ],
+    "ref_script": [
+        "ref_script/mixcr.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "Sequences_cloneCount_top5.png",
+                "guidelines": "Plot must show the top 5 TRB CDR3 sequences as bars with clone count on the y-axis; visual styling and rendering may differ."
+            },
+            {
+                "file": "analysis.clonotypes.TRB.txt",
+                "guidelines": "Records must match the reference in cloneCount and CDR3 sequence (aaSeqCDR3); column order and whitespace may differ."
+            }
+        ]
+    }
+}

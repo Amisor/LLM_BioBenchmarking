@@ -1,0 +1,18 @@
+{
+    "id": "b-4-7",
+    "question": "In a cohort of 80 patients, 24 experienced adverse events. Test whether this proportion is significantly higher than the expected 20% using a one-sided binomial test. Report the p-value and 95% CI.",
+    "ref_answer": [
+        "ref_answer/proportion_test_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/binomial_proportion_test.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "proportion_test_results.csv",
+                "guidelines": "p-value must match within +/-0.001; CI bounds must match within +/-0.01; column order and header labels may differ."
+            }
+        ]
+    }
+}

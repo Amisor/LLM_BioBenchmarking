@@ -1,0 +1,22 @@
+{
+    "id": "a-6-1",
+    "question": "Perform trimming of 16s FASTQ reads based on the provided primer sequences.",
+    "input_files": [
+        "data/primer.fa",
+        "data/sample1_1.fastq.gz",
+        "data/sample1_2.fastq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "sample1_1.trim.fastq.gz",
+            "type": "fastq.gz",
+            "description": ""
+        },
+        {
+            "file": "sample1_2.trim.fastq.gz",
+            "type": "fastq.gz",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

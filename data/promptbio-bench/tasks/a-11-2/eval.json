@@ -1,0 +1,18 @@
+{
+    "id": "a-11-2",
+    "question": "Perform co-expression network analysis on gene expression data using WGCNA and identify hub genes.",
+    "ref_answer": [
+        "ref_answer/hub_genes.csv"
+    ],
+    "ref_script": [
+        "ref_script/WGCNA.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "hub_genes.csv",
+                "guidelines": "The Is_Hub flag per gene must match the reference; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

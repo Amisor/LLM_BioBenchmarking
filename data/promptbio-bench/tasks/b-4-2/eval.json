@@ -1,0 +1,18 @@
+{
+    "id": "b-4-2",
+    "question": "Perform one-way ANOVA to test for differences in TP53 expression across tumor grades. If significant, conduct post-hoc Tukey HSD tests and visualize results using a labeled boxplot with p-values.",
+    "ref_answer": [
+        "ref_answer/tp53_boxplot_with_pvalues.png"
+    ],
+    "ref_script": [
+        "ref_script/anova_tukey_boxplot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "tp53_boxplot_with_pvalues.png",
+                "guidelines": "Boxplot must show TP53 expression by tumor grade with pairwise Tukey HSD significance annotations; axis labels, color scheme, and styling may differ."
+            }
+        ]
+    }
+}

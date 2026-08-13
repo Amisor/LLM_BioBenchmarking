@@ -1,0 +1,15 @@
+{
+    "id": "b-4-15",
+    "question": "Test whether smoking status (never, former, current) is independent of lung cancer subtype (adenocarcinoma, squamous, SCLC) in a cohort of 200 patients. Perform Chi-square test and report the p-value and whether the variables are independent (Yes/No).",
+    "input_files": [
+        "data/smoking_cancer_subtype.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "chi_square_test_results.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include P_Value, Variables_Independent"
+        }
+    ],
+    "timeout_seconds": 3600
+}

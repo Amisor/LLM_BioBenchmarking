@@ -1,0 +1,15 @@
+{
+    "id": "b-3-12",
+    "question": "Create a 2x2 grid of line plots showing the longitudinal trend of a biomarker for four patient subgroups (by age < 60 vs >= 60, and sex). Share y-axis and label each panel clearly.",
+    "input_files": [
+        "data/longitudinal_biomarker_by_subgroup.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "biomarker_trend_2x2_grid.png",
+            "type": "png",
+            "description": "timepoint as x-axis, biomarker value as y-axis, 2x2 grid by sex and age group (< 60, >= 60), shared y-axis"
+        }
+    ],
+    "timeout_seconds": 3600
+}

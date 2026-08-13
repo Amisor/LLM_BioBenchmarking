@@ -1,0 +1,23 @@
+{
+    "id": "a-11-1",
+    "question": "Given a list of differentially expressed genes (DEGs), retrieve their protein-protein interactions from the STRING database and visualize the network.",
+    "ref_answer": [
+        "ref_answer/ppi_network.csv",
+        "ref_answer/ppi_network.png"
+    ],
+    "ref_script": [
+        "ref_script/ppi_network.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "ppi_network.csv",
+                "guidelines": "Interaction records must match the reference in protein pairs and score within 1% relative absolute error; row order and column order may differ."
+            },
+            {
+                "file": "ppi_network.png",
+                "guidelines": "Node-edge network must match the reference; node sizing, layout, and color scheme may differ."
+            }
+        ]
+    }
+}

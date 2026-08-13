@@ -1,0 +1,15 @@
+{
+    "id": "b-2-6",
+    "question": "Create a pivot table showing average 'Expression' values for each 'Gene' across different 'Tissue' types.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "gene_tissue_pivot.csv",
+            "type": "csv",
+            "description": "rows as genes, columns as tissue types, values as mean expression"
+        }
+    ],
+    "timeout_seconds": 3600
+}

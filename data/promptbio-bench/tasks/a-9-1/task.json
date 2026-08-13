@@ -1,0 +1,15 @@
+{
+    "id": "a-9-1",
+    "question": "Using a somatic VCF file (hg38) from tumor sequencing, generate peptides for neoantigen prediction (MHC class I).",
+    "input_files": [
+        "data/chr20_somatic.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "peptides.fa",
+            "type": "fasta",
+            "description": "FASTA; 8-11 amino acid peptides"
+        }
+    ],
+    "timeout_seconds": 3600
+}

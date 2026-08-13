@@ -1,0 +1,18 @@
+{
+  "id": "a-8-4",
+  "question": "Filter the provided metabolomics metadata table to retain only the rows whose HMDB ID appears in the given list.",
+  "ref_answer": [
+    "ref_answer/metabolomics_meta.tsv"
+  ],
+  "ref_script": [
+    "ref_script/filter_hmdb.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "metabolomics_meta.tsv",
+        "guidelines": "Filtered rows must match the reference in all column values; row order, column order, and whitespace may differ."
+      }
+    ]
+  }
+}

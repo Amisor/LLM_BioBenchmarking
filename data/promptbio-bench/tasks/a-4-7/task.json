@@ -1,0 +1,15 @@
+{
+    "id": "a-4-7",
+    "question": "Compute count profiles for ChIP-seq reads, considering both full read length and read end positions, and generate a summary table.",
+    "input_files": [
+        "data/ChIP_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "aligned_reads_summary.csv",
+            "type": "csv",
+            "description": "rows as genomic windows, columns should include bases.counted, experiment, chrom, chromStart, chromEnd, count"
+        }
+    ],
+    "timeout_seconds": 3600
+}

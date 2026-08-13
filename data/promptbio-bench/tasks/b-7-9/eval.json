@@ -1,0 +1,23 @@
+{
+    "id": "b-7-9",
+    "question": "Train a logistic regression model on gene expression data to predict cancer vs. normal tissue samples using a 70/30 train-test split. Extract and return the top 10 most important genes (by absolute coefficient magnitude) and report test accuracy.",
+    "ref_answer": [
+        "ref_answer/logistic_regression_test_accuracy.csv",
+        "ref_answer/top_10_important_genes.csv"
+    ],
+    "ref_script": [
+        "ref_script/logreg_gene_expression.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "logistic_regression_test_accuracy.csv",
+                "guidelines": "The reported test accuracy value must match the reference within +/-0.02; column labels and row order may differ."
+            },
+            {
+                "file": "top_10_important_genes.csv",
+                "guidelines": "At least 7 of the 10 reported genes must overlap with the reference set (gene rankings near rank 10 are sensitive to solver version); coefficient values for overlapping genes within +/-0.05; column naming and ordering may differ."
+            }
+        ]
+    }
+}

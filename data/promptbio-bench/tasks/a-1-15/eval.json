@@ -1,0 +1,18 @@
+{
+  "id": "a-1-15",
+  "question": "Run BLAST to align query.fa against ref.fa using tabular format (outfmt 6).",
+  "ref_answer": [
+    "ref_answer/result.txt"
+  ],
+  "ref_script": [
+    "ref_script/blast.sh"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "result.txt",
+        "guidelines": "Hit records must match the reference in query ID, subject ID, percent identity, alignment length, e-value, and bit score; row order may differ."
+      }
+    ]
+  }
+}

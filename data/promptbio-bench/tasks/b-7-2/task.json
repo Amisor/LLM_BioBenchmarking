@@ -1,0 +1,25 @@
+{
+    "id": "b-7-2",
+    "question": "Build an SVM classification model to predict the binary outcome label using a 70/30 train-test split. Evaluate performance on both training and test sets and generate an ROC curve with AUC values for both sets.",
+    "input_files": [
+        "data/general_classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "classification_report.csv",
+            "type": "csv",
+            "description": "rows as classes and aggregate rows, columns should include Class, Precision, Recall, F1-Score, Support"
+        },
+        {
+            "file": "roc_curves.png",
+            "type": "png",
+            "description": "FPR as x-axis, TPR as y-axis, training and test curves with AUC annotations"
+        },
+        {
+            "file": "svm_performance_metrics.csv",
+            "type": "csv",
+            "description": "rows as train/test performance metrics, columns should include Metric, Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,20 @@
+{
+    "id": "a-2-8",
+    "question": "Run GSEA on ranked gene list to identify the most enriched gene sets of biological processes. Report the full enrichment results and the top 5 significantly enriched gene sets.",
+    "input_files": [
+        "data/gene_rnk.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "gsea_result.csv",
+            "type": "csv",
+            "description": "rows as gene sets, columns should include Name, Term, NES, FDR q-val"
+        },
+        {
+            "file": "gsea_top5_result.csv",
+            "type": "csv",
+            "description": "top 5 rows from gsea_result.csv"
+        }
+    ],
+    "timeout_seconds": 3600
+}

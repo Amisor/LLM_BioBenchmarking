@@ -1,0 +1,18 @@
+{
+    "id": "a-3-1",
+    "question": "Merge two RNA-Seq datasets from different sources and correct batch effects using ComBat.",
+    "ref_answer": [
+        "ref_answer/combined_corrected.csv"
+    ],
+    "ref_script": [
+        "ref_script/correct_batch.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "combined_corrected.csv",
+                "guidelines": "Values must match within 1% relative absolute error; row and column order may differ."
+            }
+        ]
+    }
+}

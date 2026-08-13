@@ -1,0 +1,15 @@
+{
+    "id": "b-2-12",
+    "question": "Classify each column in the dataset as: continuous, categorical, binary (exactly 2 unique values), datetime, or ordinal (ordered labels such as education levels).",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "data_types.csv",
+            "type": "csv",
+            "description": "rows as dataset columns, columns should include column_name, data_type"
+        }
+    ],
+    "timeout_seconds": 3600
+}

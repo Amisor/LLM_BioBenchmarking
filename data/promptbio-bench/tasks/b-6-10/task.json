@@ -1,0 +1,16 @@
+{
+    "id": "b-6-10",
+    "question": "Apply CCA to find linear relationships between two sets of variables. Compute the maximum number of canonical components (min of the number of variables in each set). Report the canonical correlations.",
+    "input_files": [
+        "data/dataset_X.csv",
+        "data/dataset_Y.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "canonical_correlations.csv",
+            "type": "csv",
+            "description": "rows as canonical components, columns should include Component, Canonical_Correlation"
+        }
+    ],
+    "timeout_seconds": 3600
+}

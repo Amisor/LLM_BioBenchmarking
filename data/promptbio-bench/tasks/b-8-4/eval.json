@@ -1,0 +1,18 @@
+{
+    "id": "b-8-4",
+    "question": "Using Elastic Net regression (alpha=0.1, l1_ratio=0.5), predict age from methylation data and identify the top 10 features by absolute coefficient magnitude with non-zero coefficients. Use an 80-20 train-test split (random_state=42) and fit the model on the training data only.",
+    "ref_answer": [
+        "ref_answer/top_10_features.csv"
+    ],
+    "ref_script": [
+        "ref_script/elastic_net_features.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "top_10_features.csv",
+                "guidelines": "All 10 feature names must match the reference exactly; coefficient values must match within 1% relative absolute error; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "id": "a-6-7",
+    "question": "Cluster ASVs using `vsearch --cluster_fast` at 97% identity to generate centroid sequences and an OTU table. Preserve original sequence IDs as centroid headers (do not relabel).",
+    "ref_answer": [
+        "ref_answer/vsearch_centroids.fasta",
+        "ref_answer/vsearch_otu_table.txt"
+    ],
+    "ref_script": [
+        "ref_script/cluster_asvs.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "vsearch_centroids.fasta",
+                "guidelines": "Centroid sequences must match the reference as an equivalent set; sequence order, case, and line-wrap may differ. Row labels should be the original ASV sequence IDs (not relabeled OTU_N)."
+            },
+            {
+                "file": "vsearch_otu_table.txt",
+                "guidelines": "Per-centroid per-ASV read counts must match the reference exactly; row and column order may differ. Row labels are original ASV sequence IDs (centroids), enabling direct comparison without label resolution."
+            }
+        ]
+    }
+}

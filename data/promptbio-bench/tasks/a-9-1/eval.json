@@ -1,0 +1,18 @@
+{
+    "id": "a-9-1",
+    "question": "Using a somatic VCF file (hg38) from tumor sequencing, generate peptides for neoantigen prediction (MHC class I).",
+    "ref_answer": [
+        "ref_answer/peptides.fa"
+    ],
+    "ref_script": [
+        "ref_script/neoantigen_peptides.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "peptides.fa",
+                "guidelines": "Peptide count must match the reference; each peptide must be 8-11 amino acids; 4-mer amino acid composition must be within 10% relative absolute error of the reference."
+            }
+        ]
+    }
+}

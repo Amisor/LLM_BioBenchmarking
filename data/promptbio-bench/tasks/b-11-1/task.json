@@ -1,0 +1,15 @@
+{
+    "id": "b-11-1",
+    "question": "A rare genetic disorder affects 1 in 10,000 individuals. A test has 99% sensitivity and 98% specificity. Compute the posterior probability that a person has the disorder given a positive test result. Show intermediate Bayes' theorem steps (prior probability, likelihood, and marginal probability of a positive test).",
+    "input_files": [
+        "data/test_parameters.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "posterior_probability.txt",
+            "type": "txt",
+            "description": "labeled values: prior probability, likelihood, marginal probability, posterior probability"
+        }
+    ],
+    "timeout_seconds": 3600
+}

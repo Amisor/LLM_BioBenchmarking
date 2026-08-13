@@ -1,0 +1,23 @@
+{
+    "id": "a-3-8",
+    "question": "Estimate human transcript abundances from the FASTQ files using Salmon, and provide a summary table of the top 10 expressed transcripts.",
+    "ref_answer": [
+        "ref_answer/quant.sf",
+        "ref_answer/top_10_transcripts.csv"
+    ],
+    "ref_script": [
+        "ref_script/salmon.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "quant.sf",
+                "guidelines": "TPM and NumReads per transcript must match within 1% relative absolute error; header comment lines, row order, and column order may differ."
+            },
+            {
+                "file": "top_10_transcripts.csv",
+                "guidelines": "The same 10 transcripts as the reference (by TPM rank) must be present, with values matching within 1% relative absolute error; column order may differ."
+            }
+        ]
+    }
+}

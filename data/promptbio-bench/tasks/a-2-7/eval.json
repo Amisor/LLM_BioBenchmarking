@@ -1,0 +1,18 @@
+{
+    "id": "a-2-7",
+    "question": "Can you draw a chromosome ideogram for human chr8?",
+    "ref_answer": [
+        "ref_answer/ideogram.png"
+    ],
+    "ref_script": [
+        "ref_script/ideogram.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "ideogram.png",
+                "guidelines": "Ideogram must depict chromosome 8 with cytogenetic band coloring per standard Giemsa-stain convention (dark/light/centromere/heterochromatin bands); pixel rendering, fonts, and exact color shades may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "b-8-1",
+    "question": "Apply LASSO regression (alpha=0.1) to the dataset to perform feature selection. Identify and return the non-zero coefficient features.",
+    "input_files": [
+        "data/regression_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "lasso_features.csv",
+            "type": "csv",
+            "description": "rows as features, columns should include Feature, Coefficient"
+        }
+    ],
+    "timeout_seconds": 3600
+}

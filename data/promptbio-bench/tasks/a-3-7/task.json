@@ -1,0 +1,16 @@
+{
+    "id": "a-3-7",
+    "question": "Normalize the raw RNA-Seq counts from the uploaded dataset using TPM.",
+    "input_files": [
+        "data/annotation.gtf",
+        "data/count_matrix.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "tpm_matrix.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include gene_id (Ensembl gene ID) followed by sample columns (TPM values)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

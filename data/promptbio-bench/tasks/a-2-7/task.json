@@ -1,0 +1,13 @@
+{
+    "id": "a-2-7",
+    "question": "Can you draw a chromosome ideogram for human chr8?",
+    "input_files": [],
+    "expected_output": [
+        {
+            "file": "ideogram.png",
+            "type": "png",
+            "description": "chr8 ideogram with Giemsa-stained band coloring"
+        }
+    ],
+    "timeout_seconds": 3600
+}

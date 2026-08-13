@@ -1,0 +1,15 @@
+{
+    "id": "b-10-4",
+    "question": "Train an XGBoost classifier (n_estimators=100, max_depth=5, learning_rate=0.1, random_state=42) on the provided data using a 70/30 stratified train-test split (random_state=42). Compute mean absolute SHAP values on the training set using TreeExplainer and return the top 10 features by SHAP importance.",
+    "input_files": [
+        "data/classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "top_10_features.csv",
+            "type": "csv",
+            "description": "rows as features, columns should include Feature, SHAP_Importance"
+        }
+    ],
+    "timeout_seconds": 3600
+}

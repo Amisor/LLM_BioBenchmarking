@@ -1,0 +1,15 @@
+{
+    "id": "b-11-4",
+    "question": "Fit a Bayesian linear regression model to predict drug response from patient age and genetic variant count. Use Normal(0, 100) priors (mean 0, variance 100) for regression coefficients and an InverseGamma(1, 1) prior for the error variance. Report posterior means, credible intervals, and compare with frequentist results.",
+    "input_files": [
+        "data/patient_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "bayesian_frequentist_comparison.csv",
+            "type": "csv",
+            "description": "rows as regression parameters, columns should include Parameter, Bayesian_Posterior_Mean, Bayesian_CI_Lower, Bayesian_CI_Upper, Frequentist_Estimate, Frequentist_CI_Lower, Frequentist_CI_Upper, Frequentist_P_Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

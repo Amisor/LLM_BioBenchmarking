@@ -1,0 +1,16 @@
+{
+    "id": "a-3-1",
+    "question": "Merge two RNA-Seq datasets from different sources and correct batch effects using ComBat.",
+    "input_files": [
+        "data/data1.csv",
+        "data/data2.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "combined_corrected.csv",
+            "type": "csv",
+            "description": "rows as genes, columns as samples"
+        }
+    ],
+    "timeout_seconds": 3600
+}

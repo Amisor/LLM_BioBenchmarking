@@ -1,0 +1,16 @@
+{
+    "id": "a-15-3",
+    "question": "I have provided ChIP-seq results for the transcription factor SPT5 and RNA-seq TPM data for wild-type and knock-out samples. Integrate the ChIP-seq and RNA-seq data to identify the transcription factor's target genes and compute log2 fold-change (KO vs WT) for each target gene.",
+    "input_files": [
+        "data/SPT5_T0_REP1_peaks.annotatePeaks.txt",
+        "data/rnaseq_tpm.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "SPT5_target_log2FC.csv",
+            "type": "csv",
+            "description": "rows as target genes, columns should include Gene, log2FC"
+        }
+    ],
+    "timeout_seconds": 3600
+}

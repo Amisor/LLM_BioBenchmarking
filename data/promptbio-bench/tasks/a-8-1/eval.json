@@ -1,0 +1,18 @@
+{
+    "id": "a-8-1",
+    "question": "Annotate LC-MS peaks by matching each query m/z against the provided HMDB database using a mass tolerance of +/-0.01 Da, and report up to 3 candidate metabolites per peak ranked by absolute ppm error.",
+    "ref_answer": [
+        "ref_answer/annotations.csv"
+    ],
+    "ref_script": [
+        "ref_script/annotate_lcms.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "annotations.csv",
+                "guidelines": "Per-peak annotation rows must match the reference in query_mz and hmdb_id (exact) and ppm_error within +/-0.001; candidates per peak must be ranked by ascending absolute ppm_error; column order and extra columns may differ."
+            }
+        ]
+    }
+}

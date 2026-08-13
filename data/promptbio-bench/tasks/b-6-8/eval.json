@@ -1,0 +1,18 @@
+{
+    "id": "b-6-8",
+    "question": "Build a 5-layer autoencoder to compress gene expression data into a lower-dimensional latent space. The architecture should follow this sequence: Input -> Dense (32 units, ReLU) -> Bottleneck (8 units, ReLU) -> Dense (32 units, ReLU) -> Output (linear). After training, extract the 8-dimensional bottleneck layer for all samples.",
+    "ref_answer": [
+        "ref_answer/bottleneck_representations.csv"
+    ],
+    "ref_script": [
+        "ref_script/autoencoder.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "bottleneck_representations.csv",
+                "guidelines": "All samples must be present with exactly 8 bottleneck latent columns; all values must be non-negative; row order, column order, and header labels may differ; numeric values are non-deterministic and need not match."
+            }
+        ]
+    }
+}

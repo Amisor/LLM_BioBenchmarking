@@ -1,0 +1,23 @@
+{
+    "id": "a-10-2",
+    "question": "Using the GWAS summary statistics and genotype data, calculate Polygenic Risk Scores (PRS) with PLINK. Evaluate the PRS predictive performance for the binary phenotype by plotting an ROC curve and computing the AUC value.",
+    "ref_answer": [
+        "ref_answer/PRS_ROC_curve.png",
+        "ref_answer/prs_auc.txt"
+    ],
+    "ref_script": [
+        "ref_script/roc.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "PRS_ROC_curve.png",
+                "guidelines": "ROC curve must show true positive rate vs. false positive rate for the PRS model; axis labels, colors, and styling may differ."
+            },
+            {
+                "file": "prs_auc.txt",
+                "guidelines": "AUC value must match the reference within +/-0.05; whitespace and decimal precision may differ."
+            }
+        ]
+    }
+}

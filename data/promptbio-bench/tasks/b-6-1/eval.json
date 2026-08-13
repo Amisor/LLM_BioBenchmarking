@@ -1,0 +1,18 @@
+{
+    "id": "b-6-1",
+    "question": "Apply PCA to a gene expression dataset. Z-score standardize the features before applying PCA. Compute the proportion of variance explained by the first 10 principal components.",
+    "ref_answer": [
+        "ref_answer/pca_variance_explained.tsv"
+    ],
+    "ref_script": [
+        "ref_script/pca_variance.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "pca_variance_explained.tsv",
+                "guidelines": "Per-PC variance proportions and the total must match the reference within 1% relative absolute error; column labels and whitespace may differ."
+            }
+        ]
+    }
+}

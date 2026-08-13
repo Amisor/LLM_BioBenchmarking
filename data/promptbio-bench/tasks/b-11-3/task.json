@@ -1,0 +1,20 @@
+{
+    "id": "b-11-3",
+    "question": "Two monoclonal antibodies are tested for binding efficiency. Monoclonal antibody X shows positive binding in 41 out of 60 trials, while monoclonal antibody Y shows positive binding in 33 out of 60 trials. Using Beta(1,1) priors for both antibodies, compute and report the posterior Beta parameters and mean binding probability for each antibody. Then simulate 10,000 draws from each posterior distribution and compute the fraction of simulations where antibody X's binding probability exceeds antibody Y's binding probability.",
+    "input_files": [
+        "data/antibody_trial_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "posterior_parameters.csv",
+            "type": "csv",
+            "description": "rows as antibodies, columns should include Antibody, Posterior_Alpha, Posterior_Beta, Posterior_Mean_Binding_Probability"
+        },
+        {
+            "file": "simulation_results.txt",
+            "type": "txt",
+            "description": "labeled values: posterior Beta parameters, simulation count, and P(X > Y)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

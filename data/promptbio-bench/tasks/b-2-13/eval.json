@@ -1,0 +1,18 @@
+{
+    "id": "b-2-13",
+    "question": "Merge two datasets on patient names using fuzzy string matching to handle typos or formatting differences. Use a similarity threshold of 80% (fuzz ratio). Keep all pairs of records whose names match above the threshold, using suffixes '_dataset1' and '_dataset2' to distinguish columns from each source.",
+    "ref_answer": [
+        "ref_answer/fuzzy_merged_data.csv"
+    ],
+    "ref_script": [
+        "ref_script/fuzzy_merge.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "fuzzy_merged_data.csv",
+                "guidelines": "Matched row set must match the reference; minor differences in borderline matches near the threshold are acceptable; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

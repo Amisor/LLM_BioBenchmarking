@@ -1,0 +1,17 @@
+{
+    "id": "a-3-5",
+    "question": "Predict alternative splicing events from RNA-Seq data using rMATS.",
+    "input_files": [
+        "data/annotation.gtf",
+        "data/sample_1.bam",
+        "data/sample_2.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "*.MATS.JC.txt",
+            "type": "txt",
+            "description": "rMATS JC format; rows as splicing events"
+        }
+    ],
+    "timeout_seconds": 3600
+}

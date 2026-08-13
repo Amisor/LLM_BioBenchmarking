@@ -1,0 +1,28 @@
+{
+    "id": "a-6-4",
+    "question": "Using the provided 16S rRNA amplicon sequence variant (ASV) table, calculate beta diversity between sample groups and identify significantly different taxa.",
+    "ref_answer": [
+        "ref_answer/PCoA_results.csv",
+        "ref_answer/PERMANOVA_results.csv",
+        "ref_answer/differential_ASVs.csv"
+    ],
+    "ref_script": [
+        "ref_script/beta_diversity.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "PCoA_results.csv",
+                "guidelines": "Coordinates must match the reference within +/-0.05 per axis; each axis may be globally sign-flipped and column order may differ."
+            },
+            {
+                "file": "PERMANOVA_results.csv",
+                "guidelines": "R^2 and F-statistic must match the reference within 5% relative absolute error; Pr(>F) need only agree in significance direction (p < 0.05); row and column order may differ."
+            },
+            {
+                "file": "differential_ASVs.csv",
+                "guidelines": "log2FoldChange and padj must match the reference within 1% relative absolute error; row and column order may differ."
+            }
+        ]
+    }
+}

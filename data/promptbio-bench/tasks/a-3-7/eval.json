@@ -1,0 +1,18 @@
+{
+    "id": "a-3-7",
+    "question": "Normalize the raw RNA-Seq counts from the uploaded dataset using TPM.",
+    "ref_answer": [
+        "ref_answer/tpm_matrix.csv"
+    ],
+    "ref_script": [
+        "ref_script/tpm.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "tpm_matrix.csv",
+                "guidelines": "TPM values must match the reference within 1% relative absolute error; row and column order may differ."
+            }
+        ]
+    }
+}

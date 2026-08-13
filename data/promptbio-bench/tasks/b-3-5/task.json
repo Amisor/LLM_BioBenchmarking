@@ -1,0 +1,15 @@
+{
+    "id": "b-3-5",
+    "question": "Generate a heatmap to visualize the pairwise Pearson correlation matrix of all numeric variables in the dataset. Use a diverging color palette and include a colorbar.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "correlation_heatmap.png",
+            "type": "png",
+            "description": "Pearson correlation heatmap; numeric variables on both axes, diverging color scale"
+        }
+    ],
+    "timeout_seconds": 3600
+}

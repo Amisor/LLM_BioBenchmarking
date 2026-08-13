@@ -1,0 +1,18 @@
+{
+    "id": "a-15-8",
+    "question": "Using Signac and Seurat, jointly analyze a single-cell multi-omic dataset measuring chromatin accessibility (scATAC-seq) and gene expression (scRNA-seq) in the same cells; then generate a UMAP based solely on the chromatin accessibility data and a joint UMAP integrating both modalities.",
+    "ref_answer": [
+        "ref_answer/umap_multiple.png"
+    ],
+    "ref_script": [
+        "ref_script/signac.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "umap_multiple.png",
+                "guidelines": "Plot must show two UMAP panels -- one for ATAC-only clusters and one for joint RNA+ATAC clusters -- with cells colored by cluster assignment; panel arrangement, color scheme, and point styling may differ."
+            }
+        ]
+    }
+}

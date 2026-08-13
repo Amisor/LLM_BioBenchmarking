@@ -1,0 +1,18 @@
+{
+    "id": "b-2-9",
+    "question": "Create a rolling window analysis with window size 5 to calculate moving averages for time series data.",
+    "ref_answer": [
+        "ref_answer/rolling_window_averages.csv"
+    ],
+    "ref_script": [
+        "ref_script/rolling_moving_average.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "rolling_window_averages.csv",
+                "guidelines": "Moving average values must match the reference within +/-0.01 for rows with a full window of 5 data points; the first 4 rows may have NaN or partial-window averages (computed with fewer than 5 points); row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

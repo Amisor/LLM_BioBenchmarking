@@ -1,0 +1,15 @@
+{
+    "id": "b-5-3",
+    "question": "Apply DBSCAN clustering to the dataset with eps=0.5 and min_samples=5. For each data point, report its cluster label and whether it is a core, border, or noise point.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "dbscan_cluster_report.csv",
+            "type": "csv",
+            "description": "rows as data points, columns should include cluster label, point type (Core, Border, or Noise)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

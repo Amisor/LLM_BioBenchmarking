@@ -1,0 +1,23 @@
+{
+    "id": "b-2-8",
+    "question": "Calculate the correlation matrix for all numeric variables and identify pairs with absolute correlation > 0.8.",
+    "ref_answer": [
+        "ref_answer/correlation_matrix.csv",
+        "ref_answer/high_correlation_pairs.csv"
+    ],
+    "ref_script": [
+        "ref_script/correlation_analysis.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "correlation_matrix.csv",
+                "guidelines": "Pearson correlation values must match the reference within +/-0.01; row and column order may differ."
+            },
+            {
+                "file": "high_correlation_pairs.csv",
+                "guidelines": "The set of variable pairs must exactly match the reference; correlation values within +/-0.01; row and column order may differ."
+            }
+        ]
+    }
+}

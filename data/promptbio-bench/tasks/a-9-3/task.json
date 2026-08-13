@@ -1,0 +1,15 @@
+{
+    "id": "a-9-3",
+    "question": "Determine HLA class I alleles (HLA-A, HLA-B, HLA-C) from the provided BAM file.",
+    "input_files": [
+        "data/example_pe.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "HLA_result.tsv",
+            "type": "tsv",
+            "description": "rows as samples, columns should include A1, A2, B1, B2, C1, C2"
+        }
+    ],
+    "timeout_seconds": 3600
+}

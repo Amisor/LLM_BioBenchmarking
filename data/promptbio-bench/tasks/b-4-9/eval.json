@@ -1,0 +1,18 @@
+{
+    "id": "b-4-9",
+    "question": "Implement a two-tailed permutation test (10,000 shuffles) to assess whether the difference in median survival between two treatment arms is statistically significant. Use random seed 42 for reproducibility. Return the empirical p-value.",
+    "ref_answer": [
+        "ref_answer/permutation_test_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/permutation_survival.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "permutation_test_results.csv",
+                "guidelines": "Empirical p-value must match within +/-0.02; significance call must match the reference; column order and header labels may differ."
+            }
+        ]
+    }
+}

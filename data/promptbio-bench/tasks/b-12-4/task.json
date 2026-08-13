@@ -1,0 +1,15 @@
+{
+    "id": "b-12-4",
+    "question": "Using the patient data in survival_data.csv (columns: PatientID, SurvTime, Event, EarlyShrinkage), perform a median split on EarlyShrinkage to create a binary ShrinkageGroup covariate (1 if above median, 0 otherwise). Fit a Cox proportional hazards model with ShrinkageGroup as the covariate, and predict the survival probability at t=52 weeks for each patient.",
+    "input_files": [
+        "data/survival_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "survival_predictions.csv",
+            "type": "csv",
+            "description": "rows as patients, columns should include PatientID, ShrinkageGroup, PredictedSurvival"
+        }
+    ],
+    "timeout_seconds": 3600
+}

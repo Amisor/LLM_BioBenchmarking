@@ -1,0 +1,18 @@
+{
+    "id": "b-2-12",
+    "question": "Classify each column in the dataset as: continuous, categorical, binary (exactly 2 unique values), datetime, or ordinal (ordered labels such as education levels).",
+    "ref_answer": [
+        "ref_answer/data_types.csv"
+    ],
+    "ref_script": [
+        "ref_script/classify_data_types.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "data_types.csv",
+                "guidelines": "Unambiguous column types (binary, datetime, continuous) must match the reference; ordinal vs. categorical is an acceptable alternative classification for boundary columns; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

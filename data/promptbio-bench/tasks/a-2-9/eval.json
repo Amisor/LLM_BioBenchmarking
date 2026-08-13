@@ -1,0 +1,18 @@
+{
+    "id": "a-2-9",
+    "question": "Perform KEGG pathway enrichment analysis on the provided gene list and report the enriched pathways.",
+    "ref_answer": [
+        "ref_answer/enrich_result.csv"
+    ],
+    "ref_script": [
+        "ref_script/kegg_enrich.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "enrich_result.csv",
+                "guidelines": "Enriched KEGG pathway records must match the reference in pathway identity, Odds Ratio, P-value, and Adjusted P-value within 1% relative absolute error; row order, column order, and extra columns may differ."
+            }
+        ]
+    }
+}

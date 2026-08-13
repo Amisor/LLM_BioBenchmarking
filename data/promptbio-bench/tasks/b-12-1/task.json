@@ -1,0 +1,15 @@
+{
+    "id": "b-12-1",
+    "question": "Perform additive seasonal decomposition (period=12) on the monthly time series data and apply seasonal adjustment.",
+    "input_files": [
+        "data/simulated_time_series.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "time_series_decomposition.csv",
+            "type": "csv",
+            "description": "rows as monthly time points, columns should include Date, Original, Trend, Seasonal, Residual, Seasonally_Adjusted"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "a-9-3",
+    "question": "Determine HLA class I alleles (HLA-A, HLA-B, HLA-C) from the provided BAM file.",
+    "ref_answer": [
+        "ref_answer/HLA_result.tsv"
+    ],
+    "ref_script": [
+        "ref_script/hla_typing.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "HLA_result.tsv",
+                "guidelines": "HLA allele calls at 4-digit resolution must match the reference for all six loci (A1, A2, B1, B2, C1, C2); column order and extra columns may differ."
+            }
+        ]
+    }
+}

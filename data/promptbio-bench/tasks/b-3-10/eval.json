@@ -1,0 +1,18 @@
+{
+    "id": "b-3-10",
+    "question": "Create a Manhattan plot from GWAS summary statistics. Plot -log10(p-value) against genomic position, grouped by chromosome. Highlight genome-wide significant SNPs (p < 5x10^-8) in red.",
+    "ref_answer": [
+        "ref_answer/manhattan_plot.png"
+    ],
+    "ref_script": [
+        "ref_script/manhattan_plot.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "manhattan_plot.png",
+                "guidelines": "Manhattan plot must show -log10(p-value) vs chromosomal position with SNPs grouped by chromosome and a genome-wide significance threshold (p < 5e-8) visually marked; chromosome colors, significance-SNP marking style, and font may differ."
+            }
+        ]
+    }
+}

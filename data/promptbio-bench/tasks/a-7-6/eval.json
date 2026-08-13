@@ -1,0 +1,18 @@
+{
+    "id": "a-7-6",
+    "question": "Convert the provided Thermo RAW file to mzML format, then report the total spectrum count, MS1 count, MS2 count, and median precursor charge state (integer) as a TSV file named summary.tsv.",
+    "ref_answer": [
+        "ref_answer/summary.tsv"
+    ],
+    "ref_script": [
+        "ref_script/raw2mzml.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "summary.tsv",
+                "guidelines": "All four fields must be present with keys exactly matching the reference; values for total_spectra, ms1_count, and ms2_count must match within 1% relative absolute error and median_precursor_charge must exactly equal the reference integer."
+            }
+        ]
+    }
+}

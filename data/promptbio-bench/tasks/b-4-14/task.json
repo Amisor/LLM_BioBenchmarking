@@ -1,0 +1,15 @@
+{
+    "id": "b-4-14",
+    "question": "Compute Spearman's rank correlation between microbiome diversity (Shannon index) and inflammatory marker (CRP) across 120 patients. Test significance of correlation and return the Spearman's rho value, p-value, and 95% confidence interval.",
+    "input_files": [
+        "data/microbiome_crp.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "spearman_correlation_results.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include Spearman_Rho, P_Value, CI_Lower, CI_Upper"
+        }
+    ],
+    "timeout_seconds": 3600
+}

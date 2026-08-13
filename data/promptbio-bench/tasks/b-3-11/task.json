@@ -1,0 +1,15 @@
+{
+    "id": "b-3-11",
+    "question": "Use a ridge plot to compare the distribution of tumor mutational burden (TMB) across 10 cancer types.",
+    "input_files": [
+        "data/tmb_by_cancer_type.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "tmb_ridge_plot.png",
+            "type": "png",
+            "description": "TMB (mut/Mb) as x-axis, one density ridge per cancer type"
+        }
+    ],
+    "timeout_seconds": 3600
+}

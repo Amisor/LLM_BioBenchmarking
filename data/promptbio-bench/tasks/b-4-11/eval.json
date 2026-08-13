@@ -1,0 +1,28 @@
+{
+    "id": "b-4-11",
+    "question": "A pilot study comparing a biomarker between two groups is stored in the input file. Using the observed mean difference and pooled standard deviation from the data, calculate the required sample size per group to achieve 80% power at alpha=0.05 (two-sided t-test). Report the sample size and plot power vs. sample size from 20 to 100.",
+    "ref_answer": [
+        "ref_answer/power_curve.png",
+        "ref_answer/power_vs_sample_size.csv",
+        "ref_answer/sample_size_result.csv"
+    ],
+    "ref_script": [
+        "ref_script/power_sample_size.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "power_curve.png",
+                "guidelines": "Power curve versus sample size per group with 80% power threshold line marked; axis labels and colors may differ."
+            },
+            {
+                "file": "power_vs_sample_size.csv",
+                "guidelines": "Power values must match within 0.1% relative absolute error; row order, column order, and header labels may differ."
+            },
+            {
+                "file": "sample_size_result.csv",
+                "guidelines": "Required sample size per group must match within +/-2; column order and header labels may differ."
+            }
+        ]
+    }
+}

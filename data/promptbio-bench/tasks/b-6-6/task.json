@@ -1,0 +1,15 @@
+{
+    "id": "b-6-6",
+    "question": "Apply UMAP (n_components=2, random_state=42) to a single-cell RNA-seq dataset to visualize cellular heterogeneity in a 2D embedding. Color cells by known cell type labels.",
+    "input_files": [
+        "data/single_cell_rnaseq_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "umap_embedding.png",
+            "type": "png",
+            "description": "UMAP1 as x-axis, UMAP2 as y-axis, points colored by cell type"
+        }
+    ],
+    "timeout_seconds": 3600
+}

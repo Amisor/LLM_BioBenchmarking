@@ -1,0 +1,15 @@
+{
+    "id": "a-1-10",
+    "question": "Calculate the average coverage only over positions with non-zero coverage directly from the BAM file. Do not use any external BED file. Just use the aligned regions as captured bases.",
+    "input_files": [
+        "data/example_tumor.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "average_coverage.txt",
+            "type": "txt",
+            "description": "single numeric value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

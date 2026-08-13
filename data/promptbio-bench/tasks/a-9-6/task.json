@@ -1,0 +1,16 @@
+{
+    "id": "a-9-6",
+    "question": "Analyze the distribution of single-cell TCR clonotypes across different cell clusters and visualize the results using a heatmap.",
+    "input_files": [
+        "data/cell_cluster.csv",
+        "data/filtered_contig_annotations.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "clonotype_cluster_heatmap.png",
+            "type": "png",
+            "description": "heatmap; clonotypes as rows, cell clusters as columns, cell counts as values"
+        }
+    ],
+    "timeout_seconds": 3600
+}

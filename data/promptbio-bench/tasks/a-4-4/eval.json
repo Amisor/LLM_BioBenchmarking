@@ -1,0 +1,18 @@
+{
+  "id": "a-4-4",
+  "question": "Identify enriched motifs in the given sequences using MEME.",
+  "ref_answer": [
+    "ref_answer/meme.txt"
+  ],
+  "ref_script": [
+    "ref_script/meme.sh"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "meme.txt",
+        "guidelines": "Discovered motif position weight matrices and motif E-values must match the reference; tool metadata, timestamps, and whitespace may differ."
+      }
+    ]
+  }
+}

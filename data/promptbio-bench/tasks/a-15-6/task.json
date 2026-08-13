@@ -1,0 +1,16 @@
+{
+    "id": "a-15-6",
+    "question": "Integrate RNA-Seq and WGS data to identify A-to-I RNA editing sites. Exclude sites that are present as germline variants in the WGS data. Report editing percentage and a confidence score for each candidate site.",
+    "input_files": [
+        "data/rna_pileup.csv",
+        "data/wgs_test.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "a_to_i_editing_sites.csv",
+            "type": "csv",
+            "description": "rows as A-to-I editing sites, columns should include chrom, pos, ref, variant_type, depth, reference_reads, edited_reads, editing_percentage, confidence_score, A_count, C_count, G_count, T_count"
+        }
+    ],
+    "timeout_seconds": 3600
+}

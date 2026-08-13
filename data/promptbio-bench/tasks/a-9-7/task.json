@@ -1,0 +1,20 @@
+{
+    "id": "a-9-7",
+    "question": "Analyze V and J gene usage from BCR sequences.",
+    "input_files": [
+        "data/trust4.tsv"
+    ],
+    "expected_output": [
+        {
+            "file": "j_gene_usage_summary.csv",
+            "type": "csv",
+            "description": "rows as J genes, columns should include j_gene, count, frequency (float value, between 0 and 1)"
+        },
+        {
+            "file": "v_gene_usage_summary.csv",
+            "type": "csv",
+            "description": "rows as V genes, columns should include v_gene, count, frequency (float value, between 0 and 1)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

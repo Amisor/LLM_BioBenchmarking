@@ -1,0 +1,15 @@
+{
+    "id": "b-2-1",
+    "question": "Extract rows from a data file where 'Age' > 30 and 'Gender' is 'Male'.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "filtered_data.csv",
+            "type": "csv",
+            "description": "rows as patients, columns as clinical, genomic, and demographic features"
+        }
+    ],
+    "timeout_seconds": 3600
+}

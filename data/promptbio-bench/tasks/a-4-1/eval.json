@@ -1,0 +1,18 @@
+{
+    "id": "a-4-1",
+    "question": "Analyze the ChIP-Seq BAM file to identify peak regions using a control BAM. Save significant narrow peaks (q-value < 0.01).",
+    "ref_answer": [
+        "ref_answer/chip_peaks_peaks.narrowPeak"
+    ],
+    "ref_script": [
+        "ref_script/call_peak.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "chip_peaks_peaks.narrowPeak",
+                "guidelines": "Peak regions must substantially overlap the reference at the base level; exact boundaries may differ."
+            }
+        ]
+    }
+}

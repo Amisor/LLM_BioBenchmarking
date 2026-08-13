@@ -1,0 +1,20 @@
+{
+    "id": "b-7-6",
+    "question": "Fit a Naive Bayes model on the Breast Cancer Wisconsin dataset using a 70/30 train-test split. Compute and return the test accuracy and the 5x5 pairwise Pearson correlation matrix among the top 5 features most correlated (by absolute value) with the diagnosis label.",
+    "input_files": [
+        "data/breast_cancer_wisconsin.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "naive_bayes_test_accuracy.csv",
+            "type": "csv",
+            "description": "rows as accuracy result (1 row), columns should include Metric, Value"
+        },
+        {
+            "file": "top5_feature_correlation_matrix.csv",
+            "type": "csv",
+            "description": "Pearson correlation matrix; columns should include feature (feature name) followed by the 5 selected feature columns"
+        }
+    ],
+    "timeout_seconds": 3600
+}

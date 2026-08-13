@@ -1,0 +1,15 @@
+{
+    "id": "a-10-3",
+    "question": "Classify each variant in the provided VCF file as Pathogenic, VUS, or Benign using ACMG evidence-based criteria. The VCF file is pre-annotated with evidence fields in the INFO column: CONSEQUENCE, AF, CLINVAR, SIFT, and POLYPHEN.",
+    "input_files": [
+        "data/variants.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "acmg_classification.tsv",
+            "type": "tsv",
+            "description": "rows as variants, columns should include CHROM, POS, ID, CLASS"
+        }
+    ],
+    "timeout_seconds": 3600
+}

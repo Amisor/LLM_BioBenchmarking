@@ -1,0 +1,18 @@
+{
+    "id": "b-4-8",
+    "question": "Use the Jonckheere-Terpstra trend test to evaluate whether mutation burden increases significantly across ordered tumor grades (I -> IV).",
+    "ref_answer": [
+        "ref_answer/trend_test_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/jonckheere_trend_test.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "trend_test_results.csv",
+                "guidelines": "J statistic and Z statistic must match within 0.1% relative absolute error; trend significance call must match; column order and header labels may differ."
+            }
+        ]
+    }
+}

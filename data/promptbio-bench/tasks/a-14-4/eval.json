@@ -1,0 +1,18 @@
+{
+  "id": "a-14-4",
+  "question": "Predict the secondary structure of an RNA sequence using RNAfold (with the -p flag to generate a dot-plot file), then visualize the square root of base-pairing probabilities as a square heatmap.",
+  "ref_answer": [
+    "ref_answer/human_tRNA_Phe_dp.ps.png"
+  ],
+  "ref_script": [
+    "ref_script/RNAfold.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "human_tRNA_Phe_dp.ps.png",
+        "guidelines": "Square heatmap with nucleotide positions on both axes and cells colored by sqrt(base-pairing probability); color scheme and styling may differ."
+      }
+    ]
+  }
+}

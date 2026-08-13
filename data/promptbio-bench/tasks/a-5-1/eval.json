@@ -1,0 +1,18 @@
+{
+  "id": "a-5-1",
+  "question": "Perform quality control on a single-cell RNA-seq dataset to preserve high-quality cells, filtering for specific criteria such as the number of genes (200~4500), mitochondrial reads (< 10%), and UMI counts (< 40000). Report the QC metrics (cell_barcode, nFeature_RNA, nCount_RNA, mito.percent) for the filtered cells.",
+  "ref_answer": [
+    "ref_answer/filtered_cells_qc.tsv"
+  ],
+  "ref_script": [
+    "ref_script/single_cell_filter.R"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "filtered_cells_qc.tsv",
+        "guidelines": "The set of retained cell barcodes must exactly match the reference; numeric QC values must match within +/-1e-6; row order may differ."
+      }
+    ]
+  }
+}

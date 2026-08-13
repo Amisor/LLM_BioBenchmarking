@@ -1,0 +1,15 @@
+{
+    "id": "b-2-4",
+    "question": "Reshape the wide format gene expression into long format with sample, gene and expression columns.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "gene_expression_long.csv",
+            "type": "csv",
+            "description": "rows as sample-gene pairs, columns should include sample, gene, expression"
+        }
+    ],
+    "timeout_seconds": 3600
+}

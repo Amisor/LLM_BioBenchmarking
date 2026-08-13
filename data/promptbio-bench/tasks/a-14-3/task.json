@@ -1,0 +1,15 @@
+{
+    "id": "a-14-3",
+    "question": "Analyze the binding interface between a protein and DNA molecules in a PDB structure. List protein residues within 4.0 Angstroms of any DNA atom, and DNA nucleotides within 4.0 Angstroms of any protein atom.",
+    "input_files": [
+        "data/4kpy.pdb"
+    ],
+    "expected_output": [
+        {
+            "file": "protein_dna_interface.csv",
+            "type": "csv",
+            "description": "rows as interface residues and nucleotides, columns should include Type, Chain, ID, Name"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "b-3-7",
+    "question": "Create a box plot showing the distribution of TP53 expression levels across different tissue types. Include jittered data points (swarm or strip), proper axis labels, and a title.",
+    "ref_answer": [
+        "ref_answer/tp53_boxplot.png"
+    ],
+    "ref_script": [
+        "ref_script/tp53_boxplot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "tp53_boxplot.png",
+                "guidelines": "Box plot must show TP53 expression across tissue types with individual data points overlaid as jittered points; axis labels, color scheme, and jitter details may differ."
+            }
+        ]
+    }
+}

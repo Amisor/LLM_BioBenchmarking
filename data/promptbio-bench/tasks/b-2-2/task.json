@@ -1,0 +1,20 @@
+{
+    "id": "b-2-2",
+    "question": "Replace missing values in all numeric columns of the dataset with their respective column medians. After imputation, report the number and percentage of missing values filled.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "imputation_report.csv",
+            "type": "csv",
+            "description": "rows as numeric columns, columns should include column, missing_count, missing_percentage, median_used"
+        },
+        {
+            "file": "imputed_data.csv",
+            "type": "csv",
+            "description": "rows as patients, columns as clinical, genomic, and demographic features"
+        }
+    ],
+    "timeout_seconds": 3600
+}

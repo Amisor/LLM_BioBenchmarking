@@ -1,0 +1,15 @@
+{
+    "id": "a-3-2",
+    "question": "Estimate immune cell proportions in bulk RNA-Seq data using xCell.",
+    "input_files": [
+        "data/TPM.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "xCell_results.csv",
+            "type": "csv",
+            "description": "rows as cell types, columns should include cell_type (cell type name) followed by sample columns (xCell enrichment scores)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

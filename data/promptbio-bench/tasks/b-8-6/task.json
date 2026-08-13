@@ -1,0 +1,15 @@
+{
+    "id": "b-8-6",
+    "question": "Train a multi-layer perceptron (MLP) regressor with one hidden layer (50 neurons, ReLU activation, random_state=42) to predict patient BMI from 100 SNPs (coded 0/1/2). Use standardized inputs (StandardScaler), 80-20 train-test split (random_state=42). Train with the Adam solver for up to 1000 epochs, using early stopping with patience=15 and a 20% internal validation fraction. Report test R^2 and MAE.",
+    "input_files": [
+        "data/clinical_comprehensive_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "test_performance.csv",
+            "type": "csv",
+            "description": "rows as metrics, columns should include Metric, Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

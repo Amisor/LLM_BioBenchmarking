@@ -1,0 +1,23 @@
+{
+    "id": "a-6-1",
+    "question": "Perform trimming of 16s FASTQ reads based on the provided primer sequences.",
+    "ref_answer": [
+        "ref_answer/sample1_1.trim.fastq.gz",
+        "ref_answer/sample1_2.trim.fastq.gz"
+    ],
+    "ref_script": [
+        "ref_script/trim_primers.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "sample1_1.trim.fastq.gz",
+                "guidelines": "Trimmed read pairs must match the reference within +/-2 bp trim tolerance; gzip byte layout may differ."
+            },
+            {
+                "file": "sample1_2.trim.fastq.gz",
+                "guidelines": "Trimmed read pairs must match the reference within +/-2 bp trim tolerance; gzip byte layout may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "a-10-5",
+  "question": "Annotate variants.vcf using VEP with vep_custom.vcf.gz as a custom annotation source, adding CSQ annotations to the INFO field.",
+  "ref_answer": [
+    "ref_answer/variants_vep.vcf"
+  ],
+  "ref_script": [
+    "ref_script/vep.sh"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "variants_vep.vcf",
+        "guidelines": "Variant records must carry CSQ annotations in the INFO field with InCancerDB custom annotations applied; exact CSQ subfield values and ordering may differ; header lines may differ."
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "b-1-4",
+    "question": "Discretize each numeric variable into 5 equal-width bins. Then, calculate the entropy (in bits, log base 2) for each variable based on the frequency distribution of its binned values. Return the results sorted in descending order of entropy.",
+    "ref_answer": [
+        "ref_answer/binned_entropy.csv"
+    ],
+    "ref_script": [
+        "ref_script/binned_entropy.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "binned_entropy.csv",
+                "guidelines": "Entropy values per feature must match the reference within +/-0.01; rows must be in descending order of entropy; column order and header labels may differ."
+            }
+        ]
+    }
+}

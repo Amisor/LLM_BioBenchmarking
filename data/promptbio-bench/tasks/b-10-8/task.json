@@ -1,0 +1,16 @@
+{
+    "id": "b-10-8",
+    "question": "Given a predicted set of the top 50 differentially expressed genes from a cancer versus normal RNA-seq analysis and a reference set of 30 known oncogenes from the COSMIC database, compute and report the intersection size and Jaccard score between the two gene sets.",
+    "input_files": [
+        "data/oncogenes.csv",
+        "data/top_50_deg.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "jaccard_score.csv",
+            "type": "csv",
+            "description": "rows as metrics, columns should include Metric, Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

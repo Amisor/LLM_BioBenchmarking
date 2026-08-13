@@ -1,0 +1,15 @@
+{
+    "id": "a-13-4",
+    "question": "For each protein sequence in the input CSV, generate a redesigned sequence by replacing each amino acid with a randomly chosen member of its conservative functional group (aliphatic, aromatic, positive, negative, polar uncharged, sulfur-containing, polar amide, or proline). The redesigned sequence must be the same length as the original.",
+    "input_files": [
+        "data/protein_sequence.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "redesigned_proteins.csv",
+            "type": "csv",
+            "description": "rows as sequences, columns should include sequence_id, original_sequence, redesigned_sequence"
+        }
+    ],
+    "timeout_seconds": 3600
+}

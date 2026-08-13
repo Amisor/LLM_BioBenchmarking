@@ -1,0 +1,15 @@
+{
+    "id": "a-11-2",
+    "question": "Perform co-expression network analysis on gene expression data using WGCNA and identify hub genes.",
+    "input_files": [
+        "data/gene_expression.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "hub_genes.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include Gene_ID, Module, Intramodular_Connectivity, Extramodular_Connectivity, Total_Connectivity, Is_Hub"
+        }
+    ],
+    "timeout_seconds": 3600
+}

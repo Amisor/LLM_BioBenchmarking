@@ -1,0 +1,23 @@
+{
+    "id": "b-7-7",
+    "question": "Build a decision tree classifier to predict drug response (responder vs. non-responder) from patient genetic variants (SNPs) and clinical features using a 70/30 train-test split. Report the top 10 most important features and the test accuracy.",
+    "ref_answer": [
+        "ref_answer/decision_tree_feature_importances.csv",
+        "ref_answer/decision_tree_test_accuracy.csv"
+    ],
+    "ref_script": [
+        "ref_script/decision_tree_drug_response.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "decision_tree_feature_importances.csv",
+                "guidelines": "At least 7 of the 10 highest-ranked features by importance must overlap with the reference set; importance scores for overlapping features within +/-0.05; row order and column labels may differ."
+            },
+            {
+                "file": "decision_tree_test_accuracy.csv",
+                "guidelines": "Test accuracy value must be within +/-0.05 of the reference; column naming and label formatting may differ."
+            }
+        ]
+    }
+}

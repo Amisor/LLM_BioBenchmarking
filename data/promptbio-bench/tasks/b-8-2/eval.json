@@ -1,0 +1,18 @@
+{
+    "id": "b-8-2",
+    "question": "Train a random forest regressor (n_estimators=100, random_state=42) to predict patient age from DNA methylation levels (beta values) and select the top 20 features by importance.",
+    "ref_answer": [
+        "ref_answer/top_20_features.csv"
+    ],
+    "ref_script": [
+        "ref_script/random_forest_features.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "top_20_features.csv",
+                "guidelines": "At least 18 of the 20 reported feature names must be present in the reference set; importance scores for matched features must agree within 10% relative absolute error; column order and naming may differ."
+            }
+        ]
+    }
+}

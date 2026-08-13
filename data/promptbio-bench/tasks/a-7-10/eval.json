@@ -1,0 +1,28 @@
+{
+    "id": "a-7-10",
+    "question": "Fit the Michaelis-Menten equation to calculate Vmax and Km with and without inhibitor, and plot both the Michaelis-Menten and Lineweaver-Burk (double-reciprocal) curves to compare enzyme kinetics.",
+    "ref_answer": [
+        "ref_answer/fit_results.tsv",
+        "ref_answer/lineweaver_burk_plot.png",
+        "ref_answer/michaelis_menten_fit.png"
+    ],
+    "ref_script": [
+        "ref_script/michaelis_menten.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "fit_results.tsv",
+                "guidelines": "TSV with columns condition, Vmax, Km; fitted values for Control and Inhibitor must match the reference within 10% relative absolute error; column order and decimal precision may differ."
+            },
+            {
+                "file": "lineweaver_burk_plot.png",
+                "guidelines": "Double-reciprocal plot with 1/[S] on x-axis and 1/V on y-axis showing both control and inhibitor series; colors, fonts, and styling may differ."
+            },
+            {
+                "file": "michaelis_menten_fit.png",
+                "guidelines": "Saturation curve plot with [S] on x-axis and V on y-axis showing fitted curves for both control and inhibitor conditions; annotation style, colors, and fonts may differ."
+            }
+        ]
+    }
+}

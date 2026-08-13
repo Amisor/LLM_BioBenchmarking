@@ -1,0 +1,18 @@
+{
+    "id": "b-3-1",
+    "question": "I have a gene expression matrix in CSV format. Generate a clustered heatmap using row-wise Z-score normalization and default hierarchical clustering. Label samples and genes clearly.",
+    "ref_answer": [
+        "ref_answer/clustered_heatmap.png"
+    ],
+    "ref_script": [
+        "ref_script/clustered_heatmap.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "clustered_heatmap.png",
+                "guidelines": "Heatmap must show row Z-score coloring with hierarchical clustering dendrograms on both axes and labeled genes and samples; color palette and font size may differ."
+            }
+        ]
+    }
+}

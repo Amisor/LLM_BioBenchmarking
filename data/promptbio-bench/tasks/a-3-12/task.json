@@ -1,0 +1,16 @@
+{
+    "id": "a-3-12",
+    "question": "Perform target prediction for the miRNAs using TargetScan.",
+    "input_files": [
+        "data/UTR_seq.txt",
+        "data/mirna_family.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "PredictedTargets.txt",
+            "type": "txt",
+            "description": "rows as miRNA-target pairs, columns should include Gene_ID, miRNA_family, site_type"
+        }
+    ],
+    "timeout_seconds": 3600
+}

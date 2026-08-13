@@ -1,0 +1,23 @@
+{
+    "id": "a-9-7",
+    "question": "Analyze V and J gene usage from BCR sequences.",
+    "ref_answer": [
+        "ref_answer/j_gene_usage_summary.csv",
+        "ref_answer/v_gene_usage_summary.csv"
+    ],
+    "ref_script": [
+        "ref_script/vdj_usage.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "j_gene_usage_summary.csv",
+                "guidelines": "Each J gene's count and frequency must match the reference within 0.1% relative absolute error; column order and extra columns may differ."
+            },
+            {
+                "file": "v_gene_usage_summary.csv",
+                "guidelines": "Each V gene's count and frequency must match the reference within 0.1% relative absolute error; column order and extra columns may differ."
+            }
+        ]
+    }
+}

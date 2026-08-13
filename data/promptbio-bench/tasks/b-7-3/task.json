@@ -1,0 +1,25 @@
+{
+    "id": "b-7-3",
+    "question": "Classify ECG signals into normal vs. arrhythmic using a 1D Convolutional Neural Network (CNN). Pad or truncate each signal to 256 time points, use a 70/30 train-test split, and train for 50 epochs with batch size 32.",
+    "input_files": [
+        "data/ecg_signals.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "classification_report.csv",
+            "type": "csv",
+            "description": "rows as classes and aggregate rows, columns should include Class, Precision, Recall, F1-Score, Support"
+        },
+        {
+            "file": "cnn_performance_metrics.csv",
+            "type": "csv",
+            "description": "rows as accuracy metrics, columns should include Metric, Value"
+        },
+        {
+            "file": "confusion_matrix.csv",
+            "type": "csv",
+            "description": "rows as actual classes, columns should include true_label (actual class name) followed by predicted class columns (counts)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

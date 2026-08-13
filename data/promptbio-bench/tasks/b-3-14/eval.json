@@ -1,0 +1,18 @@
+{
+    "id": "b-3-14",
+    "question": "Plot a Gantt-style timeline for patients, showing the duration of treatments, hospitalizations, and follow-up visits. Use color to distinguish event types and include patient IDs on the y-axis.",
+    "ref_answer": [
+        "ref_answer/gantt_patient_events.png"
+    ],
+    "ref_script": [
+        "ref_script/gantt_patient_timeline.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gantt_patient_events.png",
+                "guidelines": "Gantt chart must show horizontal event bars for each patient with distinct colors per event type (treatment, hospitalization, follow-up) and a legend; patient ordering, color scheme, and styling may differ."
+            }
+        ]
+    }
+}

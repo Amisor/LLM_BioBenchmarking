@@ -1,0 +1,15 @@
+{
+    "id": "b-5-8",
+    "question": "The dataset contains pre-computed cluster labels from two methods: K-means and hierarchical clustering (columns: kmeans_label and hierarchical_label). Compute the Adjusted Rand Index (ARI) to quantify the agreement between these two sets of cluster assignments.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "adjusted_rand_index.txt",
+            "type": "txt",
+            "description": "single numeric value: Adjusted Rand Index"
+        }
+    ],
+    "timeout_seconds": 3600
+}

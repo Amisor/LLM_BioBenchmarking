@@ -1,0 +1,15 @@
+{
+    "id": "b-8-10",
+    "question": "Model the conditional quantiles (tau=0.1, 0.5, 0.9) of inflammatory marker IL-6 using relative abundances of 500 gut microbiome taxa. Apply centered log-ratio (CLR) transformation to the microbiome data (add pseudocount 1e-6 before log). Fit a separate QuantileRegressor (sklearn, alpha=0.05, solver='highs') for each quantile. Report taxa with non-zero coefficients at tau=0.9 that have a zero coefficient at tau=0.5, sorted by absolute coefficient magnitude descending.",
+    "input_files": [
+        "data/microbiome_il6_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "high_il6_specific_taxa.csv",
+            "type": "csv",
+            "description": "rows as microbial taxa, columns should include Taxon, Coefficient"
+        }
+    ],
+    "timeout_seconds": 3600
+}

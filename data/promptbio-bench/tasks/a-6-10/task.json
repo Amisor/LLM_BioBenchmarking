@@ -1,0 +1,19 @@
+{
+    "id": "a-6-10",
+    "question": "Search ORFs with a set of HMM profiles, and rank results",
+    "input_files": [
+        "data/PF00317.hmm",
+        "data/PF00848.hmm",
+        "data/PF03477.hmm",
+        "data/PF13597.hmm",
+        "data/megahit.prodigal.faa.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "megahit.prodigal.hmmrank.tsv",
+            "type": "tsv",
+            "description": "rows as ORF-profile hits, columns should include accno(ORF ID), score, rank"
+        }
+    ],
+    "timeout_seconds": 3600
+}

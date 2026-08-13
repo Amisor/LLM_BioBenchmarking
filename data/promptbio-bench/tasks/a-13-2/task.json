@@ -1,0 +1,15 @@
+{
+    "id": "a-13-2",
+    "question": "Use Primer3 to design PCR primers for human FOXP3 mRNA: primer length 18-22 nt (opt 20), Tm 58-62 degrees C (opt 60 degrees C), GC content 40-60%, product size 200-300 bp. Return the top 5 primer pairs.",
+    "input_files": [
+        "data/FOXP3.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "foxp3_primers.csv",
+            "type": "csv",
+            "description": "rows as primer pairs, columns should include Forward_Sequence, Forward_Tm, Forward_Position, Reverse_Sequence, Reverse_Tm, Reverse_Position, Product_Size"
+        }
+    ],
+    "timeout_seconds": 3600
+}

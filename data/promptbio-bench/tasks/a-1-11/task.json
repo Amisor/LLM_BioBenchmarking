@@ -1,0 +1,15 @@
+{
+    "id": "a-1-11",
+    "question": "Can you help me extract reads from a bam file that fall within a given region? The region is chr6:29796670-29910329",
+    "input_files": [
+        "data/example_tumor.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "chr6_region.fastq",
+            "type": "fastq",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

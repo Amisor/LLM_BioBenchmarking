@@ -1,0 +1,20 @@
+{
+    "id": "b-5-9",
+    "question": "Calculate the gap statistic for K-means clustering with k values from 1 to 20, using 10 Monte Carlo reference datasets and random_state=42. For each k, compare the log within-cluster dispersion to that of uniform reference datasets drawn from the observed feature ranges. Identify the optimal k as the smallest k where gap(k) >= gap(k+1) - s(k+1) (where s(k+1) is the standard error) and report the gap values and standard errors for each k.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "gap_statistic.tsv",
+            "type": "tsv",
+            "description": "rows as k values (1-20), columns should include k, Gap Value, Std Error"
+        },
+        {
+            "file": "optimal_k.txt",
+            "type": "txt",
+            "description": "single integer: optimal number of clusters"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,20 @@
+{
+    "id": "a-13-3",
+    "question": "Assemble a synthetic plasmid from dna_parts.fasta using Golden Gate cloning with BsaI, and output a circular construct map with part positions. Assemble parts in the order they appear in the file (part1_promoter -> part2_gene -> part3_terminator -> part4_backbone), digesting with BsaI (recognition site GGTCTC, cuts 1 nt downstream on the sense strand) to generate compatible overhangs for ligation.",
+    "input_files": [
+        "data/dna_parts.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "assembled_plasmid.csv",
+            "type": "csv",
+            "description": "rows as assembled plasmid (1 row), columns should include Sequence, Length"
+        },
+        {
+            "file": "plasmid_map.txt",
+            "type": "txt",
+            "description": "plasmid map: total length and per-part position intervals (start-end bp)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,16 @@
+{
+    "id": "a-1-15",
+    "question": "Run BLAST to align query.fa against ref.fa using tabular format (outfmt 6).",
+    "input_files": [
+        "data/query.fa",
+        "data/ref.fa"
+    ],
+    "expected_output": [
+        {
+            "file": "result.txt",
+            "type": "txt",
+            "description": "BLAST tabular format (outfmt 6)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

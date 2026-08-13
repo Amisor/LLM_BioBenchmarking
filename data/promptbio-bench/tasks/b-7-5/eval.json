@@ -1,0 +1,18 @@
+{
+    "id": "b-7-5",
+    "question": "Using the provided dataset, train K-Nearest Neighbors (KNN) classifiers with k=5 using both Euclidean and Manhattan distance metrics. Evaluate each model on a 30% held-out test set. Report the test accuracy for each metric.",
+    "ref_answer": [
+        "ref_answer/knn_accuracy_comparison.csv"
+    ],
+    "ref_script": [
+        "ref_script/knn_distance_comparison.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "knn_accuracy_comparison.csv",
+                "guidelines": "Test accuracy for each distance metric must match within +/-0.05; row and column order may differ."
+            }
+        ]
+    }
+}

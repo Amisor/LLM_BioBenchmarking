@@ -1,0 +1,18 @@
+{
+    "id": "b-2-5",
+    "question": "Merge the clinical data and gene expression datasets based on patient ID. Only keep samples that exist in both files.",
+    "ref_answer": [
+        "ref_answer/merged_data.csv"
+    ],
+    "ref_script": [
+        "ref_script/merge_datasets.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "merged_data.csv",
+                "guidelines": "Row set must exactly match the reference; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

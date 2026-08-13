@@ -1,0 +1,15 @@
+{
+    "id": "a-7-5",
+    "question": "Generate a TIC chromatogram from the provided mzML data using MS1 spectra only.",
+    "input_files": [
+        "data/sample.mzML"
+    ],
+    "expected_output": [
+        {
+            "file": "TIC.png",
+            "type": "png",
+            "description": "retention time as x-axis, total ion current as y-axis"
+        }
+    ],
+    "timeout_seconds": 3600
+}

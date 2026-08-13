@@ -1,0 +1,23 @@
+{
+    "id": "b-4-5",
+    "question": "Use the Kruskal-Wallis test to determine if tumor mutational burden (TMB) differs across four cancer types. If significant, perform Dunn's post-hoc test to identify which specific cancer types differ from each other.",
+    "ref_answer": [
+        "ref_answer/dunn_posthoc_results.csv",
+        "ref_answer/kruskal_wallis_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/kruskal_dunn.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "dunn_posthoc_results.csv",
+                "guidelines": "All six pairwise significance calls (True/False) must match the reference; row order and column header labels may differ."
+            },
+            {
+                "file": "kruskal_wallis_results.csv",
+                "guidelines": "H statistic must match within 0.1% relative absolute error; significance call must match; column order and header labels may differ."
+            }
+        ]
+    }
+}

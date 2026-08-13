@@ -1,0 +1,18 @@
+{
+    "id": "a-4-6",
+    "question": "Perform cell-type-specific association testing on bulk DNA methylation data using cell type composition, disease status, and covariates. Report CpG-level coefficient estimates, test statistics, and p-values for cell-type-specific disease effects and overall covariate effects.",
+    "input_files": [
+        "data/Matrix_of_bulk_omics_measurements.csv",
+        "data/Matrix_of_cell_type_composition.csv",
+        "data/Matrix_of_covariates.csv",
+        "data/Matrix_of_traits.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "dna_methylation_results.tsv",
+            "type": "tsv",
+            "description": "rows as CpG-celltype-term associations, columns should include response, celltype, term, estimate, statistic, p.value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "b-3-13",
+    "question": "Construct a gene co-expression network by computing pairwise Pearson correlation coefficients across genes, retaining only significant co-expression relationships where the absolute correlation |r|>0.6. Visualize the network with nodes sized by their degree, edge widths and edge transparency proportional to |r|, and highlight the hub genes with different color.",
+    "ref_answer": [
+        "ref_answer/gene_coexpression_network.png"
+    ],
+    "ref_script": [
+        "ref_script/coexpression_network.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gene_coexpression_network.png",
+                "guidelines": "Network graph must show nodes sized by degree, edge widths and edge transparency proportional to |r|, and hub genes (high-degree nodes) highlighted in a distinct color from non-hub nodes; layout, color scheme, and node label visibility may differ."
+            }
+        ]
+    }
+}

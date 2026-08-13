@@ -1,0 +1,15 @@
+{
+    "id": "a-9-4",
+    "question": "Using xCell, calculate immune cell infiltration scores for all samples in the provided gene expression matrix.",
+    "input_files": [
+        "data/expr_matrix.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "xcell_results.csv",
+            "type": "csv",
+            "description": "rows as cell types, columns as samples"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,15 @@
+{
+    "id": "b-10-3",
+    "question": "Train a Random Forest classifier (n_estimators=100, random_state=42) on the dataset to predict disease status. Use a 70/30 stratified train-test split (random_state=42). Generate the confusion matrix on the test set.",
+    "input_files": [
+        "data/classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "confusion_matrix.csv",
+            "type": "csv",
+            "description": "rows as actual classes, columns should include true_label (actual class name), Predicted_Normal, Predicted_Tumor"
+        }
+    ],
+    "timeout_seconds": 3600
+}

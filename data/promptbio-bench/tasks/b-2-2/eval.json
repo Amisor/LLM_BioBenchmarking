@@ -1,0 +1,23 @@
+{
+    "id": "b-2-2",
+    "question": "Replace missing values in all numeric columns of the dataset with their respective column medians. After imputation, report the number and percentage of missing values filled.",
+    "ref_answer": [
+        "ref_answer/imputation_report.csv",
+        "ref_answer/imputed_data.csv"
+    ],
+    "ref_script": [
+        "ref_script/median_imputation.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "imputation_report.csv",
+                "guidelines": "Per-column missing counts must be exact; missing percentages within +/-0.05; median values within 1% relative absolute error; row and column order may differ."
+            },
+            {
+                "file": "imputed_data.csv",
+                "guidelines": "All numeric values must match the reference within 1% relative absolute error; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

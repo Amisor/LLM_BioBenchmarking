@@ -1,0 +1,20 @@
+{
+    "id": "a-12-1",
+    "question": "Given a FASTA file of orthologous gene sequences, build a maximum-likelihood phylogeny and generate visualization.",
+    "input_files": [
+        "data/simulated_sequences.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "aligned.fasta.treefile",
+            "type": "treefile",
+            "description": "Newick format with branch lengths"
+        },
+        {
+            "file": "phylo_tree.png",
+            "type": "png",
+            "description": "phylogenetic tree; leaf nodes labeled by sequence ID, branches scaled by evolutionary distance"
+        }
+    ],
+    "timeout_seconds": 3600
+}

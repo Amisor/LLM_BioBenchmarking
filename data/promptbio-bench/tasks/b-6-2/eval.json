@@ -1,0 +1,18 @@
+{
+    "id": "b-6-2",
+    "question": "Generate a PCA plot using a log2(x+1)-transformed and z-score standardized RNA-seq read count matrix. Color samples by known biological groups. Label the axes with the percentage of variance explained by PC1 and PC2.",
+    "ref_answer": [
+        "ref_answer/pca_rnaseq_plot.png"
+    ],
+    "ref_script": [
+        "ref_script/pca_plot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "pca_rnaseq_plot.png",
+                "guidelines": "Scatter plot must show samples colored by biological group with PC1 and PC2 variance-explained percentages on axes; color palette and marker styles may differ."
+            }
+        ]
+    }
+}

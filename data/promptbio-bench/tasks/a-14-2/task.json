@@ -1,0 +1,15 @@
+{
+    "id": "a-14-2",
+    "question": "Identify protein residues within 4.0 Angstroms of the ligand (residue name MTX) in the PDB structure.",
+    "input_files": [
+        "data/protein.pdb"
+    ],
+    "expected_output": [
+        {
+            "file": "binding_sites.csv",
+            "type": "csv",
+            "description": "rows as binding residues, columns should include Chain, Residue_ID, Residue_Name"
+        }
+    ],
+    "timeout_seconds": 3600
+}

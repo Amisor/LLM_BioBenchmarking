@@ -1,0 +1,15 @@
+{
+    "id": "b-4-3",
+    "question": "Identify genes with significantly different mutation frequencies between tumor and matched normal samples using Fisher's exact test and return top 10 hits.",
+    "input_files": [
+        "data/mutation_frequency_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "top_10_differential_mutations.csv",
+            "type": "csv",
+            "description": "rows as genes (top 10), columns should include Gene, Tumor_Mutated, Tumor_Total, Tumor_Frequency, Normal_Mutated, Normal_Total, Normal_Frequency, Frequency_Difference, Odds_Ratio, P_Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

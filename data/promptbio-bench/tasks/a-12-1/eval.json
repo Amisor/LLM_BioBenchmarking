@@ -1,0 +1,24 @@
+{
+    "id": "a-12-1",
+    "question": "Given a FASTA file of orthologous gene sequences, build a maximum-likelihood phylogeny and generate visualization.",
+    "ref_answer": [
+        "ref_answer/aligned.fasta.treefile",
+        "ref_answer/phylo_tree.png"
+    ],
+    "ref_script": [
+        "ref_script/aligned_iqtree.sh",
+        "ref_script/plot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "aligned.fasta.treefile",
+                "guidelines": "HOXA1_3 and HOXA1_4 must form a monophyletic sister clade; branch lengths and bootstrap support labels may differ."
+            },
+            {
+                "file": "phylo_tree.png",
+                "guidelines": "HOXA1_3 and HOXA1_4 must be visually grouped as a sister clade with branches scaled by evolutionary distance; HOXA1_4's branch must be visibly longer than all others; layout, orientation, and styling may differ."
+            }
+        ]
+    }
+}

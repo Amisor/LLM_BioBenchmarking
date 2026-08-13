@@ -1,0 +1,18 @@
+{
+  "id": "a-9-5",
+  "question": "For each of the provided clonotype data files, calculate the Shannon diversity index and Gini-Simpson index.",
+  "ref_answer": [
+    "ref_answer/TCR_diversity_summary.csv"
+  ],
+  "ref_script": [
+    "ref_script/clonotype_diversity.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "TCR_diversity_summary.csv",
+        "guidelines": "Diversity values per sample must match the reference within 0.1% relative absolute error; column order and header naming may differ."
+      }
+    ]
+  }
+}

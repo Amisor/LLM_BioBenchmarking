@@ -1,0 +1,15 @@
+{
+    "id": "b-2-14",
+    "question": "Identify outliers in all numeric columns using the IQR method (values < Q1 - 1.5xIQR or > Q3 + 1.5xIQR). Cap these outliers at the upper and lower bounds.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "outliers_capped.csv",
+            "type": "csv",
+            "description": "rows as patients, columns as clinical, genomic, and demographic features"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,20 @@
+{
+    "id": "a-11-9",
+    "question": "Detect communities in a biological network using the Louvain algorithm, and evaluate community quality with modularity score.",
+    "input_files": [
+        "data/ppi_network.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "community_network.png",
+            "type": "png",
+            "description": "network graph; nodes colored by community, modularity score annotated"
+        },
+        {
+            "file": "modularity_score.tsv",
+            "type": "tsv",
+            "description": "rows as summary (1 row), columns should include modularity_score, num_communities, node_count, edge_count"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,15 @@
+{
+    "id": "b-2-7",
+    "question": "Create dummy variables for the categorical column 'Category' and append them to the original dataset.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "dataset_with_dummies.csv",
+            "type": "csv",
+            "description": "rows as patients, columns as clinical, genomic, and demographic features plus Category_TypeA, Category_TypeB, Category_TypeC, Category_TypeD; each dummy variable takes value 0 (false) or 1 (true)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

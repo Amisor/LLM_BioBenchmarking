@@ -1,0 +1,15 @@
+{
+    "id": "b-6-5",
+    "question": "Apply t-SNE to single-cell RNA-seq data with perplexity=30, 1000 iterations, and random_state=42. Visualize the 2D embedding, coloring cells by known cell type labels.",
+    "input_files": [
+        "data/single_cell_rnaseq_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "tsne_embedding.png",
+            "type": "png",
+            "description": "t-SNE Dim1 as x-axis, t-SNE Dim2 as y-axis, points colored by cell type"
+        }
+    ],
+    "timeout_seconds": 3600
+}

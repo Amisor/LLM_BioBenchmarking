@@ -1,0 +1,16 @@
+{
+    "id": "a-7-8",
+    "question": "Perform DIA label-free quantification using DIA-NN with the provided mzML file and reference FASTA database.",
+    "input_files": [
+        "data/RD139_Narrow_UPS1_0_1fmol_inj1.mzML",
+        "data/REF_EColi_K12_UPS1_combined.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "report.tsv",
+            "type": "tsv",
+            "description": "DIA-NN precursor-level quantification report"
+        }
+    ],
+    "timeout_seconds": 3600
+}

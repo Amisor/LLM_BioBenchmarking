@@ -1,0 +1,16 @@
+{
+    "id": "a-15-10",
+    "question": "Use the MendelianRandomization R package to test whether gene expression causally influences a phenotype, using SNPs as instrumental variables. Run both IVW and MR-Egger methods and report the results.",
+    "input_files": [
+        "data/snp_exp.csv",
+        "data/snp_pheno.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "mr_result_summary.csv",
+            "type": "csv",
+            "description": "rows as MR methods, columns should include Method, Beta, SE, P"
+        }
+    ],
+    "timeout_seconds": 3600
+}

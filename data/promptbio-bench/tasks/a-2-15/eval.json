@@ -1,0 +1,18 @@
+{
+    "id": "a-2-15",
+    "question": "Generate a GWAS association scatter plot for chromosome 7 using the provided summary statistics file. Plot the -log10(p-value) for all SNPs on chromosome 7, highlight the top 3 most significant SNPs in a different color, and label them with their rsIDs.",
+    "ref_answer": [
+        "ref_answer/plot.png"
+    ],
+    "ref_script": [
+        "ref_script/gwas_scatter.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "plot.png",
+                "guidelines": "Scatter plot must show -log10(p-values) vs. chromosomal position for all chromosome 7 SNPs, with the top 3 most significant SNPs distinctly highlighted and labeled with their rsIDs; colors, fonts, and pixel rendering may differ."
+            }
+        ]
+    }
+}

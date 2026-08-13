@@ -1,0 +1,18 @@
+{
+    "id": "a-15-2",
+    "question": "Using the omicwas R package's ctcisQTL function, perform cell-type-specific cis-QTL analysis on methylation data with a 1 Mb cis window, controlling for the provided covariates.",
+    "ref_answer": [
+        "ref_answer/mQTL_results.tsv"
+    ],
+    "ref_script": [
+        "ref_script/QTL.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "mQTL_results.tsv",
+                "guidelines": "All SNP-CpG-celltype combination rows must match the reference; estimate, statistic, and p.value must match within 0.1% relative absolute error; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

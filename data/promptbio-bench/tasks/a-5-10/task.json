@@ -1,0 +1,16 @@
+{
+    "id": "a-5-10",
+    "question": "Conduct clustering on the spatial transcriptomics data and visualize the cluster assignments using spatial coordinates.",
+    "input_files": [
+        "data/filtered_feature_bc_matrix.h5",
+        "data/spatial/"
+    ],
+    "expected_output": [
+        {
+            "file": "spatial_clusters.csv",
+            "type": "csv",
+            "description": "rows as spots, columns should include barcode, spatial_clusters"
+        }
+    ],
+    "timeout_seconds": 3600
+}

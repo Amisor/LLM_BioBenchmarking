@@ -1,0 +1,18 @@
+{
+    "id": "b-2-7",
+    "question": "Create dummy variables for the categorical column 'Category' and append them to the original dataset.",
+    "ref_answer": [
+        "ref_answer/dataset_with_dummies.csv"
+    ],
+    "ref_script": [
+        "ref_script/create_dummy_variables.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "dataset_with_dummies.csv",
+                "guidelines": "All original records must be present with binary indicator columns for each Category value appended; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

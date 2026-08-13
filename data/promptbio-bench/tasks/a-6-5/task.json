@@ -1,0 +1,21 @@
+{
+    "id": "a-6-5",
+    "question": "Using the provided 16S rRNA amplicon sequence variant (ASV) table, calculate alpha diversity between sample groups and identify differentially abundant ASVs.",
+    "input_files": [
+        "data/16S_seq_Metadata.csv",
+        "data/ASV_table.tsv"
+    ],
+    "expected_output": [
+        {
+            "file": "AlphaDiversity_results.csv",
+            "type": "csv",
+            "description": "rows as samples, columns should include sample_id, group, Shannon, Simpson, Chao1"
+        },
+        {
+            "file": "differential_ASVs.csv",
+            "type": "csv",
+            "description": "rows as ASVs, columns should include asv_id, log2FoldChange, pvalue, padj; asv_id is the ASV sequence hash"
+        }
+    ],
+    "timeout_seconds": 3600
+}

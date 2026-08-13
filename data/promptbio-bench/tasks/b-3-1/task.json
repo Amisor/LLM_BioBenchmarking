@@ -1,0 +1,15 @@
+{
+    "id": "b-3-1",
+    "question": "I have a gene expression matrix in CSV format. Generate a clustered heatmap using row-wise Z-score normalization and default hierarchical clustering. Label samples and genes clearly.",
+    "input_files": [
+        "data/gene_expression.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "clustered_heatmap.png",
+            "type": "png",
+            "description": "clustered heatmap; genes as rows, samples as columns, cells colored by row-wise Z-score"
+        }
+    ],
+    "timeout_seconds": 3600
+}

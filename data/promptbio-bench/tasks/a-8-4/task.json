@@ -1,0 +1,16 @@
+{
+    "id": "a-8-4",
+    "question": "Filter the provided metabolomics metadata table to retain only the rows whose HMDB ID appears in the given list.",
+    "input_files": [
+        "data/HMDB_list.txt",
+        "data/metabolomics_raw.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "metabolomics_meta.tsv",
+            "type": "tsv",
+            "description": "rows as metabolites, columns should include Metabolite, SUPER_PATHWAY, SUB_PATHWAY, COMP_ID, PLATFORM, RI, MASS, CAS, PUBCHEM, KEGG, Group_HMDB"
+        }
+    ],
+    "timeout_seconds": 3600
+}

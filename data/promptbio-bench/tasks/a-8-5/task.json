@@ -1,0 +1,17 @@
+{
+    "id": "a-8-5",
+    "question": "Select the top 50 most variable metabolites (by variance across samples, computed on raw values) and perform a one-sided (alternative='greater') Fisher's exact test to identify enriched metabolic pathways. Use the SUPER_PATHWAY column in the metabolomics metadata and report one row per pathway.",
+    "input_files": [
+        "data/metabolomics_data.txt",
+        "data/metabolomics_meta.txt",
+        "data/sample_meta.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "Fisher_results.tsv",
+            "type": "tsv",
+"description": "rows as pathways, columns should include Pathway, Overlap, Pathway_Size, Odds_Ratio, P_Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

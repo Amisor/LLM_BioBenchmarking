@@ -1,0 +1,13 @@
+{
+    "id": "a-7-1",
+    "question": "Use BLAST to find the top 3 similar proteins to human hemoglobin (HBB) in mice.",
+    "input_files": [],
+    "expected_output": [
+        {
+            "file": "top3_mouse_proteins.tsv",
+            "type": "tsv",
+            "description": "rows as protein hits, columns should include accession, length, score, evalue"
+        }
+    ],
+    "timeout_seconds": 3600
+}

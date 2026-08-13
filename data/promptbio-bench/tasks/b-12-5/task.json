@@ -1,0 +1,15 @@
+{
+    "id": "b-12-5",
+    "question": "Evaluate a linear regression model for predicting daily hospital admissions using time series cross-validation with 5 folds. Use the previous 7 days of admissions as features (lag=7). Use an expanding-window split: divide the N samples (after lag windowing) into 6 equal segments of size N//6; for fold i (i=1..5), train on the first i segments and test on segment i+1. Report the mean and standard deviation of RMSE across folds.",
+    "input_files": [
+        "data/daily_admissions.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "hospital_admissions_cv_results.csv",
+            "type": "csv",
+            "description": "rows as CV folds plus Mean and Std summary rows, columns should include Fold, RMSE"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a-14-1",
+    "question": "Predict the 3D structure of a protein sequence using AlphaFold2, and output all 5 ranked PDB files with per-residue pLDDT confidence scores encoded in B-factor fields.",
+    "input_files": [
+        "data/test_protein.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "test_protein_unrelaxed_rank_00*.pdb",
+            "type": "pdb",
+            "description": "5 ranked PDB files (rank_001 through rank_005) with per-residue pLDDT confidence scores encoded in the B-factor column"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "a-7-7",
+    "question": "Perform peptide identification on the provided DDA mzML file using the given FASTA database and report peptide-spectrum matches.",
+    "ref_answer": [
+        "ref_answer/BSA2_F1_comet_psm.tsv"
+    ],
+    "ref_script": [
+        "ref_script/peptide_id.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "BSA2_F1_comet_psm.tsv",
+                "guidelines": "The set of (spectrum_id, peptide_sequence, charge) tuples must match the reference; protein_accession may differ for shared peptides; modification notation must be present and consistent."
+            }
+        ]
+    }
+}

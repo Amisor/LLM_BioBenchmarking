@@ -1,0 +1,18 @@
+{
+    "id": "a-3-9",
+    "question": "Analyze the provided transcriptome assembly FASTA and classify each transcript into broad putative categories (miRNA, lncRNA, mRNA, or unknown) based on sequence length and coding potential estimated from the longest ORF. Report transcript id, sequence length, and predicted type.",
+    "ref_answer": [
+        "ref_answer/transcript_classification.csv"
+    ],
+    "ref_script": [
+        "ref_script/ncRNA.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "transcript_classification.csv",
+                "guidelines": "Each transcript's RNA type label must match the reference; row and column order may differ."
+            }
+        ]
+    }
+}

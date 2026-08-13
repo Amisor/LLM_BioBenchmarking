@@ -1,0 +1,23 @@
+{
+    "id": "b-5-4",
+    "question": "Fit a Gaussian Mixture Model with 3 components (random_state=42) to the dataset. Visualize the clusters with scatter plots and overlay ellipses representing the Gaussian components. Report the mixing weights, means, and covariances for each component.",
+    "ref_answer": [
+        "ref_answer/gmm_cluster_plot.png",
+        "ref_answer/gmm_parameters.csv"
+    ],
+    "ref_script": [
+        "ref_script/gmm_clustering.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gmm_cluster_plot.png",
+                "guidelines": "Plot must show scatter points colored by GMM component with covariance ellipses overlaid; axis labels, colors, and styling may differ."
+            },
+            {
+                "file": "gmm_parameters.csv",
+                "guidelines": "Each component's mixing weights must match within +/-0.05; mean coordinates and covariance values must match within 5% relative absolute error; component order and column labels may differ."
+            }
+        ]
+    }
+}

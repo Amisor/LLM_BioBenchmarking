@@ -1,0 +1,15 @@
+{
+    "id": "b-3-14",
+    "question": "Plot a Gantt-style timeline for patients, showing the duration of treatments, hospitalizations, and follow-up visits. Use color to distinguish event types and include patient IDs on the y-axis.",
+    "input_files": [
+        "data/patient_events.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "gantt_patient_events.png",
+            "type": "png",
+            "description": "time as x-axis, patient ID as y-axis, bars color-coded by event type"
+        }
+    ],
+    "timeout_seconds": 3600
+}

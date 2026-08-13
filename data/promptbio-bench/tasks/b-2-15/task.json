@@ -1,0 +1,15 @@
+{
+    "id": "b-2-15",
+    "question": "Convert the given VCF file into CSV format, with each column representing a specific variant attribute. Use the schema defined in the VCF header.",
+    "input_files": [
+        "data/variants.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "variants.csv",
+            "type": "csv",
+            "description": "rows as genomic variants, columns should include CHROM, POS, REF, ALT, AC, AN, AF, DP, MQ, FS, SOR"
+        }
+    ],
+    "timeout_seconds": 3600
+}

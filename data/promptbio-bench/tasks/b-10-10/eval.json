@@ -1,0 +1,18 @@
+{
+    "id": "b-10-10",
+    "question": "Given the clustering results from a single-cell RNA-seq dataset and the corresponding known cell type labels, compute Cohen's kappa, the Adjusted Rand Index (ARI), and Normalized Mutual Information (NMI) to evaluate the agreement between the clustering labels and the biological annotations. Before computing Cohen's kappa, align cluster integer labels to true cell-type labels using the Hungarian algorithm (optimal assignment) to account for the arbitrary permutation of cluster identifiers. ARI and NMI are permutation-invariant and do not require alignment.",
+    "ref_answer": [
+        "ref_answer/clustering_metrics.csv"
+    ],
+    "ref_script": [
+        "ref_script/clustering_metrics.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "clustering_metrics.csv",
+                "guidelines": "All three metric values must match the reference within +/-0.001; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

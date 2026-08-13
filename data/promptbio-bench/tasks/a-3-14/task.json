@@ -1,0 +1,16 @@
+{
+    "id": "a-3-14",
+    "question": "Compute, for each gene and sample, the ratio between the mean circRNA expression and the mean linear RNA expression (circRNA/linear ratio).",
+    "input_files": [
+        "data/circular.tsv",
+        "data/linear.tsv"
+    ],
+    "expected_output": [
+        {
+            "file": "circ_linear_ratio.tsv",
+            "type": "tsv",
+            "description": "rows as genes, columns should include gene_id, with one column per sample"
+        }
+    ],
+    "timeout_seconds": 3600
+}

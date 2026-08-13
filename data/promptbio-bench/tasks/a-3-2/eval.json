@@ -1,0 +1,18 @@
+{
+    "id": "a-3-2",
+    "question": "Estimate immune cell proportions in bulk RNA-Seq data using xCell.",
+    "ref_answer": [
+        "ref_answer/xCell_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/xCell.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "xCell_results.csv",
+                "guidelines": "Enrichment scores must match the reference within 1% relative absolute error; row and column order may differ."
+            }
+        ]
+    }
+}

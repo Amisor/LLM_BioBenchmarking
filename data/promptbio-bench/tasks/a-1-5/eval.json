@@ -1,0 +1,18 @@
+{
+    "id": "a-1-5",
+    "question": "Can you give me a FASTA sequence of the human genome region chr1:100000-200000 using the GRCh38 (hg38) human genome reference?",
+    "ref_answer": [
+        "ref_answer/chr1_region.fasta"
+    ],
+    "ref_script": [
+        "ref_script/fetch_fasta.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "chr1_region.fasta",
+                "guidelines": "The sequence must match the reference; case and line-wrap may differ."
+            }
+        ]
+    }
+}

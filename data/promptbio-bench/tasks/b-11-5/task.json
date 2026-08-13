@@ -1,0 +1,25 @@
+{
+    "id": "b-11-5",
+    "question": "Analyze gene expression data from multiple patients across different time points. Build a hierarchical model with patient-level random effects and time-level fixed effects. Use MCMC sampling to estimate parameters and report posterior distributions for the random effects variance. Set the first time point as the reference level (time_effects[0] = 0) for identifiability.",
+    "input_files": [
+        "data/gene_expression_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "hierarchical_model_summary.txt",
+            "type": "txt",
+            "description": "labeled parameter table: posterior mean, SD, and credible intervals per parameter; random effects variance summary appended"
+        },
+        {
+            "file": "random_effects_variance_posterior.csv",
+            "type": "csv",
+            "description": "rows as MCMC samples, columns should include sigma_patient_squared, sigma_patient"
+        },
+        {
+            "file": "trace_plot.png",
+            "type": "png",
+            "description": "n-by-2 grid; left panels: density of sampled values per parameter group; right panels: MCMC iteration as x-axis, sampled values as y-axis"
+        }
+    ],
+    "timeout_seconds": 3600
+}

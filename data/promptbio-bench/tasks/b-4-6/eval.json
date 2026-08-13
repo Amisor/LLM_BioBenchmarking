@@ -1,0 +1,18 @@
+{
+    "id": "b-4-6",
+    "question": "Analyze cytokine levels measured at baseline, week 2, and week 4 in the same patients using repeated measures ANOVA. Include subject as a random factor and test for time effect.",
+    "ref_answer": [
+        "ref_answer/repeated_measures_anova_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/repeated_measures_anova.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "repeated_measures_anova_results.csv",
+                "guidelines": "F statistic must match within 1% relative absolute error; time effect significance call must match; column order and header labels may differ."
+            }
+        ]
+    }
+}

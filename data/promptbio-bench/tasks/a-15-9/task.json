@@ -1,0 +1,22 @@
+{
+    "id": "a-15-9",
+    "question": "Use R and the WGCNA package to identify co-expression modules from combined RNA and protein expression data, and test which modules are associated with disease status (the 'Disease' column in Pheno.csv). Merge the two datasets by row-binding RNA and protein features. Report the Pearson correlation of each module eigengene with Disease and its p-value.",
+    "input_files": [
+        "data/Pheno.csv",
+        "data/protein.csv",
+        "data/rna.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "module_trait_correlations.csv",
+            "type": "csv",
+            "description": "rows as WGCNA modules, columns should include Module, Correlation, Pvalue"
+        },
+        {
+            "file": "wgcna_module_trait_heatmap.png",
+            "type": "png",
+            "description": "heatmap; modules as rows, phenotype as columns, cells colored by Pearson correlation with correlation values overlaid"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,20 @@
+{
+    "id": "b-2-8",
+    "question": "Calculate the correlation matrix for all numeric variables and identify pairs with absolute correlation > 0.8.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "correlation_matrix.csv",
+            "type": "csv",
+            "description": "rows as numeric variables, columns should include variable (variable name) followed by all numeric variable columns (Pearson r values)"
+        },
+        {
+            "file": "high_correlation_pairs.csv",
+            "type": "csv",
+            "description": "rows as variable pairs, columns should include Variable1, Variable2, Correlation"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "a-3-12",
+    "question": "Perform target prediction for the miRNAs using TargetScan.",
+    "ref_answer": [
+        "ref_answer/PredictedTargets.txt"
+    ],
+    "ref_script": [
+        "ref_script/targetscan.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "PredictedTargets.txt",
+                "guidelines": "Each miRNA-target pair must match the reference with matching site_type; scores must match within +/-0.001; row and column order may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "a-3-15",
+    "question": "Merge the TPM data from two Salmon output files into a single file.",
+    "ref_answer": [
+        "ref_answer/merged_tpm.tsv"
+    ],
+    "ref_script": [
+        "ref_script/merge.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "merged_tpm.tsv",
+                "guidelines": "Per-transcript TPM values for both samples must match within 1% relative absolute error; row and column order may differ."
+            }
+        ]
+    }
+}

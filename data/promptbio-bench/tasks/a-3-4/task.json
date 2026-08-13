@@ -1,0 +1,21 @@
+{
+    "id": "a-3-4",
+    "question": "Use DESeq2 for differential analysis and plot results as a volcano plot.",
+    "input_files": [
+        "data/count_matrix.csv",
+        "data/meta_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "DESeq2_results.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include gene_id, log2FoldChange, pvalue, padj"
+        },
+        {
+            "file": "volcano_plot.png",
+            "type": "png",
+            "description": "log2FoldChange as x-axis, -log10(padj) as y-axis, points colored by significance"
+        }
+    ],
+    "timeout_seconds": 3600
+}

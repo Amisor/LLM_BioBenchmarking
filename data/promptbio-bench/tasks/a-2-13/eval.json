@@ -1,0 +1,23 @@
+{
+  "id": "a-2-13",
+  "question": "Given a VCF file containing somatic mutations from whole-exome sequencing, normalize the variants and calculate the Tumor Mutational Burden (TMB) in mutations per megabase.",
+  "ref_answer": [
+    "ref_answer/normalized.input_VEP.vcf",
+    "ref_answer/output_tmb.txt"
+  ],
+  "ref_script": [
+    "ref_script/normalize_vcf.sh"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "normalized.input_VEP.vcf",
+        "guidelines": "Normalized variant records must match the reference in CHROM, POS, REF, and ALT; header lines and INFO-field order may differ."
+      },
+      {
+        "file": "output_tmb.txt",
+        "guidelines": "Value must be a single numeric value matching the reference within 1% relative absolute error."
+      }
+    ]
+  }
+}

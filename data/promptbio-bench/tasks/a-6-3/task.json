@@ -1,0 +1,15 @@
+{
+    "id": "a-6-3",
+    "question": "Find the first ORF (minimum 100 aa, standard genetic code) in the viral sequence scanning the + strand from frame 1, and output its protein sequence.",
+    "input_files": [
+        "data/hpv.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "orfs_proteins.fasta",
+            "type": "fasta",
+            "description": "single FASTA entry; header includes strand, frame, and coordinates"
+        }
+    ],
+    "timeout_seconds": 3600
+}

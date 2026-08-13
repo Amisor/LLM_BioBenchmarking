@@ -1,0 +1,15 @@
+{
+    "id": "a-12-3",
+    "question": "Given a CSV file containing a fruit fly gene symbol, find its human ortholog(s).",
+    "input_files": [
+        "data/fruit_fly_gene.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "human_orthologs.csv",
+            "type": "csv",
+            "description": "rows as gene orthologs, columns should include human_symbol"
+        }
+    ],
+    "timeout_seconds": 3600
+}

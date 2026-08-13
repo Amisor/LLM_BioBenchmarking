@@ -1,0 +1,26 @@
+{
+    "id": "a-7-9",
+    "question": "Visualize the p-value and effect size (log2FC) distributions from the provided MeRIP-seq and proteomic data, and perform a chi-square test to evaluate the association between m6A modification status and differential gene expression using the m6A status and DEG status columns already provided in the MeRIP-seq data.",
+    "input_files": [
+        "data/MeRIP_RNA_result.xlsx",
+        "data/Proteomic_data.xlsx"
+    ],
+    "expected_output": [
+        {
+            "file": "chisq_test_p_value.txt",
+            "type": "txt",
+            "description": "single numeric value of chi-square test p-value"
+        },
+        {
+            "file": "effect_size_distribution.png",
+            "type": "png",
+            "description": "log2FC as x-axis, frequency as y-axis, 2x2 panel layout with one panel per dataset (proteomic, m6A methylation, gene expression, combined)"
+        },
+        {
+            "file": "p_value_distribution.png",
+            "type": "png",
+            "description": "p-value as x-axis, frequency as y-axis, 2x2 panel layout with one panel per dataset (proteomic, m6A methylation, gene expression, combined)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,16 @@
+{
+    "id": "a-8-3",
+    "question": "Generate a hierarchical clustering heatmap to visualize metabolic differences among tissue samples. Z-score standardize the metabolite intensities, then produce a clustermap with a tissue-type color sidebar derived from the sample metadata.",
+    "input_files": [
+        "data/metabolomics_data.txt",
+        "data/sample_meta.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "clustermap.png",
+            "type": "png",
+            "description": "heatmap; cells colored by z-score, tissue-type color sidebar"
+        }
+    ],
+    "timeout_seconds": 3600
+}

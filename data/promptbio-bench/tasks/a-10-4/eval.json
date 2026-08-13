@@ -1,0 +1,28 @@
+{
+    "id": "a-10-4",
+    "question": "Fit a sigmoid dose-response curve to the drug response data and calculate the IC50 for each drug. Plot the dose-response data with the fitted curve and annotate the IC50 value for each drug.",
+    "ref_answer": [
+        "ref_answer/DrugA_dose_response.png",
+        "ref_answer/DrugB_dose_response.png",
+        "ref_answer/ic50_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/calculate_ic50.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "DrugA_dose_response.png",
+                "guidelines": "Sigmoid dose-response curve with IC50 annotated; axis labels, colors, and styling may differ."
+            },
+            {
+                "file": "DrugB_dose_response.png",
+                "guidelines": "Sigmoid dose-response curve with IC50 annotated; axis labels, colors, and styling may differ."
+            },
+            {
+                "file": "ic50_results.csv",
+                "guidelines": "IC50 values must match the reference within 5% relative absolute error; column order may differ."
+            }
+        ]
+    }
+}

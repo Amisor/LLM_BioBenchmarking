@@ -1,0 +1,18 @@
+{
+    "id": "a-7-5",
+    "question": "Generate a TIC chromatogram from the provided mzML data using MS1 spectra only.",
+    "ref_answer": [
+        "ref_answer/TIC.png"
+    ],
+    "ref_script": [
+        "ref_script/tic_chromatogram.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "TIC.png",
+                "guidelines": "Line plot with retention time on x-axis and total ion current on y-axis; axis scale, colors, and styling may differ."
+            }
+        ]
+    }
+}

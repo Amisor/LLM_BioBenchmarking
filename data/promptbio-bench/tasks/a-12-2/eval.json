@@ -1,0 +1,18 @@
+{
+    "id": "a-12-2",
+    "question": "Given a FASTA file of protein sequences from multiple species, build a phylogenetic tree and save a visualization as a PNG.",
+    "ref_answer": [
+        "ref_answer/IL2R_tree.png"
+    ],
+    "ref_script": [
+        "ref_script/build_phylogeny.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "IL2R_tree.png",
+                "guidelines": "Phylogenetic tree with all input taxa as labeled leaf nodes; topology must match the reference; branch lengths, colors, and layout may differ. IL2RA-related human, rat, mouse and pig, cattle, sheep form sister clades respectively, and IL2RB-related human, rat, mouse form a sister clade."
+            }
+        ]
+    }
+}

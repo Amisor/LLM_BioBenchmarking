@@ -1,0 +1,18 @@
+{
+    "id": "a-6-3",
+    "question": "Find the first ORF (minimum 100 aa, standard genetic code) in the viral sequence scanning the + strand from frame 1, and output its protein sequence.",
+    "ref_answer": [
+        "ref_answer/orfs_proteins.fasta"
+    ],
+    "ref_script": [
+        "ref_script/find_orf.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "orfs_proteins.fasta",
+                "guidelines": "Sequence must match the reference; FASTA header must encode strand, frame, and coordinates; case and line-wrap may differ."
+            }
+        ]
+    }
+}

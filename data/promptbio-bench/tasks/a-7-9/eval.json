@@ -1,0 +1,28 @@
+{
+    "id": "a-7-9",
+    "question": "Visualize the p-value and effect size (log2FC) distributions from the provided MeRIP-seq and proteomic data, and perform a chi-square test to evaluate the association between m6A modification status and differential gene expression using the m6A status and DEG status columns already provided in the MeRIP-seq data.",
+    "ref_answer": [
+        "ref_answer/chisq_test_p_value.txt",
+        "ref_answer/effect_size_distribution.png",
+        "ref_answer/p_value_distribution.png"
+    ],
+    "ref_script": [
+        "ref_script/chisq.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "chisq_test_p_value.txt",
+                "guidelines": "The chi-square p-value must match the reference within two orders of magnitude; whitespace and numeric formatting may differ."
+            },
+            {
+                "file": "effect_size_distribution.png",
+                "guidelines": "2x2 panel figure with log2FC on x-axis; the three individual panels (top-left, top-right, bottom-left) are single-dataset histograms with frequency/count on the y-axis, while the bottom-right panel is an overlaid normalized density comparison of all three datasets (y-axis is density, not frequency); panel labels, colors, bin sizes, and fonts may differ."
+            },
+            {
+                "file": "p_value_distribution.png",
+                "guidelines": "2x2 panel figure with p-value on x-axis; the three individual panels (top-left, top-right, bottom-left) are single-dataset histograms with frequency/count on the y-axis, while the bottom-right panel is an overlaid normalized density comparison of all three datasets (y-axis is density, not frequency); panel labels, colors, bin sizes, and fonts may differ."
+            }
+        ]
+    }
+}

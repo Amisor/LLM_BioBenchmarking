@@ -1,0 +1,20 @@
+{
+    "id": "b-5-5",
+    "question": "Run K-means (k=3) 50 times using random_state=42 as the master seed. Build a consensus matrix where entry [i,j] is the fraction of runs in which samples i and j were co-clustered. Visualize it as a heatmap.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "consensus_matrix.csv",
+            "type": "csv",
+            "description": "rows as samples, columns as samples (pairwise co-assignment frequency values in [0,1])"
+        },
+        {
+            "file": "consensus_matrix_heatmap.png",
+            "type": "png",
+            "description": "samples as rows, samples as columns, cells colored by pairwise co-assignment frequency (0-1)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

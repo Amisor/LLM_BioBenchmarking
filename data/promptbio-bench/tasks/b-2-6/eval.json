@@ -1,0 +1,18 @@
+{
+    "id": "b-2-6",
+    "question": "Create a pivot table showing average 'Expression' values for each 'Gene' across different 'Tissue' types.",
+    "ref_answer": [
+        "ref_answer/gene_tissue_pivot.csv"
+    ],
+    "ref_script": [
+        "ref_script/pivot_gene_expression.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gene_tissue_pivot.csv",
+                "guidelines": "Mean expression values must match the reference within 1% relative absolute error; row and column order may differ."
+            }
+        ]
+    }
+}

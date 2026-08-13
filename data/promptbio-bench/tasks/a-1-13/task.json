@@ -1,0 +1,15 @@
+{
+    "id": "a-1-13",
+    "question": "I have the gene TP53. Could you calculate, for each transcript, the total non-overlapping exon length, ensuring that only exact gene name matches are used (no fuzzy matching).",
+    "input_files": [
+        "data/genomic.gff"
+    ],
+    "expected_output": [
+        {
+            "file": "TP53_transcript_exon_lengths.tsv",
+            "type": "tsv",
+            "description": "rows as transcripts, columns should include Transcript_ID, Total_Exon_Length"
+        }
+    ],
+    "timeout_seconds": 3600
+}

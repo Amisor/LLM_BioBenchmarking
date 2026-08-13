@@ -1,0 +1,18 @@
+{
+    "id": "b-4-12",
+    "question": "Compare cognitive test scores between Alzheimer's patients and controls (n=50 each). Perform t-test and compute Cohen's d with 95% CI (via bootstrapping with 10,000 iterations using random seed 42). Return the mean difference, p-value, Cohen's d, and interpret the effect size (small/medium/large).",
+    "ref_answer": [
+        "ref_answer/ttest_cohens_d_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/ttest_cohens_d.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "ttest_cohens_d_results.csv",
+                "guidelines": "Mean difference and Cohen's d must match within 1% relative absolute error; p-value must match within +/-0.001; bootstrap CI bounds must match within +/-0.05; effect size label (Large/Medium/Small) must match; column order and header labels may differ."
+            }
+        ]
+    }
+}

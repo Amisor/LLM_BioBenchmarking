@@ -1,0 +1,20 @@
+{
+    "id": "a-5-7",
+    "question": "Given a Seurat object RDS file, automate cell type annotation for each cluster using SingleR and save a UMAP plot with cells colored by cell type annotation.",
+    "input_files": [
+        "data/pbmc_seurat_object.rds"
+    ],
+    "expected_output": [
+        {
+            "file": "pbmc_seurat_object_singleR_umap.png",
+            "type": "png",
+            "description": "UMAP 1 as x-axis, UMAP 2 as y-axis, cells colored by cell type"
+        },
+        {
+            "file": "singleR_annotations.csv",
+            "type": "csv",
+            "description": "rows as cells, columns should include barcodes, labels"
+        }
+    ],
+    "timeout_seconds": 3600
+}

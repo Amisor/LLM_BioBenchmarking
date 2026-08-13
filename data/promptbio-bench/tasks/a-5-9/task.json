@@ -1,0 +1,20 @@
+{
+    "id": "a-5-9",
+    "question": "Given a Seurat object with broad cell type annotations, perform sub-clustering analysis on the T-cell population to investigate T-cell subtypes (e.g., CD4+, CD8+, regulatory T-cells). Find the top marker genes per sub-cluster and save a UMAP plot with cells colored by sub-cluster.",
+    "input_files": [
+        "data/pbmc_seurat_object_singleR.rds"
+    ],
+    "expected_output": [
+        {
+            "file": "tcell_subclusters_umap.png",
+            "type": "png",
+            "description": "UMAP 1 as x-axis, UMAP 2 as y-axis, points colored and labeled by T-cell subcluster"
+        },
+        {
+            "file": "tcell_top_markers_per_cluster.csv",
+            "type": "csv",
+            "description": "rows as marker genes, columns should include gene, cluster, avg_log2FC, p_val_adj"
+        }
+    ],
+    "timeout_seconds": 3600
+}

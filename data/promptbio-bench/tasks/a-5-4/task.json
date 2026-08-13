@@ -1,0 +1,16 @@
+{
+    "id": "a-5-4",
+    "question": "Identify spatially variable genes (FDR < 0.05) in the provided spatial gene expression data using Moran's I spatial autocorrelation.",
+    "input_files": [
+        "data/filtered_feature_bc_matrix.h5",
+        "data/spatial/"
+    ],
+    "expected_output": [
+        {
+            "file": "spatially_variable_genes.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include gene_name (gene name), I_stat (Moran's I statistic), pval_norm (p-value), pval_norm_fdr_bh (FDR-adjusted p-value)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

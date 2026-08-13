@@ -1,0 +1,17 @@
+{
+    "id": "a-5-3",
+    "question": "Infer differentiation trajectories from single-cell RNA-seq data and visualize the trajectory graph overlaid on a UMAP colored by cell cluster.",
+    "input_files": [
+        "data/barcodes.tsv.gz",
+        "data/features.tsv.gz",
+        "data/matrix.mtx.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "trajectory.png",
+            "type": "png",
+            "description": "UMAP 1 as x-axis, UMAP 2 as y-axis, cells colored by cluster, trajectory paths overlaid"
+        }
+    ],
+    "timeout_seconds": 3600
+}

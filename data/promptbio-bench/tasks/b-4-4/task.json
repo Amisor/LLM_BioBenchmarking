@@ -1,0 +1,15 @@
+{
+    "id": "b-4-4",
+    "question": "Assess whether blood pressure changed significantly after treatment in 30 patients using a paired t-test. Report the mean difference, 95% confidence interval, and p-value.",
+    "input_files": [
+        "data/blood_pressure_paired.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "paired_ttest_results.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include Mean_Difference, CI_95_Lower, CI_95_Upper, P_Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

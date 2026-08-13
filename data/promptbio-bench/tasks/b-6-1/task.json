@@ -1,0 +1,15 @@
+{
+    "id": "b-6-1",
+    "question": "Apply PCA to a gene expression dataset. Z-score standardize the features before applying PCA. Compute the proportion of variance explained by the first 10 principal components.",
+    "input_files": [
+        "data/gene_expression.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "pca_variance_explained.tsv",
+            "type": "tsv",
+            "description": "rows as principal components plus total row, columns should include PC, VarianceExplained"
+        }
+    ],
+    "timeout_seconds": 3600
+}

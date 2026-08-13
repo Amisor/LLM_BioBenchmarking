@@ -1,0 +1,28 @@
+{
+    "id": "b-2-10",
+    "question": "Implement stratified sampling based on the 'DiagnosisClass' column to create training (70%) and testing (30%) sets while maintaining class distribution.",
+    "ref_answer": [
+        "ref_answer/stratified_sampling_report.csv",
+        "ref_answer/test_set.csv",
+        "ref_answer/train_set.csv"
+    ],
+    "ref_script": [
+        "ref_script/stratified_split.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "stratified_sampling_report.csv",
+                "guidelines": "Per-class split counts and percentages must match the reference; row and column order may differ."
+            },
+            {
+                "file": "test_set.csv",
+                "guidelines": "Must contain 30% of patients with per-class counts matching the reference report; specific patient assignment may differ; row order, column order, and header labels may differ."
+            },
+            {
+                "file": "train_set.csv",
+                "guidelines": "Must contain 70% of patients with per-class counts matching the reference report; specific patient assignment may differ; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a-7-6",
+    "question": "Convert the provided Thermo RAW file to mzML format, then report the total spectrum count, MS1 count, MS2 count, and median precursor charge state (integer) as a TSV file named summary.tsv.",
+    "input_files": [
+        "data/test.raw"
+    ],
+    "expected_output": [
+        {
+            "file": "summary.tsv",
+            "type": "tsv",
+            "description": "rows as summary (1 row), columns should include total_spectra, ms1_count, ms2_count, median_precursor_charge"
+        }
+    ],
+    "timeout_seconds": 3600
+}

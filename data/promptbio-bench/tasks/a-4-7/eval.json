@@ -1,0 +1,18 @@
+{
+    "id": "a-4-7",
+    "question": "Compute count profiles for ChIP-seq reads, considering both full read length and read end positions, and generate a summary table.",
+    "ref_answer": [
+        "ref_answer/aligned_reads_summary.csv"
+    ],
+    "ref_script": [
+        "ref_script/experiments_summary.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "aligned_reads_summary.csv",
+                "guidelines": "Each genomic window's read count under both 'each' and 'end' counting modes must match the reference exactly; row order, column order, and extra columns may differ."
+            }
+        ]
+    }
+}

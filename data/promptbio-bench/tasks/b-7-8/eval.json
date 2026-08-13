@@ -1,0 +1,18 @@
+{
+    "id": "b-7-8",
+    "question": "Train two Support Vector Machine (SVM) classifiers to distinguish Alzheimer's vs. control subjects using gene expression data (50 gene features): one with a linear kernel and one with an RBF kernel, using a 70/30 train-test split. Report test accuracy and AUC for both models.",
+    "ref_answer": [
+        "ref_answer/svm_comparison_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/svm_kernel_comparison.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "svm_comparison_results.csv",
+                "guidelines": "Test accuracy and AUC for each kernel must match within +/-0.05; row and column order may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "id": "b-6-3",
+    "question": "Apply Non-negative Matrix Factorization (n_components=3, init='nndsvda') to log2(x+1)-transformed gene expression data.",
+    "input_files": [
+        "data/gene_expression.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "nmf_components_W.csv",
+            "type": "csv",
+            "description": "rows as samples, columns should include Sample_ID, TumorNormalGroup, Metagene_1, Metagene_2, Metagene_3"
+        },
+        {
+            "file": "nmf_gene_loadings_H.csv",
+            "type": "csv",
+            "description": "rows as metagenes, columns should include metagene (metagene name) followed by gene columns (loading values)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

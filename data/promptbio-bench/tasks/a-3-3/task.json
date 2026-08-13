@@ -1,0 +1,16 @@
+{
+    "id": "a-3-3",
+    "question": "Perform differential analysis using limma to identify the top 20 markers for each pairwise comparison among the three grades.",
+    "input_files": [
+        "data/GSE2990_RAW.tar",
+        "data/GSE2990_suppl_info.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "Grade*.csv",
+            "type": "csv",
+            "description": "rows as probes, columns should include probe_id (probe identifier), logFC (log fold change), P.Value (p-value), adj.P.Val (FDR-adjusted p-value)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

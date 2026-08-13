@@ -1,0 +1,18 @@
+{
+    "id": "a-12-5",
+    "question": "Analyze the distribution of treeness values for single-copy orthologous genes in animals and fungi. Perform a Mann-Whitney U test to compare the two groups and generate a violin plot annotated with the test statistic and p-value.",
+    "ref_answer": [
+        "ref_answer/tree.png"
+    ],
+    "ref_script": [
+        "ref_script/treeness.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "tree.png",
+                "guidelines": "Violin plot of treeness values for animals and fungi with a Mann-Whitney U statistic and p-value annotation matching the reference; colors and layout may differ."
+            }
+        ]
+    }
+}

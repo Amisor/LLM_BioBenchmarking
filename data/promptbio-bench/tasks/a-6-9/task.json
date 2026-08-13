@@ -1,0 +1,17 @@
+{
+    "id": "a-6-9",
+    "question": "Assemble the provided RNA-seq reads into transcripts using an RNA-seq assembler.",
+    "input_files": [
+        "data/SAMPLE1_PE.processed.fastq.gz",
+        "data/SAMPLE2_PE.processed.fastq.gz",
+        "data/SAMPLE3_PE.processed.fastq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "transcripts.fasta",
+            "type": "fasta",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,20 @@
+{
+    "id": "b-8-3",
+    "question": "Perform grid search with 5-fold cross-validation to find the best XGBoost regression hyperparameters. Search n_estimators in [50, 100, 150, 200] and max_depth in [3, 5, 7, 9] using R-squared as the scoring metric. Use an 80-20 train-test split with random_state=42 for both the split and the cross-validation folds. Report the best parameters, best cross-validation R-squared, and final test R-squared, RMSE, and MAE.",
+    "input_files": [
+        "data/regression_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "best_parameters.csv",
+            "type": "csv",
+            "description": "rows as hyperparameters, columns should include Parameter, Value"
+        },
+        {
+            "file": "test_performance.csv",
+            "type": "csv",
+            "description": "rows as metrics, columns should include Metric, Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

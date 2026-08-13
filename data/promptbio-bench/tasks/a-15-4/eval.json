@@ -1,0 +1,18 @@
+{
+    "id": "a-15-4",
+    "question": "Integrate WES and RNA-Seq data to annotate all pathogenic variants with an expression status. For each pathogenic variant, report whether its gene is expressed (TPM > 1.0 in any sample).",
+    "ref_answer": [
+        "ref_answer/expressed_pathogenic_variants.csv"
+    ],
+    "ref_script": [
+        "ref_script/integrate_wes_rnaseq.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "expressed_pathogenic_variants.csv",
+                "guidelines": "All pathogenic variants must be present with the correct Expressed flag per the reference; column order and header labels may differ."
+            }
+        ]
+    }
+}

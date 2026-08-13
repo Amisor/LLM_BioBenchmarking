@@ -1,0 +1,15 @@
+{
+    "id": "b-3-15",
+    "question": "Create a horizontal lollipop chart showing the log2 fold change of the top 20 differentially expressed genes (by adjusted p-value). Order genes by log2 fold change (ascending) along the y-axis. Use red for upregulated and blue for downregulated genes. Add a vertical reference line at zero.",
+    "input_files": [
+        "data/volcano_DE_results.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "lollipop_top20_log2fc.png",
+            "type": "png",
+            "description": "log2 fold change as x-axis, genes as y-axis, red for upregulated, blue for downregulated"
+        }
+    ],
+    "timeout_seconds": 3600
+}

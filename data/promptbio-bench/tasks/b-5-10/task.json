@@ -1,0 +1,16 @@
+{
+    "id": "b-5-10",
+    "question": "Use Similarity Network Fusion (SNF) to integrate gene expression and copy number variation profiles from tumor samples. Construct similarity (affinity) matrices for each view, then fuse them into a single multi-view similarity matrix. Apply spectral clustering with 3 clusters to the fused matrix and obtain the final cluster assignments.",
+    "input_files": [
+        "data/copy_number_variation.csv",
+        "data/gene_expression.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "snf_cluster_assignments.tsv",
+            "type": "tsv",
+            "description": "rows as samples, columns should include Sample, Cluster"
+        }
+    ],
+    "timeout_seconds": 3600
+}

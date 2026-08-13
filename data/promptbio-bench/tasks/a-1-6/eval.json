@@ -1,0 +1,18 @@
+{
+    "id": "a-1-6",
+    "question": "I'd like to select 10 random reads from a FASTQ file.",
+    "ref_answer": [
+        "ref_answer/subsampled.fq.gz"
+    ],
+    "ref_script": [
+        "ref_script/subsample_fastq.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "subsampled.fq.gz",
+                "guidelines": "Exactly 10 read records must be present, each a valid read drawn from the input FASTQ; record order and gzip byte layout may differ."
+            }
+        ]
+    }
+}

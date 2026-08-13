@@ -1,0 +1,18 @@
+{
+    "id": "b-5-8",
+    "question": "The dataset contains pre-computed cluster labels from two methods: K-means and hierarchical clustering (columns: kmeans_label and hierarchical_label). Compute the Adjusted Rand Index (ARI) to quantify the agreement between these two sets of cluster assignments.",
+    "ref_answer": [
+        "ref_answer/adjusted_rand_index.txt"
+    ],
+    "ref_script": [
+        "ref_script/adjusted_rand_index.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "adjusted_rand_index.txt",
+                "guidelines": "The ARI value must match the reference within +/-0.001; whitespace and decimal precision may differ."
+            }
+        ]
+    }
+}

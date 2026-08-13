@@ -1,0 +1,23 @@
+{
+    "id": "a-3-4",
+    "question": "Use DESeq2 for differential analysis and plot results as a volcano plot.",
+    "ref_answer": [
+        "ref_answer/DESeq2_results.csv",
+        "ref_answer/volcano_plot.png"
+    ],
+    "ref_script": [
+        "ref_script/volcano.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "DESeq2_results.csv",
+                "guidelines": "log2FoldChange, stat, and padj per gene must match within 1% relative absolute error; row and column order may differ."
+            },
+            {
+                "file": "volcano_plot.png",
+                "guidelines": "Points must be colored to distinguish significant from non-significant genes (padj < 0.05); styling may differ."
+            }
+        ]
+    }
+}

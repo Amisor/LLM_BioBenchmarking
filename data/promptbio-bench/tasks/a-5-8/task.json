@@ -1,0 +1,15 @@
+{
+    "id": "a-5-8",
+    "question": "Given a folder of single-cell RNA-seq expression data output by cellranger, create a Seurat object with standard preprocessing, then perform doublet detection using scDblFinder and visualize singlet/doublet classification on a UMAP.",
+    "input_files": [
+        "data/filtered_gene_bc_matrices/hg19/"
+    ],
+    "expected_output": [
+        {
+            "file": "pbmc_seurat_object_dbl_umap.png",
+            "type": "png",
+            "description": "UMAP 1 as x-axis, UMAP 2 as y-axis, cells colored by singlet/doublet classification"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+  "id": "a-1-14",
+  "question": "I want to extract only the soft-clipped portions of reads from a SAM file.",
+  "ref_answer": [
+    "ref_answer/soft_clip.fq.gz"
+  ],
+  "ref_script": [
+    "ref_script/soft_clip.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "soft_clip.fq.gz",
+        "guidelines": "Soft-clipped segments >= 10 bp must match the reference in sequence and base quality; record order and gzip byte layout may differ."
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a-5-2",
+    "question": "Perform clustering on single-cell RNA-seq data after dimensionality reduction and visualize the results as a labeled UMAP plot.",
+    "input_files": [
+        "data/small_seurat_contains_PCA_obj.rds"
+    ],
+    "expected_output": [
+        {
+            "file": "umap.png",
+            "type": "png",
+            "description": "UMAP 1 as x-axis, UMAP 2 as y-axis, points colored and labeled by cluster"
+        }
+    ],
+    "timeout_seconds": 3600
+}

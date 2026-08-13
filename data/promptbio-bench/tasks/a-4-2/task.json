@@ -1,0 +1,15 @@
+{
+    "id": "a-4-2",
+    "question": "Identify differentially methylated CpG sites between cancer and normal samples using methylKit",
+    "input_files": [
+        "data/testDat.rds"
+    ],
+    "expected_output": [
+        {
+            "file": "dm_result.txt",
+            "type": "txt",
+            "description": "rows as CpG sites, columns should include chr, start, end, strand, pvalue, qvalue, meth.diff"
+        }
+    ],
+    "timeout_seconds": 3600
+}

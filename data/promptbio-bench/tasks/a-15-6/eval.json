@@ -1,0 +1,18 @@
+{
+    "id": "a-15-6",
+    "question": "Integrate RNA-Seq and WGS data to identify A-to-I RNA editing sites. Exclude sites that are present as germline variants in the WGS data. Report editing percentage and a confidence score for each candidate site.",
+    "ref_answer": [
+        "ref_answer/a_to_i_editing_sites.csv"
+    ],
+    "ref_script": [
+        "ref_script/rna_wgs_editing.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "a_to_i_editing_sites.csv",
+                "guidelines": "Each editing site row must match the reference in genomic coordinates and nucleotide counts (A/C/G/T); editing_percentage must match within +/-0.1; confidence_score may vary based on scoring formula but must be a positive numeric value; variant_type label may differ (e.g. 'A->G', 'A_to_I') as long as it indicates A-to-I editing; column order and header labels may differ."
+            }
+        ]
+    }
+}

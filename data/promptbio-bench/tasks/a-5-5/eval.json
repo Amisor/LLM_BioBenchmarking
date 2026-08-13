@@ -1,0 +1,18 @@
+{
+    "id": "a-5-5",
+    "question": "Normalize single-cell RNA-seq count data and filter genes of interest. Note that the raw count data uses gene IDs, and the output file should use gene names.",
+    "ref_answer": [
+        "ref_answer/normalized_counts.csv"
+    ],
+    "ref_script": [
+        "ref_script/normalize_counts.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "normalized_counts.csv",
+                "guidelines": "Normalized expression values per cell must match the reference within 1% relative absolute error; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "b-3-3",
+    "question": "Create a bar plot showing total mutation counts per sample. Order the bars by descending count.",
+    "ref_answer": [
+        "ref_answer/mutation_counts_per_sample.png"
+    ],
+    "ref_script": [
+        "ref_script/mutation_counts_barplot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "mutation_counts_per_sample.png",
+                "guidelines": "Bar plot must show mutation counts per sample with bars ordered by descending count; color scheme and font may differ."
+            }
+        ]
+    }
+}

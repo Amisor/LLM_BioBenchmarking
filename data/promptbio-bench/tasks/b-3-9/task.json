@@ -1,0 +1,15 @@
+{
+    "id": "b-3-9",
+    "question": "Visualize patient transitions between disease stages (I, II, III, IV) across three time points (T1, T2, T3) using a Sankey diagram. Flow width should be proportional to the number of patients making each transition.",
+    "input_files": [
+        "data/patient_stage_transitions.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "stage_transition_sankey.png",
+            "type": "png",
+            "description": "Sankey diagram; disease stages I/II/III/IV as nodes across T1/T2/T3, link widths proportional to patient counts"
+        }
+    ],
+    "timeout_seconds": 3600
+}

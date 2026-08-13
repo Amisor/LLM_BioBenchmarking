@@ -1,0 +1,23 @@
+{
+    "id": "a-4-9",
+    "question": "Analyze the distribution of age-related CpG sites across chromosomes for both Zebra Finch (ZF) and Jackdaw (JD) datasets. Specifically, calculate the density of CpG sites per chromosome and determine if the distribution is uniform, which involves counting the number of CpG sites per chromosome, calculating the density, and performing a chi-square test to assess uniformity.",
+    "input_files": [
+        "data/JD_AgeRelated_CpG_noMT_Final.csv",
+        "data/JD_Chromosome_Length.csv",
+        "data/ZF_AgeRelated_CpG_noMT_Final.csv",
+        "data/ZF_Chromosome_Length.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "jd_result.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include statistic, p.value, parameter"
+        },
+        {
+            "file": "zf_result.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include statistic, p.value, parameter"
+        }
+    ],
+    "timeout_seconds": 3600
+}

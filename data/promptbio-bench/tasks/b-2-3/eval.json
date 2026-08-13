@@ -1,0 +1,23 @@
+{
+    "id": "b-2-3",
+    "question": "From a CSV file containing both clinical and genomic data, impute missing values using k-nearest neighbors (k=5) based on Euclidean distance. Report the total number and percentage of imputed values.",
+    "ref_answer": [
+        "ref_answer/knn_imputation_report.csv",
+        "ref_answer/knn_imputed_data.csv"
+    ],
+    "ref_script": [
+        "ref_script/knn_imputation.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "knn_imputation_report.csv",
+                "guidelines": "Per-column missing counts must be exact; missing percentages within +/-0.05; row and column order may differ."
+            },
+            {
+                "file": "knn_imputed_data.csv",
+                "guidelines": "All numeric values must match the reference within 5% relative absolute error; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

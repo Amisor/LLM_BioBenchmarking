@@ -1,0 +1,15 @@
+{
+    "id": "b-2-9",
+    "question": "Create a rolling window analysis with window size 5 to calculate moving averages for time series data.",
+    "input_files": [
+        "data/time_series.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "rolling_window_averages.csv",
+            "type": "csv",
+            "description": "rows as time points, columns should include Date, Value, Measurement, Value_MA5, Measurement_MA5"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,18 @@
+{
+    "id": "a-14-2",
+    "question": "Identify protein residues within 4.0 Angstroms of the ligand (residue name MTX) in the PDB structure.",
+    "ref_answer": [
+        "ref_answer/binding_sites.csv"
+    ],
+    "ref_script": [
+        "ref_script/identify_binding_sites.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "binding_sites.csv",
+                "guidelines": "Exact set of (chain, residue-ID, residue-name) tuples must match the reference; row order and column names may differ."
+            }
+        ]
+    }
+}

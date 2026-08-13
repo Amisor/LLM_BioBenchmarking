@@ -1,0 +1,16 @@
+{
+    "id": "a-4-1",
+    "question": "Analyze the ChIP-Seq BAM file to identify peak regions using a control BAM. Save significant narrow peaks (q-value < 0.01).",
+    "input_files": [
+        "data/FOXA1_IP_chr1.bam",
+        "data/INPUT_chr1.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "chip_peaks_peaks.narrowPeak",
+            "type": "narrowPeak",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

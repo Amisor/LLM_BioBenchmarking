@@ -1,0 +1,15 @@
+{
+    "id": "a-1-6",
+    "question": "I'd like to select 10 random reads from a FASTQ file.",
+    "input_files": [
+        "data/sample1.fq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "subsampled.fq.gz",
+            "type": "fastq.gz",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

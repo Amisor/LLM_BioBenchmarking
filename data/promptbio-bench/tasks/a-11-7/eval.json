@@ -1,0 +1,28 @@
+{
+    "id": "a-11-7",
+    "question": "Analyze the Spearman correlation between gene expression and gene essentiality scores across common cell lines. Identify the top 5 and bottom 5 correlated genes and visualize the scatter plot of the top correlated gene.",
+    "ref_answer": [
+        "ref_answer/bottom_5.csv",
+        "ref_answer/top_5.csv",
+        "ref_answer/top_gene.png"
+    ],
+    "ref_script": [
+        "ref_script/spearman_corr.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "bottom_5.csv",
+                "guidelines": "The 5 bottom-correlated gene records must match the reference in identity and Spearman r within +/-0.001; column order may differ."
+            },
+            {
+                "file": "top_5.csv",
+                "guidelines": "The 5 top-correlated gene records must match the reference in identity and Spearman r within +/-0.001; column order may differ."
+            },
+            {
+                "file": "top_gene.png",
+                "guidelines": "Scatter plot of expression vs. inverted essentiality for the top gene; Spearman r annotation must be visible; marker styling and colors may differ."
+            }
+        ]
+    }
+}

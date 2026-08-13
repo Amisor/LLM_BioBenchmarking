@@ -1,0 +1,18 @@
+{
+    "id": "a-11-10",
+    "question": "Identify the KEGG pathways enriched in the provided gene list using KEGG_2021_Human.",
+    "ref_answer": [
+        "ref_answer/enrich_result.csv"
+    ],
+    "ref_script": [
+        "ref_script/kegg_enrich.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "enrich_result.csv",
+                "guidelines": "Pathway records must match the reference in term name, P-value and Adjusted P-value within 1% relative absolute error, and Genes list; row order and column order may differ."
+            }
+        ]
+    }
+}

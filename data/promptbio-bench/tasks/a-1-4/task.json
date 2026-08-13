@@ -1,0 +1,16 @@
+{
+    "id": "a-1-4",
+    "question": "Please merge the two input FASTQ files into a single merged FASTQ file.",
+    "input_files": [
+        "data/sample1.fq.gz",
+        "data/sample2.fq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "merged.fastq.gz",
+            "type": "fastq.gz",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

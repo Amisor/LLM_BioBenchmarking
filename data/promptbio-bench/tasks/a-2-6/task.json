@@ -1,0 +1,20 @@
+{
+    "id": "a-2-6",
+    "question": "Detect copy number variations from paired normal and tumor whole genome sequencing BAM files using cnvkit.",
+    "input_files": [
+        "data/Homo_sapiens_assembly38.fasta",
+        "data/Homo_sapiens_assembly38.fasta.fai",
+        "data/normal_0.1.bam",
+        "data/normal_0.1.bam.bai",
+        "data/tumor_0.1.bam",
+        "data/tumor_0.1.bam.bai"
+    ],
+    "expected_output": [
+        {
+            "file": "tumor_0.1.call.cns",
+            "type": "cns",
+            "description": "rows as genomic segments, columns should include chromosome, start, end, log2 ratio, copy number"
+        }
+    ],
+    "timeout_seconds": 3600
+}

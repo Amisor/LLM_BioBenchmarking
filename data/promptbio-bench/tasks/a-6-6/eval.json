@@ -1,0 +1,18 @@
+{
+    "id": "a-6-6",
+    "question": "Using the provided 16S rRNA amplicon sequence variant (ASV) table, calculate alpha diversity indices (Shannon, Simpson, and Chao1) for each sample.",
+    "ref_answer": [
+        "ref_answer/AlphaDiversity_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/abundance_tables.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "AlphaDiversity_results.csv",
+                "guidelines": "Shannon, Simpson, and Chao1 values must match the reference within 0.1% relative absolute error; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

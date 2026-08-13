@@ -1,0 +1,33 @@
+{
+    "id": "a-2-3",
+    "question": "Detect germline SNPs and indels from exome sequencing data. Filter SNPs and indels separately and generate a tabix index for each.",
+    "input_files": [
+        "data/normal_0.1_chr21_R1.fastq",
+        "data/normal_0.1_chr21_R2.fastq",
+        "data/Homo_sapiens_assembly38.fasta",
+        "data/Homo_sapiens_assembly38.fasta.fai"
+    ],
+    "expected_output": [
+        {
+            "file": "normal_0.1_chr21.indels.filtered.vcf.gz",
+            "type": "vcf.gz",
+            "description": ""
+        },
+        {
+            "file": "normal_0.1_chr21.indels.filtered.vcf.gz.tbi",
+            "type": "tbi",
+            "description": ""
+        },
+        {
+            "file": "normal_0.1_chr21.snps.filtered.vcf.gz",
+            "type": "vcf.gz",
+            "description": ""
+        },
+        {
+            "file": "normal_0.1_chr21.snps.filtered.vcf.gz.tbi",
+            "type": "tbi",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

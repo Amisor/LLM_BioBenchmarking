@@ -1,0 +1,28 @@
+{
+    "id": "b-5-7",
+    "question": "Apply spectral clustering to the dataset. Use the RBF kernel with gamma=0.01 to construct the affinity matrix W, and build the unnormalized graph Laplacian L = D - W (where D is the diagonal degree matrix). Report the sorted eigenvalues of L, visualize them with the largest eigengap annotated, and determine the optimal number of clusters using the eigengap heuristic.",
+    "ref_answer": [
+        "ref_answer/laplacian_eigenvalues.csv",
+        "ref_answer/laplacian_eigenvalues.png",
+        "ref_answer/optimal_k.txt"
+    ],
+    "ref_script": [
+        "ref_script/spectral_clustering.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "laplacian_eigenvalues.csv",
+                "guidelines": "Ascending eigenvalue records must match the reference within +/-0.01; column naming may differ."
+            },
+            {
+                "file": "laplacian_eigenvalues.png",
+                "guidelines": "Plot must show sorted Laplacian eigenvalues as a line with the eigengap annotated; axis labels and styling may differ."
+            },
+            {
+                "file": "optimal_k.txt",
+                "guidelines": "Must contain a single integer equal to the reference optimal cluster count."
+            }
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "id": "a-6-7",
+    "question": "Cluster ASVs using `vsearch --cluster_fast` at 97% identity to generate centroid sequences and an OTU table. Preserve original sequence IDs as centroid headers (do not relabel).",
+    "input_files": [
+        "data/ASV_seqs.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "vsearch_centroids.fasta",
+            "type": "fasta",
+            "description": "FASTA with original ASV sequence IDs as headers"
+        },
+        {
+            "file": "vsearch_otu_table.txt",
+            "type": "txt",
+            "description": "rows as OTU centroids, columns as ASVs (read counts)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

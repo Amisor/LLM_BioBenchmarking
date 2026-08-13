@@ -1,0 +1,16 @@
+{
+    "id": "a-2-10",
+    "question": "Calculate the average sequence length of single-copy orthologous genes (SCOGs) separately for animals and fungi, reading from the provided FASTA files. Report the group and average_length for each group.",
+    "input_files": [
+        "data/scogs_animals/",
+        "data/scogs_fungi/"
+    ],
+    "expected_output": [
+        {
+            "file": "average_length_report.tsv",
+            "type": "tsv",
+            "description": "rows as organism groups, columns should include group, average_length"
+        }
+    ],
+    "timeout_seconds": 3600
+}

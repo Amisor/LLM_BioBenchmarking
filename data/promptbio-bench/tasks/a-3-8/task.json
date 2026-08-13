@@ -1,0 +1,21 @@
+{
+    "id": "a-3-8",
+    "question": "Estimate human transcript abundances from the FASTQ files using Salmon, and provide a summary table of the top 10 expressed transcripts.",
+    "input_files": [
+        "data/K562f_1.fq.gz",
+        "data/K562f_2.fq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "quant.sf",
+            "type": "sf",
+            "description": "Salmon quant format; rows as transcripts, columns should include Name, Length, EffectiveLength, TPM, NumReads"
+        },
+        {
+            "file": "top_10_transcripts.csv",
+            "type": "csv",
+            "description": "rows as top 10 transcripts by TPM, columns should include Name, Length, EffectiveLength, TPM, NumReads"
+        }
+    ],
+    "timeout_seconds": 3600
+}

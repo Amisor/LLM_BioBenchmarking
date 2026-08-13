@@ -1,0 +1,23 @@
+{
+    "id": "a-15-7",
+    "question": "Use iClusterPlus to integrate RNA-seq, DNA variant, and copy number data for unsupervised clustering and to identify three molecular subtypes. Visualize the identified molecular subtypes using PCA.",
+    "ref_answer": [
+        "ref_answer/cluster.csv",
+        "ref_answer/cluster.png"
+    ],
+    "ref_script": [
+        "ref_script/iclusterplus.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "cluster.csv",
+                "guidelines": "Cluster assignments must match the reference partition at the record level, with at least 80% of samples agreeing after optimal label remapping; cluster label values and column order may differ."
+            },
+            {
+                "file": "cluster.png",
+                "guidelines": "Points colored by cluster membership; axis labels, color scheme, and point styling may differ."
+            }
+        ]
+    }
+}

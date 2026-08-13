@@ -1,0 +1,16 @@
+{
+    "id": "a-3-13",
+    "question": "Assemble transcripts from the provided paired-end RNA-Seq reads using Trinity.",
+    "input_files": [
+        "data/SRX9161265_SRR12681119_2k_1.fastq.gz",
+        "data/SRX9161265_SRR12681119_2k_2.fastq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "trinity_out.Trinity.fasta",
+            "type": "fasta",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

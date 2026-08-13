@@ -1,0 +1,23 @@
+{
+    "id": "b-6-3",
+    "question": "Apply Non-negative Matrix Factorization (n_components=3, init='nndsvda') to log2(x+1)-transformed gene expression data.",
+    "ref_answer": [
+        "ref_answer/nmf_components_W.csv",
+        "ref_answer/nmf_gene_loadings_H.csv"
+    ],
+    "ref_script": [
+        "ref_script/nmf.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "nmf_components_W.csv",
+                "guidelines": "Each sample's metagene activation scores in the W matrix must match the reference within +/-0.05; column order and label naming may differ."
+            },
+            {
+                "file": "nmf_gene_loadings_H.csv",
+                "guidelines": "Each gene's loading value must match the reference within 5% relative absolute error; metagene row and gene column order may differ."
+            }
+        ]
+    }
+}

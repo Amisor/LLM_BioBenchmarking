@@ -1,0 +1,15 @@
+{
+    "id": "a-4-8",
+    "question": "Compute and visualize the optimal segmentation model with 2 peaks for each ChIP-seq data set.",
+    "input_files": [
+        "data/ChIP_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "segmentation_model_plot.png",
+            "type": "png",
+            "description": "genomic position as x-axis, signal as y-axis, one panel per dataset"
+        }
+    ],
+    "timeout_seconds": 3600
+}

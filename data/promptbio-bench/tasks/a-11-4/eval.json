@@ -1,0 +1,18 @@
+{
+    "id": "a-11-4",
+    "question": "Run GSEA on ranked gene list against GO Biological Process gene sets. Identify the top 5 enriched gene sets by absolute NES score.",
+    "ref_answer": [
+        "ref_answer/gsea_top5_result.csv"
+    ],
+    "ref_script": [
+        "ref_script/gsea.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gsea_top5_result.csv",
+                "guidelines": "Top-5 gene sets must match the reference in term identity; NES values may vary due to permutation; row order may differ."
+            }
+        ]
+    }
+}

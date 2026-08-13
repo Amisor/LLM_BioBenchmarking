@@ -1,0 +1,23 @@
+{
+    "id": "a-11-9",
+    "question": "Detect communities in a biological network using the Louvain algorithm, and evaluate community quality with modularity score.",
+    "ref_answer": [
+        "ref_answer/community_network.png",
+        "ref_answer/modularity_score.tsv"
+    ],
+    "ref_script": [
+        "ref_script/louvain_community.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "community_network.png",
+                "guidelines": "Nodes must be colored by community with gene labels visible; community assignment, color scheme, and layout may differ."
+            },
+            {
+                "file": "modularity_score.tsv",
+                "guidelines": "Modularity score must match within +/-0.05; community count may differ; column order and header labels may differ."
+            }
+        ]
+    }
+}

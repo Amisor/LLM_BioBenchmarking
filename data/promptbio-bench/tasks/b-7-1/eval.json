@@ -1,0 +1,23 @@
+{
+    "id": "b-7-1",
+    "question": "Train a Random Forest classifier on the provided dataset to predict the outcome label using a 70/30 train-test split. Extract and return the top 10 most important features and report the test accuracy.",
+    "ref_answer": [
+        "ref_answer/random_forest_test_accuracy.csv",
+        "ref_answer/random_forest_feature_importances.csv"
+    ],
+    "ref_script": [
+        "ref_script/rf_feature_importance.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "random_forest_test_accuracy.csv",
+                "guidelines": "Test accuracy value must match the reference within +/-0.05; column naming may differ."
+            },
+            {
+                "file": "random_forest_feature_importances.csv",
+                "guidelines": "At least 8 of the 10 reported features must overlap with the reference set; importance scores for overlapping features within +/-0.05; row order and column labels may differ."
+            }
+        ]
+    }
+}

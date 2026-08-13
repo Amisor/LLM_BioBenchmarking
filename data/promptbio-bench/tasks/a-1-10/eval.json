@@ -1,0 +1,18 @@
+{
+    "id": "a-1-10",
+    "question": "Calculate the average coverage only over positions with non-zero coverage directly from the BAM file. Do not use any external BED file. Just use the aligned regions as captured bases.",
+    "ref_answer": [
+        "ref_answer/average_coverage.txt"
+    ],
+    "ref_script": [
+        "ref_script/coverage.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "average_coverage.txt",
+                "guidelines": "The value must match the reference within 0.1% relative absolute error; whitespace and decimal precision may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "b-2-15",
+    "question": "Convert the given VCF file into CSV format, with each column representing a specific variant attribute. Use the schema defined in the VCF header.",
+    "ref_answer": [
+        "ref_answer/variants.csv"
+    ],
+    "ref_script": [
+        "ref_script/convert_vcf_to_csv.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "variants.csv",
+                "guidelines": "Variant records must match the reference; float field values within +/-0.001; row order, column order, and additional columns beyond the required set may differ."
+            }
+        ]
+    }
+}

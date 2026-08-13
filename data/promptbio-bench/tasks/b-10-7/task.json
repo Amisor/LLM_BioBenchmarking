@@ -1,0 +1,15 @@
+{
+    "id": "b-10-7",
+    "question": "Train a Random Forest classifier (n_estimators=100, random_state=42) to predict cancer type (5 classes: lung, breast, prostate, colon, ovarian) from methylation profiles using a 70/30 stratified train-test split (random_state=42). Compute multi-class ROC AUC using one-vs-rest with both macro and micro averaging.",
+    "input_files": [
+        "data/methylation_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "multiclass_roc_auc.csv",
+            "type": "csv",
+            "description": "rows as averaging methods, columns should include Averaging_Method, ROC_AUC"
+        }
+    ],
+    "timeout_seconds": 3600
+}

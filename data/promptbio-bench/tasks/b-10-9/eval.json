@@ -1,0 +1,23 @@
+{
+    "id": "b-10-9",
+    "question": "Use forward selection with AIC as the selection criterion to build a logistic regression model (max_iter=1000, random_state=42) predicting tumor vs. normal status from gene expression data. Start with no features and add one feature at a time, stopping when AIC no longer decreases.",
+    "ref_answer": [
+        "ref_answer/selected_features.csv",
+        "ref_answer/final_aic.csv"
+    ],
+    "ref_script": [
+        "ref_script/forward_selection_aic.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "selected_features.csv",
+                "guidelines": "The first 10 features must appear in the same order as the reference; the full selected feature set must match the reference exactly; header labels may differ."
+            },
+            {
+                "file": "final_aic.csv",
+                "guidelines": "The FINAL_AIC value must match the reference within +/-2; header labels may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "id": "a-6-2",
+    "question": "Infer Amplicon Sequence Variants (ASVs) and predict whether the ASVs correspond to ribosomal RNA sequences.",
+    "input_files": [
+        "data/sampleID_1_1.fastq.gz",
+        "data/sampleID_1_2.fastq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "ASV_seqs.len.1.ASV_tax.gtdb_R07-RS207.species.tsv",
+            "type": "tsv",
+            "description": "rows as ASVs, columns should include ASV_ID, sequence, Kingdom"
+        },
+        {
+            "file": "ASV_table.csv",
+            "type": "csv",
+            "description": "rows as ASVs, columns should include ASV, is_rRNA"
+        }
+    ],
+    "timeout_seconds": 3600
+}

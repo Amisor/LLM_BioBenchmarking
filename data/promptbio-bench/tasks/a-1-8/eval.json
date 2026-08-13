@@ -1,0 +1,18 @@
+{
+    "id": "a-1-8",
+    "question": "Filter the BAM file to keep only reads with a mapping quality of 30 or above.",
+    "ref_answer": [
+        "ref_answer/example_tumor_filtered.bam"
+    ],
+    "ref_script": [
+        "ref_script/filter_bam.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "example_tumor_filtered.bam",
+                "guidelines": "Read records must match the reference; BAM header and optional-tag order may differ."
+            }
+        ]
+    }
+}

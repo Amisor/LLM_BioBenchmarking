@@ -1,0 +1,16 @@
+{
+    "id": "a-9-9",
+    "question": "Calculate the Morisita-Horn overlap index to compare the CDR3 amino acid repertoires between the two provided samples.",
+    "input_files": [
+        "data/sample1_1_TCR_clonotypes.txt",
+        "data/sample1_2_TCR_clonotypes.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "morisita_result.txt",
+            "type": "txt",
+            "description": "single numeric value of Morisita-Horn Overlap Index"
+        }
+    ],
+    "timeout_seconds": 3600
+}

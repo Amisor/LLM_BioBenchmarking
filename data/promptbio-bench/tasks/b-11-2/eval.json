@@ -1,0 +1,23 @@
+{
+    "id": "b-11-2",
+    "question": "Two CRISPR guide RNAs, Guide A and Guide B, are tested for editing efficiency: Guide A succeeds in 45 out of 60 trials, and Guide B succeeds in 38 out of 60 trials. Using Beta(1,1) priors for both, compute their full posterior probability distributions, calculate and report the posterior mean efficiency for each guide, and generate a plot comparing the two posterior distributions.",
+    "ref_answer": [
+        "ref_answer/posterior_distributions_comparison.png",
+        "ref_answer/posterior_means.csv"
+    ],
+    "ref_script": [
+        "ref_script/crispr_beta_posterior.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "posterior_distributions_comparison.png",
+                "guidelines": "Plot must show both posterior Beta distribution curves with annotated posterior means; axis labels, color scheme, and styling may differ."
+            },
+            {
+                "file": "posterior_means.csv",
+                "guidelines": "Posterior alpha, beta, and mean efficiency for each guide must match the reference within +/-0.001."
+            }
+        ]
+    }
+}

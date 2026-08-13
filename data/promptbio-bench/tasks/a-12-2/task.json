@@ -1,0 +1,15 @@
+{
+    "id": "a-12-2",
+    "question": "Given a FASTA file of protein sequences from multiple species, build a phylogenetic tree and save a visualization as a PNG.",
+    "input_files": [
+        "data/IL2R.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "IL2R_tree.png",
+            "type": "png",
+            "description": "phylogenetic tree; leaf nodes labeled by taxon name, branches scaled by evolutionary distance"
+        }
+    ],
+    "timeout_seconds": 3600
+}

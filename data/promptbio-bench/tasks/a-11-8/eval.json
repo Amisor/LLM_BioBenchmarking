@@ -1,0 +1,23 @@
+{
+    "id": "a-11-8",
+    "question": "Integrate a PPI network and a miRNA-target network into a unified multi-layer network and identify cross-layer hub genes as genes whose degree centrality in the unified network exceeds the 90th percentile threshold.",
+    "ref_answer": [
+        "ref_answer/cross_layer_hubs.csv",
+        "ref_answer/integrated_network.png"
+    ],
+    "ref_script": [
+        "ref_script/integrate_ppi_mirna_find_hubs.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "cross_layer_hubs.csv",
+                "guidelines": "Hub node records must match the reference in identity, degree centrality within 1% relative absolute error, and type; column order may differ."
+            },
+            {
+                "file": "integrated_network.png",
+                "guidelines": "Two-layer network with gene and miRNA nodes; cross-layer hubs must be visually distinguished; layout and colors may differ."
+            }
+        ]
+    }
+}

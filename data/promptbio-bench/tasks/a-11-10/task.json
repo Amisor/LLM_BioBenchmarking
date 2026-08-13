@@ -1,0 +1,15 @@
+{
+    "id": "a-11-10",
+    "question": "Identify the KEGG pathways enriched in the provided gene list using KEGG_2021_Human.",
+    "input_files": [
+        "data/gene_list.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "enrich_result.csv",
+            "type": "csv",
+            "description": "rows as KEGG pathways, columns should include Gene_set, Term, Overlap, P-value, Adjusted P-value, Odds Ratio, Combined Score, Genes"
+        }
+    ],
+    "timeout_seconds": 3600
+}

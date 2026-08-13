@@ -1,0 +1,18 @@
+{
+    "id": "a-7-8",
+    "question": "Perform DIA label-free quantification using DIA-NN with the provided mzML file and reference FASTA database.",
+    "ref_answer": [
+        "ref_answer/report.tsv"
+    ],
+    "ref_script": [
+        "ref_script/diann_quant.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "report.tsv",
+                "guidelines": "Quantified precursors must match the reference in peptide sequence (Stripped.Sequence) and charge state (Precursor.Charge); intensity values (Precursor.Quantity) may differ within 10% relative absolute error across DIA-NN runs."
+            }
+        ]
+    }
+}

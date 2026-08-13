@@ -1,0 +1,17 @@
+{
+    "id": "a-2-5",
+    "question": "Generate a circos plot showing the co-occurrence of mutations in this cancer cohort",
+    "input_files": [
+        "data/sample_1_chr20.vcf",
+        "data/sample_2_chr20.vcf",
+        "data/sample_3_chr20.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "circos.png",
+            "type": "png",
+            "description": "circos plot; chromosomes as sectors, pairwise co-occurrence frequency as ribbon width"
+        }
+    ],
+    "timeout_seconds": 3600
+}

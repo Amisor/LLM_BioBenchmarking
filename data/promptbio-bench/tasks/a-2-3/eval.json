@@ -1,0 +1,33 @@
+{
+  "id": "a-2-3",
+  "question": "Detect germline SNPs and indels from exome sequencing data. Filter SNPs and indels separately and generate a tabix index for each.",
+  "ref_answer": [
+    "ref_answer/normal_0.1_chr21.indels.filtered.vcf.gz",
+    "ref_answer/normal_0.1_chr21.indels.filtered.vcf.gz.tbi",
+    "ref_answer/normal_0.1_chr21.snps.filtered.vcf.gz",
+    "ref_answer/normal_0.1_chr21.snps.filtered.vcf.gz.tbi"
+  ],
+  "ref_script": [
+    "ref_script/snpindel.sh"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "normal_0.1_chr21.indels.filtered.vcf.gz",
+        "guidelines": "Indel variant records (CHROM, POS, REF, ALT, FILTER) must match the reference; caller header lines and INFO-field order may differ."
+      },
+      {
+        "file": "normal_0.1_chr21.indels.filtered.vcf.gz.tbi",
+        "guidelines": "The file must be a valid tabix index for the companion VCF.gz file; internal byte layout may differ."
+      },
+      {
+        "file": "normal_0.1_chr21.snps.filtered.vcf.gz",
+        "guidelines": "Variant records (CHROM, POS, REF, ALT, FILTER) must match the reference; caller header lines and INFO-field order may differ."
+      },
+      {
+        "file": "normal_0.1_chr21.snps.filtered.vcf.gz.tbi",
+        "guidelines": "The index answers tabix range queries with the same variant records as the reference; internal byte layout across tabix versions may differ."
+      }
+    ]
+  }
+}

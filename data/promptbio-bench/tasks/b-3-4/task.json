@@ -1,0 +1,15 @@
+{
+    "id": "b-3-4",
+    "question": "Generate a pie chart to show the distribution of cancer grades across all patients.",
+    "input_files": [
+        "data/clinical_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "cancer_grade_distribution_pie.png",
+            "type": "png",
+            "description": "pie chart; slices sized by patient count per cancer grade"
+        }
+    ],
+    "timeout_seconds": 3600
+}

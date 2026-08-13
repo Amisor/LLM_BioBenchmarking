@@ -1,0 +1,18 @@
+{
+    "id": "a-1-3",
+    "question": "Please convert the BAM file to SAM format.",
+    "ref_answer": [
+        "ref_answer/example_tumor_sorted.sam"
+    ],
+    "ref_script": [
+        "ref_script/bam2sam.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "example_tumor_sorted.sam",
+                "guidelines": "All read records must match the reference; SAM header lines and optional-tag order may differ."
+            }
+        ]
+    }
+}

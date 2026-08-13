@@ -1,0 +1,13 @@
+{
+    "id": "a-7-3",
+    "question": "Retrieve the amino acid sequence of human albumin (ALB) from UniProt and calculate its molecular weight.",
+    "input_files": [],
+    "expected_output": [
+        {
+            "file": "alb_molecular_weight.txt",
+            "type": "txt",
+            "description": "single numeric value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

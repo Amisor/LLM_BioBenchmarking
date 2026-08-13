@@ -1,0 +1,15 @@
+{
+    "id": "b-4-6",
+    "question": "Analyze cytokine levels measured at baseline, week 2, and week 4 in the same patients using repeated measures ANOVA. Include subject as a random factor and test for time effect.",
+    "input_files": [
+        "data/cytokine_longitudinal.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "repeated_measures_anova_results.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include Test, F_Statistic, P_Value, Time_Effect_Significant"
+        }
+    ],
+    "timeout_seconds": 3600
+}

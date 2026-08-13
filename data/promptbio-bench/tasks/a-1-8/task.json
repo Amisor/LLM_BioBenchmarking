@@ -1,0 +1,15 @@
+{
+    "id": "a-1-8",
+    "question": "Filter the BAM file to keep only reads with a mapping quality of 30 or above.",
+    "input_files": [
+        "data/example_tumor.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "example_tumor_filtered.bam",
+            "type": "bam",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,15 @@
+{
+    "id": "b-4-9",
+    "question": "Implement a two-tailed permutation test (10,000 shuffles) to assess whether the difference in median survival between two treatment arms is statistically significant. Use random seed 42 for reproducibility. Return the empirical p-value.",
+    "input_files": [
+        "data/survival_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "permutation_test_results.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include Empirical_P_Value, Significant"
+        }
+    ],
+    "timeout_seconds": 3600
+}

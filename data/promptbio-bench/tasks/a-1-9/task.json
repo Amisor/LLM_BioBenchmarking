@@ -1,0 +1,15 @@
+{
+    "id": "a-1-9",
+    "question": "Calculate GC content for each sequence in the fasta and save results.",
+    "input_files": [
+        "data/seq.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "gc_content.tsv",
+            "type": "tsv",
+            "description": "rows as sequences, columns should include Sequence_ID, GC_percent"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,21 @@
+{
+    "id": "a-9-2",
+    "question": "Analyze the TCR sequencing data and identify the top 5 TRB clonotypes by clone count.",
+    "input_files": [
+        "data/ERR10361565_1.fastq.gz",
+        "data/ERR10361565_2.fastq.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "Sequences_cloneCount_top5.png",
+            "type": "png",
+            "description": "TRB amino acid sequences as x-axis, clone counts as y-axis"
+        },
+        {
+            "file": "analysis.clonotypes.TRB.txt",
+            "type": "txt",
+            "description": "rows as TRB clonotypes (top 5 by clone count), columns should include cloneCount, aaSeqCDR3"
+        }
+    ],
+    "timeout_seconds": 3600
+}

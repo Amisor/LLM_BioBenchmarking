@@ -1,0 +1,20 @@
+{
+    "id": "b-12-3",
+    "question": "Given longitudinal patient data tracking disease severity over time with states [Mild, Moderate, Severe, Remission], estimate the empirical transition probability matrix between consecutive weekly observations. Use a first-order Markov model to predict the probability of being in a Severe state after 12 steps for a patient currently in a Moderate state.",
+    "input_files": [
+        "data/patient_states.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "severe_prediction.csv",
+            "type": "csv",
+            "description": "rows as prediction result (1 row), columns should include CurrentState, Weeks, Probability_Severe"
+        },
+        {
+            "file": "transition_matrix.csv",
+            "type": "csv",
+            "description": "rows as source states, columns should include from_state (source state name) followed by destination state columns (transition probabilities)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

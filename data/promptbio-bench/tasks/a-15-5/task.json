@@ -1,0 +1,16 @@
+{
+    "id": "a-15-5",
+    "question": "Integrate differentially expressed genes and proteins, and identify concordant vs. discordant regulation trends. Classify each gene as concordant if RNA and protein log2 fold-changes have the same sign (both positive or both negative), and discordant if they have opposite signs.",
+    "input_files": [
+        "data/protein_de.csv",
+        "data/rna_de.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "rna_protein_concordance.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include gene_id, log2FoldChange_RNA, pvalue_RNA, log2FoldChange_Protein, pvalue_Protein, RNA_dir, Protein_dir, Regulation"
+        }
+    ],
+    "timeout_seconds": 3600
+}

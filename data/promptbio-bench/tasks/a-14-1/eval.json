@@ -1,0 +1,22 @@
+{
+    "id": "a-14-1",
+    "question": "Predict the 3D structure of a protein sequence using AlphaFold2, and output all 5 ranked PDB files with per-residue pLDDT confidence scores encoded in B-factor fields.",
+    "ref_answer": [
+        "ref_answer/test_protein_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb",
+        "ref_answer/test_protein_unrelaxed_rank_002_alphafold2_ptm_model_5_seed_000.pdb",
+        "ref_answer/test_protein_unrelaxed_rank_003_alphafold2_ptm_model_3_seed_000.pdb",
+        "ref_answer/test_protein_unrelaxed_rank_004_alphafold2_ptm_model_1_seed_000.pdb",
+        "ref_answer/test_protein_unrelaxed_rank_005_alphafold2_ptm_model_2_seed_000.pdb"
+    ],
+    "ref_script": [
+        "ref_script/protein_fold.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "test_protein_unrelaxed_rank_00*.pdb",
+                "guidelines": "5 PDB files (rank_001 through rank_005) must be present; Ca RMSD of each ranked structure compared by matching rank to the corresponding reference within 2 Angstroms; B-factor column must encode per-residue pLDDT (values in 0-100 range, not all-zero); atom-record order may differ."
+            }
+        ]
+    }
+}

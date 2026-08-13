@@ -1,0 +1,15 @@
+{
+    "id": "b-10-6",
+    "question": "Implement linear regression on the provided dataset and evaluate its performance using two distinct methods: leave-one-out cross-validation (LOOCV) and a single 80-20 train-test split. Compare the resulting error metrics from both evaluation approaches.",
+    "input_files": [
+        "data/regression_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "regression_comparison.csv",
+            "type": "csv",
+            "description": "rows as evaluation methods, columns should include Method, MSE, RMSE, MAE, R2"
+        }
+    ],
+    "timeout_seconds": 3600
+}

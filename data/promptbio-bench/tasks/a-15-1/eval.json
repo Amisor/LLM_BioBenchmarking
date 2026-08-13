@@ -1,0 +1,18 @@
+{
+    "id": "a-15-1",
+    "question": "Compute Pearson correlations between all gene-methylation site pairs (all-vs-all) using DNA methylation beta values and gene expression values from the same samples. Apply Benjamini-Hochberg FDR correction globally across all pairs. Identify gene-methylation site pairs with significant negative correlations (FDR < 0.05).",
+    "ref_answer": [
+        "ref_answer/significant_results.tsv"
+    ],
+    "ref_script": [
+        "ref_script/expr_meth_cor.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "significant_results.tsv",
+                "guidelines": "Gene-site pairs must match the reference as an unordered set; correlation values within +/-1e-4, P-values and FDR values within 1% relative absolute error; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

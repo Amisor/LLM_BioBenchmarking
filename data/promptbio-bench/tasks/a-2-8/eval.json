@@ -1,0 +1,23 @@
+{
+  "id": "a-2-8",
+  "question": "Run GSEA on ranked gene list to identify the most enriched gene sets of biological processes. Report the full enrichment results and the top 5 significantly enriched gene sets.",
+  "ref_answer": [
+    "ref_answer/gsea_result.csv",
+    "ref_answer/gsea_top5_result.csv"
+  ],
+  "ref_script": [
+    "ref_script/gsea.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "gsea_result.csv",
+        "guidelines": "All gene-set records must match the reference in term identity and enrichment direction; NES may vary by 5% relative absolute error and FDR q-val by 10% relative absolute error due to permutation; column order and extra columns may differ."
+      },
+      {
+        "file": "gsea_top5_result.csv",
+        "guidelines": "Top-5 gene sets must match the reference in term identity and enrichment direction; NES may vary by 5% relative absolute error and ranking may shift by +/-2 positions; column order may differ."
+      }
+    ]
+  }
+}

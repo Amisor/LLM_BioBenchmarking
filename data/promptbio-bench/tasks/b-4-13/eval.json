@@ -1,0 +1,18 @@
+{
+    "id": "b-4-13",
+    "question": "Analyze viral load (log10) measured weekly over 6 weeks in HIV patients on two drug regimens. Fit a linear mixed-effects model with fixed effects for time and treatment, and random intercepts for subject. Test for treatment-by-time interaction and report p-value and marginal R^2.",
+    "ref_answer": [
+        "ref_answer/lme_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/lme_viral_load.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "lme_results.csv",
+                "guidelines": "Marginal R^2 must match within 1% relative absolute error; Interaction_P_Value must be significant (below 0.05); column order and header labels may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a-2-9",
+    "question": "Perform KEGG pathway enrichment analysis on the provided gene list and report the enriched pathways.",
+    "input_files": [
+        "data/gene_list.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "enrich_result.csv",
+            "type": "csv",
+            "description": "rows as KEGG pathways, columns should include Gene_set, Term, Odds Ratio, P-value, Adjusted P-value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

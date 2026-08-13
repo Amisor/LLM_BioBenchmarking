@@ -1,0 +1,15 @@
+{
+    "id": "a-1-3",
+    "question": "Please convert the BAM file to SAM format.",
+    "input_files": [
+        "data/example_tumor_sorted.bam"
+    ],
+    "expected_output": [
+        {
+            "file": "example_tumor_sorted.sam",
+            "type": "sam",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,15 @@
+{
+    "id": "b-4-10",
+    "question": "A case-control study finds that 40 out of 100 cancer patients were exposed to a toxin vs. 20 out of 100 controls. Compute the odds ratio (OR) and 95% CI.",
+    "input_files": [
+        "data/case_control_toxin.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "odds_ratio_results.csv",
+            "type": "csv",
+            "description": "rows as test result (1 row), columns should include Odds_Ratio, CI_Lower, CI_Upper"
+        }
+    ],
+    "timeout_seconds": 3600
+}

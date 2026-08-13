@@ -1,0 +1,23 @@
+{
+    "id": "b-6-7",
+    "question": "Perform Factor Analysis on a behavioral or survey dataset to identify underlying latent traits (e.g., anxiety, depression). Use parallel analysis (100 iterations, 95th percentile, random_state=42) to select the number of factors. Report factor loadings.",
+    "ref_answer": [
+        "ref_answer/factor_loadings.csv",
+        "ref_answer/n_factors.txt"
+    ],
+    "ref_script": [
+        "ref_script/factor_analysis.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "factor_loadings.csv",
+                "guidelines": "Each survey item's factor loading values must match the reference within +/-0.05; sign of each factor may be flipped, column order and item label formatting may differ."
+            },
+            {
+                "file": "n_factors.txt",
+                "guidelines": "The factor count must match the reference exactly; whitespace may differ."
+            }
+        ]
+    }
+}

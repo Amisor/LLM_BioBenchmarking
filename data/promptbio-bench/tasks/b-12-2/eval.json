@@ -1,0 +1,18 @@
+{
+    "id": "b-12-2",
+    "question": "Using time-series glucose data (columns: Hour, Level), train a Random Forest multi-output regressor to predict glucose levels at +1, +2, and +3 hours ahead for each individual patient. Use the past 6 hours as the feature window (lookback=6). Use a random 80/20 train-test split (random_state=42). Use n_estimators=100 and random_state=42 for the Random Forest.",
+    "ref_answer": [
+        "ref_answer/glucose_predictions.csv"
+    ],
+    "ref_script": [
+        "ref_script/predict_glucose.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "glucose_predictions.csv",
+                "guidelines": "Test-set rows identified by PatientID and Start_Hour must match the reference; Pred_* values must match within 5% relative absolute error; column order and header labels may differ."
+            }
+        ]
+    }
+}

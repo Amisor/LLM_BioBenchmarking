@@ -1,0 +1,15 @@
+{
+    "id": "a-11-3",
+    "question": "Analyze PPI network to identify top 5 hub genes using degree centrality.",
+    "input_files": [
+        "data/ppi.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "hub_gene.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include Gene, Degree"
+        }
+    ],
+    "timeout_seconds": 3600
+}

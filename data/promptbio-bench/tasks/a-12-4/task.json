@@ -1,0 +1,17 @@
+{
+    "id": "a-12-4",
+    "question": "Calculate Moran's I autocorrelation coefficient for phylogenetic traits (body mass and longevity) using a phylogenetic distance matrix derived from a given tree.",
+    "input_files": [
+        "data/body.csv",
+        "data/longevity.csv",
+        "data/phylogenetic_tree.nwk"
+    ],
+    "expected_output": [
+        {
+            "file": "moran_results.csv",
+            "type": "csv",
+            "description": "rows as traits, columns should include Trait, Moran_I, P_Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

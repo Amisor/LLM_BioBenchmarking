@@ -1,0 +1,18 @@
+{
+    "id": "a-9-9",
+    "question": "Calculate the Morisita-Horn overlap index to compare the CDR3 amino acid repertoires between the two provided samples.",
+    "ref_answer": [
+        "ref_answer/morisita_result.txt"
+    ],
+    "ref_script": [
+        "ref_script/morisita_horn.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "morisita_result.txt",
+                "guidelines": "Value must match the reference within 1% relative absolute error; whitespace and decimal precision may differ."
+            }
+        ]
+    }
+}

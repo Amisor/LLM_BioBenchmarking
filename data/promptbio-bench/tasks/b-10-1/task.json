@@ -1,0 +1,15 @@
+{
+    "id": "b-10-1",
+    "question": "Train a Random Forest classifier (n_estimators=100, random_state=42) to classify tumor vs. normal samples (treating tumor as the positive class). Evaluate performance using 5-fold cross-validation. Report mean accuracy, precision, and recall for the positive (tumor) class.",
+    "input_files": [
+        "data/classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "cv_results.csv",
+            "type": "csv",
+            "description": "rows as metrics, columns should include Metric, Mean"
+        }
+    ],
+    "timeout_seconds": 3600
+}

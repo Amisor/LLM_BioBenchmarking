@@ -1,0 +1,18 @@
+{
+    "id": "a-1-2",
+    "question": "Please generate a tabix index for the provided VCF.gz file.",
+    "ref_answer": [
+        "ref_answer/A375_WGS_WMG.cnv.vcf.gz.tbi"
+    ],
+    "ref_script": [
+        "ref_script/tabix_index.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "A375_WGS_WMG.cnv.vcf.gz.tbi",
+                "guidelines": "The file must be a valid tabix index for the input VCF.gz file; internal byte layout may differ."
+            }
+        ]
+    }
+}

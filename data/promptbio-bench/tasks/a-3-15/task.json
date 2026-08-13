@@ -1,0 +1,16 @@
+{
+    "id": "a-3-15",
+    "question": "Merge the TPM data from two Salmon output files into a single file.",
+    "input_files": [
+        "data/ERR2675443.quant.sf",
+        "data/ERR2675450.quant.sf"
+    ],
+    "expected_output": [
+        {
+            "file": "merged_tpm.tsv",
+            "type": "tsv",
+            "description": "rows as transcripts, columns should include Name, ERR2675443_TPM, ERR2675450_TPM"
+        }
+    ],
+    "timeout_seconds": 3600
+}

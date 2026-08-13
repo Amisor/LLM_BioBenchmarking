@@ -1,0 +1,15 @@
+{
+    "id": "a-1-14",
+    "question": "I want to extract only the soft-clipped portions of reads from a SAM file.",
+    "input_files": [
+        "data/example_tumor_sorted.sam"
+    ],
+    "expected_output": [
+        {
+            "file": "soft_clip.fq.gz",
+            "type": "fastq.gz",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

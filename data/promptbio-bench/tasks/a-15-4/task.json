@@ -1,0 +1,16 @@
+{
+    "id": "a-15-4",
+    "question": "Integrate WES and RNA-Seq data to annotate all pathogenic variants with an expression status. For each pathogenic variant, report whether its gene is expressed (TPM > 1.0 in any sample).",
+    "input_files": [
+        "data/rnaseq_tpm.csv",
+        "data/wes.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "expressed_pathogenic_variants.csv",
+            "type": "csv",
+            "description": "rows as pathogenic variants, columns should include Gene, Chrom, Pos, VariantID, REF, ALT, ClinSig, Expressed (boolean: True if gene TPM > 1.0 in any sample, False otherwise)"
+        }
+    ],
+    "timeout_seconds": 3600
+}

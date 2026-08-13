@@ -1,0 +1,15 @@
+{
+    "id": "b-1-3",
+    "question": "Calculate the coefficient of variation (CV) as a percentage (%) for each numeric variable to assess relative variability. Return a table sorted in descending order of CV.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "coefficient_of_variation.csv",
+            "type": "csv",
+            "description": "rows as numeric features, columns should include feature, mean, std, coefficient_of_variation"
+        }
+    ],
+    "timeout_seconds": 3600
+}

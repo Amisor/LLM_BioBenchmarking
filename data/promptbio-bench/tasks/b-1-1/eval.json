@@ -1,0 +1,18 @@
+{
+    "id": "b-1-1",
+    "question": "Calculate the mean, median, standard deviation, and interquartile range (IQR) for all numeric columns in the provided dataset. Return the results in a tidy table.",
+    "ref_answer": [
+        "ref_answer/summary_statistics.csv"
+    ],
+    "ref_script": [
+        "ref_script/summary_statistics.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "summary_statistics.csv",
+                "guidelines": "Statistic values per feature must match the reference within 0.1% relative absolute error; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

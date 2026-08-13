@@ -1,0 +1,18 @@
+{
+    "id": "a-14-5",
+    "question": "Find all non-overlapping G-quadruplex (G4) motifs in a DNA FASTA file using the pattern G{3+}N{1-7}G{3+}N{1-7}G{3+}N{1-7}G{3+} and report each match.",
+    "ref_answer": [
+        "ref_answer/g_quadruplex_motifs.csv"
+    ],
+    "ref_script": [
+        "ref_script/quadparser.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "g_quadruplex_motifs.csv",
+                "guidelines": "Exact set of 1-based inclusive motif records must match the reference; row order, column order, and extra columns may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "id": "a-5-6",
+    "question": "Given a folder of single-cell RNA-seq expression data output by cellranger, identify the top 10 marker genes per cluster (filtered to avg_log2FC > 1) compared to all other cells.",
+    "ref_answer": [
+        "ref_answer/top10_markers.tsv"
+    ],
+    "ref_script": [
+        "ref_script/cell_type_analysis.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "top10_markers.tsv",
+                "guidelines": "Top 10 marker genes per cluster must match the reference in gene identity; avg_log2FC and p_val_adj values must match within 1% relative absolute error; column order, row order, and cluster label integers may differ."
+            }
+        ]
+    }
+}

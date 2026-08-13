@@ -1,0 +1,18 @@
+{
+    "id": "b-3-4",
+    "question": "Generate a pie chart to show the distribution of cancer grades across all patients.",
+    "ref_answer": [
+        "ref_answer/cancer_grade_distribution_pie.png"
+    ],
+    "ref_script": [
+        "ref_script/cancer_grade_pie.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "cancer_grade_distribution_pie.png",
+                "guidelines": "Pie chart must show proportional slices with percentage labels for each cancer grade; color scheme and font may differ."
+            }
+        ]
+    }
+}

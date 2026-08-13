@@ -1,0 +1,15 @@
+{
+    "id": "b-3-2",
+    "question": "Generate a scatter plot showing the correlation between the first two numeric columns of the dataset. Add a regression line, correlation coefficient (r), and 95% confidence band.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "scatter_with_regression.png",
+            "type": "png",
+            "description": "first numeric column as x-axis, second numeric column as y-axis, regression line, 95% CI band, Pearson r annotated"
+        }
+    ],
+    "timeout_seconds": 3600
+}

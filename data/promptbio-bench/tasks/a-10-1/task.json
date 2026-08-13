@@ -1,0 +1,15 @@
+{
+    "id": "a-10-1",
+    "question": "Keep only insertions and deletions longer than 1kb in the VCF file.",
+    "input_files": [
+        "data/simulated.vcf"
+    ],
+    "expected_output": [
+        {
+            "file": "filtered_large_indels.vcf",
+            "type": "vcf",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

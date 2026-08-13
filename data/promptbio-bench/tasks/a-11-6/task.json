@@ -1,0 +1,18 @@
+{
+    "id": "a-11-6",
+    "question": "Perform an overrepresentation analysis (ORA) of gene ontology (GO) terms based on the differential expression results between ASXL1 mutation conditions, using the provided reference files. Identify the top 10 most significantly enriched GO terms by adjusted p-value and visualize them in a bar plot.",
+    "input_files": [
+        "data/HGNC_05-09-19.txt",
+        "data/Issy_ASXL1_blood_coldata_gender.xlsx",
+        "data/Issy_ASXL1_blood_featureCounts_GeneTable_final.txt",
+        "data/gencode.v31.primary_assembly.genes.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "GO_BarPlot_Issy_ASXL1_blood.png",
+            "type": "png",
+            "description": "adjusted p-value as x-axis, GO term as y-axis"
+        }
+    ],
+    "timeout_seconds": 3600
+}

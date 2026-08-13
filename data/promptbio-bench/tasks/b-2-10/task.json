@@ -1,0 +1,25 @@
+{
+    "id": "b-2-10",
+    "question": "Implement stratified sampling based on the 'DiagnosisClass' column to create training (70%) and testing (30%) sets while maintaining class distribution.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "stratified_sampling_report.csv",
+            "type": "csv",
+            "description": "rows as classes, columns should include Class, Original_Count, Original_Percentage, Train_Count, Train_Percentage, Test_Count, Test_Percentage"
+        },
+        {
+            "file": "test_set.csv",
+            "type": "csv",
+            "description": "rows as patients, columns as clinical, genomic, demographic, and diagnostic features"
+        },
+        {
+            "file": "train_set.csv",
+            "type": "csv",
+            "description": "rows as patients, columns as clinical, genomic, demographic, and diagnostic features"
+        }
+    ],
+    "timeout_seconds": 3600
+}

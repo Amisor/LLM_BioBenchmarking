@@ -1,0 +1,16 @@
+{
+    "id": "a-5-5",
+    "question": "Normalize single-cell RNA-seq count data and filter genes of interest. Note that the raw count data uses gene IDs, and the output file should use gene names.",
+    "input_files": [
+        "data/count_data.csv",
+        "data/gene_names.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "normalized_counts.csv",
+            "type": "csv",
+            "description": "rows as cells, columns as gene names"
+        }
+    ],
+    "timeout_seconds": 3600
+}

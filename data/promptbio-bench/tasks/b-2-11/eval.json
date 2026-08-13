@@ -1,0 +1,23 @@
+{
+    "id": "b-2-11",
+    "question": "Generate polynomial features up to degree 3 and all pairwise interaction terms for numeric columns in the dataset. Ensure the output is scaled appropriately.",
+    "ref_answer": [
+        "ref_answer/feature_names.csv",
+        "ref_answer/polynomial_features.csv"
+    ],
+    "ref_script": [
+        "ref_script/polynomial_features.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "feature_names.csv",
+                "guidelines": "Feature index-to-name mappings must match the reference; column order, row order, and header labels may differ."
+            },
+            {
+                "file": "polynomial_features.csv",
+                "guidelines": "Scaled polynomial and interaction feature values must match the reference within 1% relative absolute error; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

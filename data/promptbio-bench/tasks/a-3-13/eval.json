@@ -1,0 +1,18 @@
+{
+    "id": "a-3-13",
+    "question": "Assemble transcripts from the provided paired-end RNA-Seq reads using Trinity.",
+    "ref_answer": [
+        "ref_answer/trinity_out.Trinity.fasta"
+    ],
+    "ref_script": [
+        "ref_script/trinity.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "trinity_out.Trinity.fasta",
+                "guidelines": "Assembled sequences must match the reference set; header IDs and sequence order may differ."
+            }
+        ]
+    }
+}

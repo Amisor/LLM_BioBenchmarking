@@ -1,0 +1,18 @@
+{
+    "id": "a-4-8",
+    "question": "Compute and visualize the optimal segmentation model with 2 peaks for each ChIP-seq data set.",
+    "ref_answer": [
+        "ref_answer/segmentation_model_plot.png"
+    ],
+    "ref_script": [
+        "ref_script/segmentation.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "segmentation_model_plot.png",
+                "guidelines": "Plot must show a 2-peak segmentation model for each ChIP-seq dataset with genomic position on the x-axis and coverage signal on the y-axis; colors, fonts, and panel arrangement may differ."
+            }
+        ]
+    }
+}

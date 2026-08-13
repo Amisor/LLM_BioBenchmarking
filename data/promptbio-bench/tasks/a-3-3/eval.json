@@ -1,0 +1,20 @@
+{
+    "id": "a-3-3",
+    "question": "Perform differential analysis using limma to identify the top 20 markers for each pairwise comparison among the three grades.",
+    "ref_answer": [
+        "ref_answer/Grade2vsGrade1_DE_results.csv",
+        "ref_answer/Grade3vsGrade1_DE_results.csv",
+        "ref_answer/Grade3vsGrade2_DE_results.csv"
+    ],
+    "ref_script": [
+        "ref_script/limma.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "Grade*.csv",
+                "guidelines": "Probe records must match the reference in identity; logFC and adj.P.Val must match within +/-0.001; row and column order may differ."
+            }
+        ]
+    }
+}

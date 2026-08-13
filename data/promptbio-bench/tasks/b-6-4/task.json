@@ -1,0 +1,15 @@
+{
+    "id": "b-6-4",
+    "question": "Perform NMF (init='nndsvda') for k=2 to 10 and compute consensus matrices using 50 runs per k. Derive 50 per-run integer seeds from np.random.RandomState(42) and use the i-th seed for both NMF and KMeans in run i. For each run, assign cluster labels via KMeans (n_init=1) on the W matrix. Build the consensus matrix as the fraction of runs in which each pair of samples is assigned to the same cluster. Select the optimal k as the one with the highest cophenetic correlation of its consensus matrix.",
+    "input_files": [
+        "data/gene_expression.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "optimal_k.txt",
+            "type": "txt",
+            "description": "single integer: optimal number of clusters"
+        }
+    ],
+    "timeout_seconds": 3600
+}

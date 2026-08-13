@@ -1,0 +1,20 @@
+{
+    "id": "a-3-11",
+    "question": "Predict RNA secondary structures for the small RNAs in the provided FASTA file using ViennaRNA. Generate SVG images of the structures and report the dot-bracket notation with minimum free energies.",
+    "input_files": [
+        "data/transcripts.fa"
+    ],
+    "expected_output": [
+        {
+            "file": "Transcript*.svg",
+            "type": "svg",
+            "description": "RNA secondary structure diagram per transcript"
+        },
+        {
+            "file": "transcripts_rnafold.txt",
+            "type": "txt",
+            "description": "FASTA-style; dot-bracket notation and MFE per sequence"
+        }
+    ],
+    "timeout_seconds": 3600
+}

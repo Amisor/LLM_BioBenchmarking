@@ -1,0 +1,20 @@
+{
+    "id": "b-7-1",
+    "question": "Train a Random Forest classifier on the provided dataset to predict the outcome label using a 70/30 train-test split. Extract and return the top 10 most important features and report the test accuracy.",
+    "input_files": [
+        "data/general_classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "random_forest_test_accuracy.csv",
+            "type": "csv",
+            "description": "rows as accuracy result (1 row), columns should include Metric, Value"
+        },
+        {
+            "file": "random_forest_feature_importances.csv",
+            "type": "csv",
+            "description": "rows as features, columns should include Feature, Importance"
+        }
+    ],
+    "timeout_seconds": 3600
+}

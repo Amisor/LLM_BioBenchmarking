@@ -1,0 +1,15 @@
+{
+    "id": "b-7-4",
+    "question": "Train a Random Forest classifier on the provided dataset using a 70/30 train-test split and compare two configurations: one using the default class weight setting and the other using balanced class weights. For each version, calculate the area under the precision-recall curve (AUPRC) on the test set and report the results.",
+    "input_files": [
+        "data/general_classification_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "rf_auprc_comparison.csv",
+            "type": "csv",
+            "description": "rows as classifier configurations, columns should include Configuration, AUPRC"
+        }
+    ],
+    "timeout_seconds": 3600
+}

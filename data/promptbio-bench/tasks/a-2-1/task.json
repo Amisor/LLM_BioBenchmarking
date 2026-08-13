@@ -1,0 +1,15 @@
+{
+    "id": "a-2-1",
+    "question": "Translate the gene symbols in data/gene.txt to their corresponding Ensembl gene IDs using biomaRt. Report hgnc_symbol and ensembl_gene_id, one row per gene.",
+    "input_files": [
+        "data/gene.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "gene_mapping.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include hgnc_symbol and ensembl_gene_id"
+        }
+    ],
+    "timeout_seconds": 3600
+}

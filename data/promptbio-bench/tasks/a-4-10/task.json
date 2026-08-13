@@ -1,0 +1,17 @@
+{
+    "id": "a-4-10",
+    "question": "Given ChIP-seq peak locations for a transcription factor and a gene annotation file in GTF format, identify the nearest gene for each ChIP-seq peak using HOMER.",
+    "input_files": [
+        "data/SPT5_T0_REP1_peaks.broadPeak",
+        "data/genes.gtf",
+        "data/genome.fa"
+    ],
+    "expected_output": [
+        {
+            "file": "SPT5_T0_REP1_peaks.annotatePeaks.txt",
+            "type": "txt",
+            "description": "HOMER annotatePeaks format; rows as peaks, columns should include PeakID, chr, start, end, Distance to TSS, Gene Name"
+        }
+    ],
+    "timeout_seconds": 3600
+}

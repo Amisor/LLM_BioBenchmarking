@@ -1,0 +1,15 @@
+{
+    "id": "b-7-10",
+    "question": "Implement self-training with SVM to classify cell types. Use a 70/30 train-test split, then treat only 20% of the training set as labeled and the remaining 80% as unlabeled. Iteratively add predictions with confidence >= 0.8 back to the labeled pool and retrain, for up to 10 iterations. Report the initial test accuracy (before self-training) and the final test accuracy.",
+    "input_files": [
+        "data/single_cell_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "self_training_results.csv",
+            "type": "csv",
+            "description": "rows as self-training metrics, columns should include Metric, Value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

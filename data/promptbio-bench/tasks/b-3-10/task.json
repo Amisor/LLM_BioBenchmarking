@@ -1,0 +1,15 @@
+{
+    "id": "b-3-10",
+    "question": "Create a Manhattan plot from GWAS summary statistics. Plot -log10(p-value) against genomic position, grouped by chromosome. Highlight genome-wide significant SNPs (p < 5x10^-8) in red.",
+    "input_files": [
+        "data/gwas_summary_stats.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "manhattan_plot.png",
+            "type": "png",
+            "description": "genomic position (by chromosome) as x-axis, -log10(p-value) as y-axis, genome-wide significant SNPs highlighted"
+        }
+    ],
+    "timeout_seconds": 3600
+}

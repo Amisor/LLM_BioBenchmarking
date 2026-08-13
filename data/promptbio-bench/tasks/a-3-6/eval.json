@@ -1,0 +1,23 @@
+{
+    "id": "a-3-6",
+    "question": "Identify candidate fusion gene junctions from RNA-Seq data. Align reads with STAR using chimeric detection parameters to produce a chimeric junction file, then extract candidate fusion junctions into a CSV.",
+    "ref_answer": [
+        "ref_answer/K562_Chimeric.out.junction",
+        "ref_answer/K562_candidate_fusions.csv"
+    ],
+    "ref_script": [
+        "ref_script/star_fusion.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "K562_Chimeric.out.junction",
+                "guidelines": "Junction records must match the reference in donor and acceptor chromosome, position, and strand; read-level annotation columns may differ."
+            },
+            {
+                "file": "K562_candidate_fusions.csv",
+                "guidelines": "Fusion records must match the reference in chr1, base1, strand1, chr2, base2, strand2, and junction_type; row and column order may differ."
+            }
+        ]
+    }
+}

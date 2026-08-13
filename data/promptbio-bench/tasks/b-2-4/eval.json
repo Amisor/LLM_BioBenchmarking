@@ -1,0 +1,18 @@
+{
+    "id": "b-2-4",
+    "question": "Reshape the wide format gene expression into long format with sample, gene and expression columns.",
+    "ref_answer": [
+        "ref_answer/gene_expression_long.csv"
+    ],
+    "ref_script": [
+        "ref_script/reshape_wide_to_long.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "gene_expression_long.csv",
+                "guidelines": "All sample-gene-expression rows must match the reference, including rows where expression is missing; row and column order may differ."
+            }
+        ]
+    }
+}

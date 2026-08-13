@@ -1,0 +1,15 @@
+{
+    "id": "a-1-2",
+    "question": "Please generate a tabix index for the provided VCF.gz file.",
+    "input_files": [
+        "data/A375_WGS_WMG.cnv.vcf.gz"
+    ],
+    "expected_output": [
+        {
+            "file": "A375_WGS_WMG.cnv.vcf.gz.tbi",
+            "type": "tbi",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

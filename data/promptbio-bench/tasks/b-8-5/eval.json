@@ -1,0 +1,18 @@
+{
+    "id": "b-8-5",
+    "question": "Use an LSTM neural network to predict daily ICU occupancy over the next 7 days using a sliding window of the past 21 days. Normalize the series with MinMaxScaler. Use the first 80% of sliding-window sequences for training and the remaining 20% as the test set. Architecture: two LSTM layers (64 units then 32 units, both ReLU) each followed by Dropout(0.2), then Dense(16, ReLU) and Dense(7) output. Train with Adam optimizer (MSE loss, batch_size=32) for up to 100 epochs using early stopping (patience=10, monitor val_loss) on a 20% internal validation split of training sequences. Report test RMSE.",
+    "ref_answer": [
+        "ref_answer/test_performance.csv"
+    ],
+    "ref_script": [
+        "ref_script/lstm_forecast.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "test_performance.csv",
+                "guidelines": "The single Test_RMSE value must be within 25% relative absolute error of the reference; row/column label phrasing may differ."
+            }
+        ]
+    }
+}

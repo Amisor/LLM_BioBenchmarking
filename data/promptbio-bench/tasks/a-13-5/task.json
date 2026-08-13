@@ -1,0 +1,18 @@
+{
+    "id": "a-13-5",
+    "question": "Using the grand average of hydropathicity (GRAVY) score and the formula solubility = 1 / (1 + exp(2 * GRAVY)), predict the solubility of the protein sequence below. Suggest the top 3 single-point mutations that most improve solubility by substituting hydrophobic residues with hydrophilic ones. Report the original solubility, the top 3 mutations with solubility gain, and the best mutant sequence and solubility. Sequence: MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+    "input_files": [],
+    "expected_output": [
+        {
+            "file": "summary.txt",
+            "type": "txt",
+            "description": "labeled values: original sequence, original solubility, best mutant sequence, best mutant solubility"
+        },
+        {
+            "file": "mutations.tsv",
+            "type": "tsv",
+            "description": "rows as mutations, columns should include position, original, mutant, solubility_gain"
+        }
+    ],
+    "timeout_seconds": 3600
+}

@@ -1,0 +1,27 @@
+{
+    "id": "a-8-2",
+    "question": "Preprocessing of raw mass spectrometry data (peak extraction and alignment using BSA1_F1 as reference)",
+    "input_files": [
+        "data/BSA1_F1.mzML",
+        "data/BSA2_F1.mzML",
+        "data/BSA3_F1.mzML"
+    ],
+    "expected_output": [
+        {
+            "file": "BSA1_aligned.tsv",
+            "type": "tsv",
+            "description": "rows as features, columns should include rt, mz, intensity, charge, quality"
+        },
+        {
+            "file": "BSA2_aligned.tsv",
+            "type": "tsv",
+            "description": "rows as features, columns should include rt, mz, intensity, charge, quality"
+        },
+        {
+            "file": "BSA3_aligned.tsv",
+            "type": "tsv",
+            "description": "rows as features, columns should include rt, mz, intensity, charge, quality"
+        }
+    ],
+    "timeout_seconds": 3600
+}

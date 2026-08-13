@@ -1,0 +1,18 @@
+{
+    "id": "a-5-10",
+    "question": "Conduct clustering on the spatial transcriptomics data and visualize the cluster assignments using spatial coordinates.",
+    "ref_answer": [
+        "ref_answer/spatial_clusters.csv"
+    ],
+    "ref_script": [
+        "ref_script/spatially_region_genes.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "spatial_clusters.csv",
+                "guidelines": "Cluster label assignments must match the reference with at least 80% of spots agreeing after optimal label remapping; row order may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "id": "a-11-5",
+    "question": "Perform one-way ANOVA on log-transformed expression data across sample types. Report the feature, F-statistic, and p-value for all features.",
+    "input_files": [
+        "data/expr_edit.csv",
+        "data/sample_type.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "anova_results.csv",
+            "type": "csv",
+            "description": "rows as features, columns should include feature, f_stat, p_value"
+        }
+    ],
+    "timeout_seconds": 3600
+}

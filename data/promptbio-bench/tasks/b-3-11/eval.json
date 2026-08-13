@@ -1,0 +1,18 @@
+{
+    "id": "b-3-11",
+    "question": "Use a ridge plot to compare the distribution of tumor mutational burden (TMB) across 10 cancer types.",
+    "ref_answer": [
+        "ref_answer/tmb_ridge_plot.png"
+    ],
+    "ref_script": [
+        "ref_script/tmb_ridge_plot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "tmb_ridge_plot.png",
+                "guidelines": "Ridge plot must show TMB density distributions for all 10 cancer types as stacked overlapping curves; axis labels, color scheme, and cancer type ordering may differ."
+            }
+        ]
+    }
+}

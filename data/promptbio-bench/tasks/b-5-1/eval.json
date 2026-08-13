@@ -1,0 +1,18 @@
+{
+    "id": "b-5-1",
+    "question": "Standardize the dataset (zero mean, unit variance), then perform hierarchical clustering (Ward's linkage, Euclidean distance) on the standardized data (with samples as rows) and plot the dendrogram to visualize the clustering structure.",
+    "ref_answer": [
+        "ref_answer/hierarchical_dendrogram.png"
+    ],
+    "ref_script": [
+        "ref_script/hierarchical_clustering.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "hierarchical_dendrogram.png",
+                "guidelines": "Plot must show a hierarchical tree with sample labels and linkage distance on the y-axis; colors, fonts, and styling may differ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "id": "b-3-6",
+    "question": "For each drug, compute the Pearson correlation between EGFR gene expression and drug response (IC50) across cell lines. Plot the correlation coefficients as a bar chart and highlight the top 3 positively and top 3 negatively correlated drugs.",
+    "ref_answer": [
+        "ref_answer/egfr_drug_correlation.png",
+        "ref_answer/top_egfr_drug_correlations.csv"
+    ],
+    "ref_script": [
+        "ref_script/egfr_drug_correlation.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "egfr_drug_correlation.png",
+                "guidelines": "Bar chart must show Pearson correlations for all drugs with the top 3 positively and top 3 negatively correlated drugs visually distinguished from the rest; axis labels, color scheme, and styling may differ."
+            },
+            {
+                "file": "top_egfr_drug_correlations.csv",
+                "guidelines": "Correlation values must match the reference within +/-0.01; direction classification must use 'Positive'/'Negative' (not 'TopPositive'/'TopNegative'); row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

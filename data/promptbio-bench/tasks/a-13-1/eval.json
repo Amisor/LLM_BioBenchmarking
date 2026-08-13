@@ -1,0 +1,18 @@
+{
+    "id": "a-13-1",
+    "question": "Design CRISPR gRNAs for human FOXP3 using 20nt guide sequences with NGG PAM. Search both forward and reverse strands. Apply basic quality filters: GC content 20-80%, exclude sequences with four or more consecutive identical nucleotides (e.g., TTTT).",
+    "ref_answer": [
+        "ref_answer/foxp3_grnas.csv"
+    ],
+    "ref_script": [
+        "ref_script/gDNA.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "foxp3_grnas.csv",
+                "guidelines": "Each target_sequence must be present in the reference with the correct pam_sequence; no extra or missing pairs are allowed; row order, column order, and extra columns may differ."
+            }
+        ]
+    }
+}

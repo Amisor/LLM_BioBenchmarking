@@ -1,0 +1,15 @@
+{
+    "id": "a-3-10",
+    "question": "Convert DNA sequence to RNA sequence.",
+    "input_files": [
+        "data/dna_sequences.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "rna_sequences.fasta",
+            "type": "fasta",
+            "description": ""
+        }
+    ],
+    "timeout_seconds": 3600
+}

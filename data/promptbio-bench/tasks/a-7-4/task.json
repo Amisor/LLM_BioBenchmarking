@@ -1,0 +1,15 @@
+{
+    "id": "a-7-4",
+    "question": "Calculate the isoelectric point (pI) of each protein in the given FASTA file.",
+    "input_files": [
+        "data/protein.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "isoelectric.tsv",
+            "type": "tsv",
+            "description": "rows as proteins, columns should include protein_id, pI"
+        }
+    ],
+    "timeout_seconds": 3600
+}

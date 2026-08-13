@@ -1,0 +1,18 @@
+{
+    "id": "b-8-1",
+    "question": "Apply LASSO regression (alpha=0.1) to the dataset to perform feature selection. Identify and return the non-zero coefficient features.",
+    "ref_answer": [
+        "ref_answer/lasso_features.csv"
+    ],
+    "ref_script": [
+        "ref_script/lasso_regression.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "lasso_features.csv",
+                "guidelines": "All selected feature names must match the reference exactly; coefficient values must match within 1% relative absolute error; column order, row order, and header labels may differ."
+            }
+        ]
+    }
+}

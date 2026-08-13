@@ -1,0 +1,18 @@
+{
+    "id": "a-4-5",
+    "question": "Analyze ChIP-seq read data to compute mean and median read sizes for each experiment and generate a summary table.",
+    "ref_answer": [
+        "ref_answer/experiments_summary.csv"
+    ],
+    "ref_script": [
+        "ref_script/chip_summary.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "experiments_summary.csv",
+                "guidelines": "Per-experiment mean and median read sizes must match the reference within 0.1% relative absolute error; row order, column order, and extra columns may differ."
+            }
+        ]
+    }
+}

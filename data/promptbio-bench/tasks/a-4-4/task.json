@@ -1,0 +1,15 @@
+{
+    "id": "a-4-4",
+    "question": "Identify enriched motifs in the given sequences using MEME.",
+    "input_files": [
+        "data/sequence.fasta"
+    ],
+    "expected_output": [
+        {
+            "file": "meme.txt",
+            "type": "txt",
+            "description": "MEME text output format"
+        }
+    ],
+    "timeout_seconds": 3600
+}

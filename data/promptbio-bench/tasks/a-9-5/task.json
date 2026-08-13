@@ -1,0 +1,18 @@
+{
+    "id": "a-9-5",
+    "question": "For each of the provided clonotype data files, calculate the Shannon diversity index and Gini-Simpson index.",
+    "input_files": [
+        "data/sample1_1_TCR_clonotypes.txt",
+        "data/sample1_2_TCR_clonotypes.txt",
+        "data/sample2_1_TCR_clonotypes.txt",
+        "data/sample3_1_TCR_clonotypes.txt"
+    ],
+    "expected_output": [
+        {
+            "file": "TCR_diversity_summary.csv",
+            "type": "csv",
+            "description": "rows as samples, columns should include sample, shannon, gini"
+        }
+    ],
+    "timeout_seconds": 3600
+}

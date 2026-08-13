@@ -1,0 +1,15 @@
+{
+    "id": "b-5-2",
+    "question": "Apply K-means clustering to the dataset with k=3 and random_state=42. Report the cluster centroids and the within-cluster sum of squares (WCSS) for each cluster.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "kmeans_centroids_and_wcss.csv",
+            "type": "csv",
+            "description": "rows as clusters, columns should include Cluster, feature centroids, WCSS"
+        }
+    ],
+    "timeout_seconds": 3600
+}

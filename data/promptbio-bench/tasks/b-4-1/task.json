@@ -1,0 +1,15 @@
+{
+    "id": "b-4-1",
+    "question": "Identify significantly differentially expressed genes between treated and control groups using the Wilcoxon rank-sum test. Apply Benjamini-Hochberg correction and return genes with FDR < 0.05.",
+    "input_files": [
+        "data/gene_expression_tumor_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "significant_genes_fdr.csv",
+            "type": "csv",
+            "description": "rows as genes, columns should include Gene, FDR"
+        }
+    ],
+    "timeout_seconds": 3600
+}

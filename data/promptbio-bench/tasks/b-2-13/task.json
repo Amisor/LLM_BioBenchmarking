@@ -1,0 +1,16 @@
+{
+    "id": "b-2-13",
+    "question": "Merge two datasets on patient names using fuzzy string matching to handle typos or formatting differences. Use a similarity threshold of 80% (fuzz ratio). Keep all pairs of records whose names match above the threshold, using suffixes '_dataset1' and '_dataset2' to distinguish columns from each source.",
+    "input_files": [
+        "data/bio_dataset.csv",
+        "data/clinical_data.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "fuzzy_merged_data.csv",
+            "type": "csv",
+            "description": "rows as matched patients, columns as features from both datasets"
+        }
+    ],
+    "timeout_seconds": 3600
+}

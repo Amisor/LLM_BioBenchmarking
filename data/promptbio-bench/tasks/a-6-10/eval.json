@@ -1,0 +1,18 @@
+{
+    "id": "a-6-10",
+    "question": "Search ORFs with a set of HMM profiles, and rank results",
+    "ref_answer": [
+        "ref_answer/megahit.prodigal.hmmrank.tsv"
+    ],
+    "ref_script": [
+        "ref_script/hmm_search.sh"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "megahit.prodigal.hmmrank.tsv",
+                "guidelines": "ORF-profile hits must match the reference in accno, score within 1% relative absolute error, and rank; row and column order may differ."
+            }
+        ]
+    }
+}

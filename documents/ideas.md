@@ -69,7 +69,14 @@
 - Reference workflow: each task should have a trusted script or workflow written by a bioinformatician.
 - Fixed data: each task should include small input data that can be run quickly and reproducibly.
 - Expected answer: each task should include expected outputs or ground-truth results produced by the reference workflow.
+- Input helpers: provide R package helper functions that guide users in formatting inputs to the expected benchmark schema.
 - Self-contained criteria: each benchmark task should include its own input data, expected outputs, scoring rules, accepted tolerances, and failure conditions.
+- Parameters: record required, default, and LLM-chosen parameters for each workflow step, and evaluate whether they are appropriate for the task and data.
+- Failure reasons: evaluations should report why a workflow failed, such as missing dependencies, incorrect tool choice, invalid inputs, runtime errors, missing outputs, wrong output format, or incorrect biological result.
+- Reproducibility across reruns: rerun workflows and check whether outputs remain stable.
+- Provenance capture: record prompts, generated code, commands, parameters, tool versions, package versions, database versions, and container tags.
+- Minimal success criteria: define the smallest acceptable output needed to count as partial success.
+- Difficulty levels: include simple, intermediate, and hard examples to test robustness across task complexity.
 
 ### Task-Specific Metrics
 
@@ -91,5 +98,6 @@
 ### Robustness, Cost, and Resource Use
 
 - Paper-derived metrics: completion status, equivalence score, computational time, and token consumption, enabling direct comparison of accuracy, robustness, and cost-efficiency across task categories and difficulty levels.
+- Token usage: record prompt tokens, completion tokens, total tokens, and estimated API cost per task.
 - Tool validity: score whether selected tools are maintained, appropriate for the task, correctly parameterized, containerized, and cited/versioned.
 - Resource metrics: measure runtime, memory, CPU use, disk use, and container/image size.

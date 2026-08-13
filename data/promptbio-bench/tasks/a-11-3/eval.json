@@ -1,0 +1,18 @@
+{
+    "id": "a-11-3",
+    "question": "Analyze PPI network to identify top 5 hub genes using degree centrality.",
+    "ref_answer": [
+        "ref_answer/hub_gene.csv"
+    ],
+    "ref_script": [
+        "ref_script/find_hub_gene.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "hub_gene.csv",
+                "guidelines": "The 5 hub gene records must match the reference in identity and degree. The last gene can be either PTEN or EGFR, as they have the same Degree value."
+            }
+        ]
+    }
+}

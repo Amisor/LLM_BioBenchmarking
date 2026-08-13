@@ -1,0 +1,18 @@
+{
+    "id": "b-6-9",
+    "question": "Apply 2D MDS (random_state=42) to a z-score standardized gene expression dataset with known experimental groups. Calculate the ratio of between-group to within-group Euclidean distances in the 2D embedding, and the stress value defined as sqrt(sum((d_orig - d_mds)^2) / sum(d_orig^2)) where d_orig are pairwise Euclidean distances in the standardized high-dimensional space and d_mds are pairwise distances in the 2D embedding.",
+    "ref_answer": [
+        "ref_answer/mds_results.txt"
+    ],
+    "ref_script": [
+        "ref_script/mds.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "mds_results.txt",
+                "guidelines": "Use semantic comparison. Verify that the output contains the Stress and Between_Within_Ratio values and that they are semantically equivalent to the reference; values should agree within approximately 5%; label names and whitespace differences are acceptable."
+            }
+        ]
+    }
+}

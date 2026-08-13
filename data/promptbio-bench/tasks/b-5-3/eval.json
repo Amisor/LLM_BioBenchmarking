@@ -1,0 +1,18 @@
+{
+    "id": "b-5-3",
+    "question": "Apply DBSCAN clustering to the dataset with eps=0.5 and min_samples=5. For each data point, report its cluster label and whether it is a core, border, or noise point.",
+    "ref_answer": [
+        "ref_answer/dbscan_cluster_report.csv"
+    ],
+    "ref_script": [
+        "ref_script/dbscan_clustering.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "dbscan_cluster_report.csv",
+                "guidelines": "Each point's cluster label and point type (Core, Border, or Noise) must match the reference; row order, column order, and header labels may differ."
+            }
+        ]
+    }
+}

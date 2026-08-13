@@ -1,0 +1,18 @@
+{
+    "id": "b-3-8",
+    "question": "Create a volcano plot showing log2 fold change (x-axis) vs. -log10(p-value) (y-axis) for gene expression data. Highlight genes with |log2FC| > 1 and adjusted p-value < 0.05 in red. Annotate the top 5 most significant genes.",
+    "ref_answer": [
+        "ref_answer/volcano_plot.png"
+    ],
+    "ref_script": [
+        "ref_script/volcano_plot.py"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "volcano_plot.png",
+                "guidelines": "Volcano plot must show significantly differentially expressed genes (|log2FC| > 1, adj p < 0.05) highlighted in a distinct color and the 5 most significant genes annotated by name; axis labels, color scheme, and annotation offsets may differ."
+            }
+        ]
+    }
+}

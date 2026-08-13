@@ -1,0 +1,18 @@
+{
+    "id": "a-5-3",
+    "question": "Infer differentiation trajectories from single-cell RNA-seq data and visualize the trajectory graph overlaid on a UMAP colored by cell cluster.",
+    "ref_answer": [
+        "ref_answer/trajectory.png"
+    ],
+    "ref_script": [
+        "ref_script/monocle.R"
+    ],
+    "scoring": {
+        "expected_output": [
+            {
+                "file": "trajectory.png",
+                "guidelines": "Plot must show a UMAP with cells colored by cluster and at least one trajectory path overlaid; exact trajectory topology, color palette, and point size may differ."
+            }
+        ]
+    }
+}

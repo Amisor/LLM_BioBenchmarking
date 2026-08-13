@@ -1,0 +1,25 @@
+{
+    "id": "b-5-6",
+    "question": "Compute the average silhouette score for K-means clustering (random_state=42, n_init=10) over the range k=2 to k=20. Visualize the scores in a line plot and determine the optimal number of clusters based on the maximum average silhouette score.",
+    "input_files": [
+        "data/bio_dataset.csv"
+    ],
+    "expected_output": [
+        {
+            "file": "kmeans_silhouette_scores.csv",
+            "type": "csv",
+            "description": "rows as k values (2-20), columns should include k, silhouette_score"
+        },
+        {
+            "file": "kmeans_silhouette_scores.png",
+            "type": "png",
+            "description": "k (2-20) as x-axis, average silhouette score as y-axis, optimal k marked"
+        },
+        {
+            "file": "optimal_k.txt",
+            "type": "txt",
+            "description": "single integer: optimal number of clusters"
+        }
+    ],
+    "timeout_seconds": 3600
+}
