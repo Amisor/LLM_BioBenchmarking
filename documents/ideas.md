@@ -144,3 +144,27 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 - Token usage: record prompt tokens, completion tokens, total tokens, and estimated API cost per task.
 - Tool validity: score whether selected tools are maintained, appropriate for the task, correctly parameterized, containerized, and cited/versioned.
 - Resource metrics: measure runtime, memory, CPU use, disk use, and container/image size.
+
+## LLM-Judge Calibration (Brainstorm)
+
+Neither reviewed paper validated its judge: Guo_2026/promptbio-bench's LLM judge has zero tests and no human-agreement study anywhere in the repo; Alam_2026 has no judge at all, scoring is manual expert read-through only. This is real, unclaimed territory our benchmark can contribute.
+
+### Candidate protocol
+- Build a small human-labeled gold set (e.g. 20-40 candidate/reference output pairs) with 2+ human raters per item, drawn from output types that need a judge in the first place (free-text summaries, images/figures, phylogenetic tree descriptions, QC reports).
+- Score the LLM judge against those same items; compute agreement with weighted Cohen's Kappa or ICC (intraclass correlation), not raw percent agreement, which overstates agreement on skewed score distributions.
+- Report human-human inter-rater reliability alongside human-LLM reliability. A judge only counts as "validated" if it lands within the human-human agreement band, not merely "better than chance" or "better than no judge."
+
+### Judge design variants worth testing
+- Single-pass judge (current promptbio-bench design): one call returning score + confidence + categorical verdict + rationale.
+- Ensemble/self-consistency judge: N independent judge calls (different seeds/models), majority vote or averaged score; measure reliability gain vs. added token/runtime cost against single-pass.
+- Rubric-conditioned judge: an explicit per-task-type scoring rubric instead of open-ended "assess equivalence" prose; test whether a structured rubric reduces judge variance.
+- Reference-anchored vs. reference-free judge: does showing the judge the human reference answer bias it toward superficial similarity over genuine correctness?
+
+### Task types best suited to this study
+- Free-text QC/analysis summaries, especially numeric-value-sensitive judging (Guo_2026's own stated judge focus).
+- Images/figures, scoring scientific content equivalence rather than pixel similarity.
+- Structured-but-fuzzy outputs with no existing exact/approximate metric, e.g. phylogenetic tree topology descriptions or taxonomic-classification narratives.
+
+### Reporting
+- Publish the calibration study itself (methodology + numbers) as a benchmark artifact, not just the resulting judge scores; that is the actual differentiator from Guo_2026's zero-test, zero-calibration judge.
+- Document judge failure modes found during calibration, e.g. overconfidence, sycophancy toward longer/more verbose answers, sensitivity to formatting or ordering.
