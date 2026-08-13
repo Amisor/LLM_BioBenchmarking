@@ -5,6 +5,10 @@
 - TouchStone
 - BeyondBenchmarking
 
+### Example Directory Structure (GDrive)
+
+https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sharing
+
 ## Summaries
 
 ### Guo_2026
@@ -101,3 +105,4 @@
 - Token usage: record prompt tokens, completion tokens, total tokens, and estimated API cost per task.
 - Tool validity: score whether selected tools are maintained, appropriate for the task, correctly parameterized, containerized, and cited/versioned.
 - Resource metrics: measure runtime, memory, CPU use, disk use, and container/image size.
+
