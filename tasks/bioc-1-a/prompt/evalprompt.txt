@@ -1,0 +1,6 @@
+Can you take a look at @tasks/bioc-1-a/task.json task file and also use the data
+at @tasks/bioc-1-a/data/gse.rds to produce a response within a folder name with
+the template "tasks/bioc-1-a/answer/{model_name_here}"? Make sure to only access
+these files and create the indicated folder. Do not use any code / history from
+previous conversations. Replace "{model_name_here}" with the model that is
+currently being used. Double check that the model name is the one used.
