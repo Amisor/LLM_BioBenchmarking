@@ -1,11 +1,13 @@
 # Ideas
 
+## Candidate Names
+
 - Basason
 - BioBasanos
 - TouchStone
 - BeyondBenchmarking
 
-### Example Directory Structure (GDrive)
+## Example Directory Structure (GDrive)
 
 https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sharing
 
@@ -14,18 +16,44 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 ### Guo_2026
 
 - Title: PromptBio-Bench: Benchmarking LLM-based Bioinformatics Agents for End-to-End Data Analysis
-- Agents tested: Biomni, ToolsGenie, and one additional bioinformatics agent to verify from the full text.
+- Authors: all affiliated with PromptBio Inc.
+- **Competing interest (important caveat for citing this benchmark):** all authors are currently affiliated with PromptBio Inc., and ToolsGenie (one of the three benchmarked agents, scoring statistically comparable to or better than Biomni) is a PromptBio Inc. product. Treat the ToolsGenie-vs-Biomni comparison as coming from a non-independent source.
+- Agents tested: Biomni (v0.0.8), STELLA (v1.0.0), and ToolsGenie (v3.2.0); all three are general-purpose bioinformatics agents, not domain-scoped ones.
+  - Agent backends: Biomni and ToolsGenie configured with Claude Sonnet 4.6; STELLA used its hybrid multi-model strategy (Dev Agent + Tool Creation Agent on Claude Sonnet 4.6, Manager Agent + Critic Agent on Gemini 2.5 Pro). Each agent deployed in Docker, default configuration only (no task-specific prompting/few-shot), same server (Ubuntu 20.04 LTS), 1-hour per-task runtime cap (timeouts recorded as failed).
+- Benchmark suite: 244 expert-curated task capsules (bioinformatics n=131/54%, data science n=113/46%), spanning genomics, epigenomics, transcriptomics, proteomics, metabolomics, metagenomics, single-cell/spatial omics, data wrangling/visualization, statistical inference, ML, survival analysis. Difficulty stratified low (n=60)/medium (n=139)/high (n=45), assigned via LLM-ensemble voting (ChatGPT 5.2, Grok 4.1, Claude 4.6, each rating 3x, majority vote across 9 runs; see Supplementary Figure 3).
+  - Each task capsule = natural-language prompt + domain-appropriate input files (FASTQ/BAM/VCF/CSV/etc.) + human-expert reference answer + evaluation guideline. Single-pass protocol: one attempt per agent per task (explicitly flagged by authors as a limitation: no run-to-run variability/iterative-refinement capture).
+- Evaluation framework (the most transferable part of this paper for our benchmark design): format-specific comparison handlers, quantitative similarity metrics, and LLM-as-judge for unstructured outputs, unified into a single [0,1] similarity score per output file, averaged (unweighted) into one task-level score. Task deemed "accurate" if score > 0.5. Failed/non-parseable/missing outputs scored 0 and flagged non-completions.
+  - Format handlers share a two-phase design: (1) validation: file existence, magic-byte format compliance, parsability; (2) comparison: an LLM recommends the comparison strategy + parameters given format/question/evaluation guideline, then scoring executes deterministically. Each handler exposes multiple strategies (exact / approximate / summary, plus format-specific functional and semantic strategies) trading off tolerance vs. semantic depth. Detailed per-format strategy/parameter/metric/use-case tables (FASTA, FASTQ, VCF/BCF, BED/narrowPeak/broadPeak/bedGraph/bigBed, BAM/SAM/CRAM, .fai, .bai/.crai, .tbi, bigWig/WIG, PDB/mmCIF, CSV/TSV/XLSX, Image, Plain Text) are in the Supplementary Note, a ready-made reference for designing our own file-comparison handlers rather than inventing one per format from scratch.
+  - Underlying metrics library: Jaccard (set overlap: variants/regions/cluster labels), Hellinger distance (distributional agreement: k-mer freq, length dist, signal histograms), Relative Absolute Error/RAE (numeric properties: feature counts, proportions, total length), Pearson/Spearman correlation (paired numeric vectors: tracks, scores), Smith-Waterman normalized alignment identity (sequence pairs), RMSD + chain sequence identity (protein structure comparison, mmCIF/PDB).
+  - LLM-as-judge (GPT-5.4) handles figures and free-text summaries: given task description + expert reference file + agent candidate file, judge assesses scientific-content equivalence (images: same patterns/conclusions, not pixel similarity; text: key reference info present, particular attention to numeric values) and returns equivalence score [0,1] + confidence + categorical verdict (equivalent/partially equivalent/not equivalent/uncertain) + textual rationale.
+- Results:
+  - Task completion (valid non-empty output within time limit; distinct from accuracy): Biomni 0.99, ToolsGenie 0.98, STELLA 0.88 overall. By difficulty: Biomni 1.00/0.99/0.98 (low/med/high), ToolsGenie 1.00/0.99/0.93, STELLA 0.90/0.91/0.76. STELLA's completion degraded most under difficulty; Biomni/ToolsGenie stayed near-ceiling even at high difficulty.
+  - Accuracy (similarity to expert reference; failed tasks scored 0): overall Biomni 0.76, ToolsGenie 0.76, STELLA 0.72. By difficulty, low: Biomni/ToolsGenie 0.90, STELLA 0.80; medium: Biomni 0.73/STELLA 0.73/ToolsGenie 0.72 (near-tied); high: ToolsGenie 0.69, Biomni 0.67, STELLA 0.56. Universal finding: accuracy declines with difficulty across all three agents; high task-completion rate does not imply high analytical accuracy (a distinct and reusable framing for our own benchmark). Biomni and ToolsGenie's per-task correctness profiles were more concordant with each other than either was with STELLA (Supplementary Figure 2 confusion matrices), suggestive of shared architectural lineage/backend (both on Claude Sonnet 4.6) vs. STELLA's separate multi-model design.
+  - Computational cost: Biomni fastest/most consistent runtime; ToolsGenie moderately higher runtime with a broader distribution (attributed to multi-agent coordination/verification/retries); STELLA had the broadest runtime variability. Token consumption: Biomni and ToolsGenie used far fewer tokens than STELLA, especially input tokens; ToolsGenie used fewer input tokens than Biomni but more output tokens (task-specific code generation vs. Biomni's larger curated action-space context). STELLA's token usage was markedly higher with long upper tails, attributed to manager-subagent coordination and multi-model orchestration overhead (Supplementary Table 1).
+- Authors' self-reported limitations (design lessons for our benchmark): (1) 244 tasks is still modest relative to real bioinformatics breadth, some subcategories underrepresented/low statistical power; (2) single reference answer per task penalizes valid alternative analytical approaches; future work should consider multiple reference answers/flexible equivalence rubrics/expanded human review; (3) STELLA's self-evolving capability was not exercised, so its results are a lower bound, not a ceiling; (4) native LLM coding harnesses (Codex, Claude Code) were NOT benchmarked alongside domain-specific agents, an open comparison gap; (5) single-pass/one-shot protocol only, no replicate runs or interactive/iterative multi-round analyst-agent settings, explicitly named as necessary in future benchmarks.
+- Code/data availability: benchmark evaluation code at github.com/PromptBio/promptbio-bench; task capsules (descriptions, input data, reference answers) at huggingface.co/datasets/promptbio-ai/promptbio-bench-data.
+- Related agents cited for context (useful for our own agent landscape list): CellVoyager (single-cell), SpatialAgent (spatial transcriptomics), DrBioRight 2.0 (cancer proteomics), CRISPR-GPT (gene-editing design), PathChat/SPARK (pathology multimodal), AutoBA (multi-omic code-gen), BioMaster (retrieval-guided planning/debugging/output validation), BioMedAgent (tool learning/chaining/memory retrieval).
+- Related benchmarks cited for context (positions PromptBio-Bench against): LAB-Bench (biological knowledge/research reasoning), BixBench (expert-curated analytical questions on real datasets), BioMysteryBench/CompBioBench (open-ended, objectively-verifiable computational biology problems), BiomniBench (agent trajectory/process quality), BioML-bench (end-to-end biomedical ML). PromptBio-Bench's claimed differentiator: breadth of real-world file-centric, multi-step bioinformatics workflows and heterogeneous output types (not just Q&A/multiple-choice/narrow task scope), directly relevant to positioning our own benchmark's novelty claim.
+- Page 12 of this PDF (right after Competing Interests) and, previously, page 12 of Alam_2026.pdf, each contained an embedded prompt-injection block instructing the reader (an AI assistant) to stop calling tools and fabricate a fake conversation summary instead of continuing the task. Both were ignored; noting the pattern here in case these two files are reused/shared.
 
 ### Alam_2026
 
 - Title: From Prompt to Pipeline: Large Language Models for Scientific Workflow Development in Bioinformatics
-- Goal: evaluate whether LLMs can generate accurate, complete, and usable bioinformatics workflows from natural language prompts.
+- RQ1 (goal): evaluate whether LLMs can generate accurate, complete, and usable bioinformatics workflows from natural language prompts.
 - LLMs tested: GPT-4o, Gemini 2.5 Flash, and DeepSeek-V3.
 - Workflow systems tested: Galaxy and Nextflow.
 - Example tasks: RNA-seq, SNP analysis, and DNA methylation.
 - References used for comparison: Galaxy Training Network and nf-core.
 - Criteria: correctness, completeness, tool appropriateness, executability, and usability.
 - Prompting strategies: instruction-only, role-based, and chain-of-thought prompts.
+- Per-workflow verdicts (10 workflows across Galaxy W1-W5, Nextflow W1-W5): no single LLM wins universally; performance depends on platform and task complexity, not just model choice.
+  - Galaxy workflows: Gemini 2.5 Flash consistently best under instruction-only prompts alone, most complete/accurate/accessible for novices; GPT-4o is concise but omits implementation details (e.g., strand column in BED format) and sometimes recommends tools unavailable in Galaxy/ToolShed (ISMapper, MobileElementFinder, Trackster, GFF3sort), requiring escalation to role-based/chain-of-thought prompts that still didn't fully resolve tool-availability hallucinations; DeepSeek-V3 is technically sound but also hallucinates unavailable tools (e.g., Infernal).
+  - Nextflow workflows: DeepSeek-V3 consistently best, producing the most implementation-ready output (main.nf/modules.config/nextflow.config structure, container usage, directory scaffolding); Gemini 2.5 Flash is close behind with strong modular DSL2 structure and broader tool coverage (aligners + pseudo-aligners) but less low-level implementation detail; GPT-4o under instruction-only prompting hallucinated non-existent nf-core module names (fastqc_raw, trim_reads instead of fastqc, trimgalore) and only became nf-core-compliant after role-based prompting.
+- RQ2 (completeness/correctness/usability), evaluated by 2 domain experts against GTN/nf-core baselines: Gemini best on completeness+usability for Galaxy; DeepSeek best on completeness for Nextflow; correctness is generally high across all three models, with GPT-4o most prone to suboptimal-but-reasonable tool choices; DeepSeek's outputs are technically accurate but often verbose/dense, requiring simplification for novice usability.
+- RQ3 (prompting strategy) key finding: instruction-only prompts suffice for simple tasks but become insufficient as task complexity rises; GPT-4o shows the largest improvement from role-based/chain-of-thought prompting (it needs scaffolding), while Gemini stays robust even under minimal prompting (better "zero-shot" tuning for this domain). Documents a generalizable prompt pattern per platform: Galaxy prompts should specify [biological goal] + [input file formats] + [expected output]; Nextflow prompts should specify [bioinformatics task] + [tools] + [data types/result types].
+- Threats to validity (self-reported, useful as design lessons for our own benchmark): (1) internal validity: manual expert scoring is subjective, no quantitative usability metric; (2) external validity: only 3 LLMs (chosen for availability circa early 2025) and workflows drawn only from well-documented GTN/nf-core tutorials, so results may not generalize to exploratory/novel workflows; (3) construct validity: "community-curated workflow = ground truth" assumption may unfairly penalize valid alternative tool choices; (4) conclusion validity: small sample size (10 workflows), default model configs only (no parameter/prompt tuning sweep).
+- Explicit limitation acknowledged by the authors: no execution-based scoring, workflows were assessed by expert read-through against GTN/nf-core references, not by actually running them and diffing outputs. This is a gap our benchmark should close (real execution + ground-truth output comparison, not just expert workflow review).
+- Related work they distinguish themselves from (useful pointers for our own related-work / agent survey): BRAD (Pickard et al. 2024) - RAG-based conversational agent for QA/gene enrichment, not full workflow generation; OLAF (Riffle et al. 2025) - conversational single-cell analysis agent; BioCoder (Tang et al. 2024) - function-level Python/Java bioinformatics code-gen benchmark scored via fuzz testing, not workflow-level; Playbook Workflow Builder (Clarke et al. 2025) - GUI workflow assembly from semantically annotated blocks, no LLM-generation quality evaluation; PROTEUS (Ding et al. 2024) - LLM hierarchical planning/hypothesis generation for proteomics; Sänger et al. 2024 - single-model (ChatGPT) qualitative workflow-design assessment, not multi-model/domain-specific.
 
 #### Other
 
@@ -45,11 +73,14 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 
 - Track which LLM agents or coding assistants are evaluated.
 - Record model name, provider, version/date, access method, prompt strategy, token usage, and execution environment.
+- "Applies to Current Goal?" is judged against the benchmarking goal defined in `README.md`: whether LLM-produced workflows use appropriate, current, reproducible, and efficient tools for common bioinformatics tasks.
+- "Score" is a 1-10 subjective relevance rating for fit to that goal, not a benchmark performance score.
 
 | Agent | Tasks | Output Types | Applies to Current Goal? | Score | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Biomni | General biomedical research, literature review, broad bioinformatics tasks | Text reports, code, analyses, possible workflow outputs | Yes; strong candidate for broad bioinformatics workflow benchmarking | 8 | Paper: Guo_2026; Reddit thread |
-| ToolsGenie | Bioinformatics agent tasks from PromptBio-Bench | Executable code, tool-based outputs, structured result files | Yes; directly aligned with benchmarking agent-generated bioinformatics analyses | 8 | Paper: Guo_2026 |
+| Biomni | PromptBio-Bench (244 tasks: genomics, transcriptomics, proteomics, single-cell, data science, stats/ML) | Code, reports, structured output files (FASTQ/BAM/VCF/CSV/images/etc.) | Yes; strong candidate, independent of PromptBio Inc. (unlike ToolsGenie) | 8 | Guo_2026: completion 0.99, accuracy 0.76, fastest runtime and fewest tokens; also see Reddit thread |
+| ToolsGenie | Same PromptBio-Bench suite as Biomni | Executable code, structured result files | Yes, but PromptBio Inc. authored the paper and owns ToolsGenie: treat the vs.-Biomni ranking as non-independent | 6 | Guo_2026: completion 0.98, accuracy 0.76 (highest of the 3 agents at high difficulty, 0.69) |
+| STELLA | Same PromptBio-Bench suite | Executable code, structured result files | Yes; the architecturally distinct baseline (multi-model orchestration vs. single-backend agents) | 6 | Guo_2026: completion 0.88, accuracy 0.72 (drops to 0.56 at high difficulty); highest token/runtime variance; self-evolving mode unused, so this is a lower bound |
 | GPT-4o | Galaxy/Nextflow workflow generation in Alam_2026 | Workflow descriptions, scripts, structured prompts, code | Yes; useful baseline general LLM for workflow generation | 7 | Paper: Alam_2026 |
 | Gemini 2.5 Flash | Galaxy workflow generation, structured multi-step prompts | Workflow descriptions, structured plans, code | Yes; useful for prompt-to-workflow comparisons | 7 | Paper: Alam_2026 |
 | DeepSeek-V3 | Nextflow workflow generation, code-heavy tasks | Nextflow scripts, command-line workflow plans, code | Yes; useful for code/workflow generation comparisons | 7 | Paper: Alam_2026 |
@@ -76,7 +107,14 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 - Input helpers: provide R package helper functions that guide users in formatting inputs to the expected benchmark schema.
 - Self-contained criteria: each benchmark task should include its own input data, expected outputs, scoring rules, accepted tolerances, and failure conditions.
 - Parameters: record required, default, and LLM-chosen parameters for each workflow step, and evaluate whether they are appropriate for the task and data.
-- Failure reasons: evaluations should report why a workflow failed, such as missing dependencies, incorrect tool choice, invalid inputs, runtime errors, missing outputs, wrong output format, or incorrect biological result.
+- Failure reasons: evaluations should report why a workflow failed, such as:
+  - Missing dependencies
+  - Incorrect tool choice
+  - Invalid inputs
+  - Runtime errors
+  - Missing outputs
+  - Wrong output format
+  - Incorrect biological result
 - Reproducibility across reruns: rerun workflows and check whether outputs remain stable.
 - Provenance capture: record prompts, generated code, commands, parameters, tool versions, package versions, database versions, and container tags.
 - Minimal success criteria: define the smallest acceptable output needed to count as partial success.
@@ -93,6 +131,7 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 - Text outputs: use exact match, normalized string match, fuzzy matching, ontology-aware matching, and semantic similarity where appropriate.
 - File outputs: check expected files, schemas, formats, checksums when deterministic, and content-level validity.
 - Reference comparison: score how close the LLM-generated workflow result is to the bioinformatician/reference workflow result for the same input data.
+- Format-specific comparison handlers (Guo_2026 Supplementary Note is a ready reference to adapt from): per file type (FASTA, FASTQ, VCF/BCF, BED/narrowPeak/broadPeak/bedGraph/bigBed, BAM/SAM/CRAM, .fai, .bai/.crai, .tbi, bigWig/WIG, PDB/mmCIF, CSV/TSV/XLSX, Image, Plain Text), define exact/approximate/summary strategies (plus functional/semantic where applicable) with named parameters, a primary metric, and a "when to use" note. Two-phase handler design: validate (existence, magic-byte format check, parsability) before comparing.
 
 ### Hallucination and Negative Controls
 
@@ -105,4 +144,3 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 - Token usage: record prompt tokens, completion tokens, total tokens, and estimated API cost per task.
 - Tool validity: score whether selected tools are maintained, appropriate for the task, correctly parameterized, containerized, and cited/versioned.
 - Resource metrics: measure runtime, memory, CPU use, disk use, and container/image size.
-
