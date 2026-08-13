@@ -5,6 +5,38 @@
 - TouchStone
 - BeyondBenchmarking
 
+## Summaries
+
+### Guo_2026
+
+- Title: PromptBio-Bench: Benchmarking LLM-based Bioinformatics Agents for End-to-End Data Analysis
+- Agents tested: Biomni, ToolsGenie, and one additional bioinformatics agent to verify from the full text.
+
+### Alam_2026
+
+- Title: From Prompt to Pipeline: Large Language Models for Scientific Workflow Development in Bioinformatics
+- Goal: evaluate whether LLMs can generate accurate, complete, and usable bioinformatics workflows from natural language prompts.
+- LLMs tested: GPT-4o, Gemini 2.5 Flash, and DeepSeek-V3.
+- Workflow systems tested: Galaxy and Nextflow.
+- Example tasks: RNA-seq, SNP analysis, and DNA methylation.
+- References used for comparison: Galaxy Training Network and nf-core.
+- Criteria: correctness, completeness, tool appropriateness, executability, and usability.
+- Prompting strategies: instruction-only, role-based, and chain-of-thought prompts.
+
+#### Other
+
+##### Reddit Thread: Tested 5 AI Scientist Platforms
+
+- Source type: community/user-reported experience, not a formal benchmark.
+- Title: Tested 5 AI scientist platforms for biotech research - here's what I found
+- Platforms discussed: Biomni, Future House/Edison Scientific, Faraday by AscentBio, Potato AI, and Science Machine.
+- Reported takeaways: Biomni was described as useful for general biomedical research and literature review, but weaker for molecule-specific medicinal chemistry tasks.
+- Future House/Edison Scientific was described as having strong branding, but the user found the accessible experience less impressive and noted friction when prompts crossed task categories.
+- Potato AI was described as potentially useful for protocol generation, but less agentic due to form-heavy interaction.
+- Faraday by AscentBio was described as the strongest fit for biotech users, with useful outputs for target insight, molecule evaluation, molecule design, and clinical data analysis.
+- Science Machine was described as strong for data analysis, especially clinical and genomics data, but less suited to molecule-focused work.
+- Relevance: suggests candidate agents should be evaluated by task type, because literature review, data analysis, molecule design, and end-to-end bioinformatics workflows may require different capabilities.
+
 ## Workflow Standards
 
 - Use maintained Bioconductor packages and workflows as references where possible.
@@ -12,6 +44,12 @@
 - Use existing Docker/Bioconductor container images instead of building custom images from scratch when possible.
 - Pin package versions, container tags, input data versions, and workflow parameters.
 - Treat runtime and memory as core benchmark outputs, not secondary notes.
+
+## LLM Agents
+
+- Track which LLM agents or coding assistants are evaluated.
+- Record model name, provider, version/date, access method, prompt strategy, token usage, and execution environment.
+- Candidate agents:
 
 ## Metrics
 
