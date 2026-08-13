@@ -1,0 +1,7 @@
+Drug,Correlation,Type
+Afatinib,0.8576702519748083,Positive
+Gefitinib,0.8571711394605072,Positive
+Erlotinib,0.840247210017711,Positive
+Cetuximab,-0.8880778223892952,Negative
+Osimertinib,-0.883228244009968,Negative
+Lapatinib,-0.8299672624480038,Negative

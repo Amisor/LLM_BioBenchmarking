@@ -1,0 +1,23 @@
+Hierarchical Bayesian Model Summary
+======================================================================
+
+Model Structure:
+  Fixed effects: 5 time points
+  Random effects: 30 patient-level intercepts
+  Observations: 150
+
+Posterior Summary:
+                  mean     sd  hdi_3%  hdi_97%  mcse_mean  mcse_sd  ess_bulk  ess_tail  r_hat
+intercept        4.731  0.286   4.214    5.281      0.010    0.005     831.0    1802.0    1.0
+time_effects[0]  0.000  0.000   0.000    0.000      0.000      NaN    8000.0    8000.0    NaN
+time_effects[1]  0.672  0.209   0.273    1.049      0.002    0.002    9886.0    6328.0    1.0
+time_effects[2]  1.162  0.207   0.772    1.547      0.002    0.002   10850.0    6628.0    1.0
+time_effects[3]  1.801  0.207   1.407    2.187      0.002    0.002   11364.0    6558.0    1.0
+time_effects[4]  2.233  0.209   1.828    2.611      0.002    0.002   11353.0    7065.0    1.0
+sigma_patient    1.271  0.186   0.944    1.626      0.003    0.003    4936.0    4750.0    1.0
+sigma_error      0.808  0.053   0.712    0.910      0.001    0.001    4279.0    5389.0    1.0
+
+Random Effects Variance (sigma_patient^2) Posterior:
+  Mean: 1.6510
+  Median: 1.5631
+  95% Credible Interval: [0.9163, 2.8644]

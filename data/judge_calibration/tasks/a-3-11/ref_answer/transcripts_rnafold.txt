@@ -1,0 +1,9 @@
+>Transcript1
+AUGGCUACGUAUGCUAGCUAGCUAGCUGAUGCUGAUGCUAGCUGAUGCUGA
+........((((..((((((((((((....))))..))))))))))))... (-17.30)
+>Transcript2
+GGGAAAUCCCGGGAUAAAUCCCGGGAAAUCCCGGAUAAAUCCCGGGAU
+.....((((((((((..((((.(((....)))))))..)))))))))) (-27.50)
+>Transcript3
+AUGCUAGCUAGCUAGCUAGCUAGCUAGCUGAUGCUAGCUAGCUAGCU
+..(((((((((((((((((((....)))))..)))))))))))))). (-31.30)
