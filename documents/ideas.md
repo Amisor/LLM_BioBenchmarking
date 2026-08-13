@@ -49,7 +49,18 @@
 
 - Track which LLM agents or coding assistants are evaluated.
 - Record model name, provider, version/date, access method, prompt strategy, token usage, and execution environment.
-- Candidate agents:
+
+| Agent | Tasks | Output Types | Applies to Current Goal? | Score | Notes |
+| --- | --- | --- | --- | --- | --- |
+| Biomni | General biomedical research, literature review, broad bioinformatics tasks | Text reports, code, analyses, possible workflow outputs | Yes; strong candidate for broad bioinformatics workflow benchmarking | 8 | Paper: Guo_2026; Reddit thread |
+| ToolsGenie | Bioinformatics agent tasks from PromptBio-Bench | Executable code, tool-based outputs, structured result files | Yes; directly aligned with benchmarking agent-generated bioinformatics analyses | 8 | Paper: Guo_2026 |
+| GPT-4o | Galaxy/Nextflow workflow generation in Alam_2026 | Workflow descriptions, scripts, structured prompts, code | Yes; useful baseline general LLM for workflow generation | 7 | Paper: Alam_2026 |
+| Gemini 2.5 Flash | Galaxy workflow generation, structured multi-step prompts | Workflow descriptions, structured plans, code | Yes; useful for prompt-to-workflow comparisons | 7 | Paper: Alam_2026 |
+| DeepSeek-V3 | Nextflow workflow generation, code-heavy tasks | Nextflow scripts, command-line workflow plans, code | Yes; useful for code/workflow generation comparisons | 7 | Paper: Alam_2026 |
+| Faraday by AscentBio | Target insight, molecule evaluation, molecule design, clinical data analysis | Scientific reports, figures, analysis outputs | Partial; more drug-discovery focused than Bioconductor workflow benchmarking | 6 | Reddit thread |
+| Science Machine | Data analysis, clinical data, genomics data | Analysis reports, data outputs, notifications | Partial; relevant for genomics/data-analysis tasks, less clear for workflow reproducibility | 6 | Reddit thread |
+| Future House/Edison Scientific | Literature research, analysis agents, possible molecule agent workflows | Research summaries, agent outputs, possibly analysis files | Partial; interesting for comparison, but accessible workflow execution may be limited | 5 | Reddit thread |
+| Potato AI | Protocol generation and biotech workflow forms | Protocols, form-driven outputs | Low; less aligned with executable bioinformatics workflow benchmarking | 4 | Reddit thread |
 
 ## Metrics
 
