@@ -20,3 +20,56 @@ The goal is to evaluate whether LLM-produced workflows use appropriate, current,
 - Phylogenetic placement
 
 Each task should define reference inputs, expected outputs, container requirements, evaluation metrics, and resource-use measurements.
+
+## Setup
+
+### Biomni agent
+
+Tested against `biomni` 0.0.8 (the version benchmarked in Guo_2026 / PromptBio-Bench).
+
+1. From the repo root, create an isolated virtual environment. Do not install into system/Homebrew
+   Python directly, macOS's Homebrew Python refuses global installs (PEP 668,
+   "externally-managed-environment"), and a shared venv keeps everyone's dependency versions aligned.
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate      # Windows: .venv\Scripts\activate
+   ```
+
+2. Install `biomni`. This pulls in its full dependency chain automatically (`pandas`, `langchain`,
+   `langchain-core`, `langgraph`, etc.), no manual dependency installs needed.
+
+   ```bash
+   pip install --upgrade pip
+   pip install biomni
+   ```
+
+3. Verify the install:
+
+   ```bash
+   python3 -c "from biomni.agent import A1; print('biomni import OK')"
+   ```
+
+**Before running anything further, read both notes below**, they change what actually happens when
+you construct an agent.
+
+- **First-run data lake download.** Calling `A1()` with no arguments triggers a full download of
+  Biomni's data lake and benchmark files from S3. This is large and, because Python buffers stdout
+  when piped, silent for several minutes, it can look hung when it isn't. For a quick install check
+  or any run that doesn't need the data lake, skip it explicitly:
+
+  ```bash
+  python3 -c "
+  from biomni.agent import A1
+  agent = A1(expected_data_lake_files=[])
+  print('A1 initialized OK')
+  "
+  ```
+
+- **An LLM backend credential is required to actually run a query.** `A1()` defaults to
+  `claude-sonnet-4-5`, which needs a standalone `ANTHROPIC_API_KEY` (a Claude Code login does not
+  provide one to other tools). Supported alternatives, set via the `source`/`llm` constructor
+  arguments, include `OpenAI`, `AzureOpenAI`, `Gemini`, `Bedrock`, `Groq`, `Ollama` (local, no API
+  key), and `Custom`. Confirm your credential has available quota before assuming a run failure is a
+  code bug, an exhausted key fails with `openai.RateLimitError: insufficient_quota` (or the
+  equivalent for other providers), not an install or syntax error.
