@@ -34,4 +34,13 @@ rownames(sampleDistMatrix) <- paste(vsd$dex, vsd$cell, sep = " - ")
 colnames(sampleDistMatrix) <- NULL
 
 ## Save sample distance matrix as CSV
-readr::write_csv(as.data.frame(sampleDistMatrix), "tasks/bioc-1-a/data/sample_dist_matrix.csv")
+sdm <- as.data.frame(sampleDistMatrix)
+colnames(sdm) <- paste0("V", seq_len(ncol(sdm)) + 1)
+readr::write_csv(
+    tibble::tibble(
+        V1 = rownames(sampleDistMatrix),
+        sdm
+    ),
+    "tasks/bioc-1-a/ref_answer/sample_dist_matrix.csv"
+)
+
