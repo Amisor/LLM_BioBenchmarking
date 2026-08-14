@@ -380,3 +380,68 @@ add_data <- function(
     writer(data_object, dest_path)
     invisible(dest_path)
 }
+
+#' Copy prompt templates into a benchmark test's prompt folder
+#'
+#' Copies the prompt template files bundled with the package (under
+#' `inst/extdata/prompt`) into the `prompt` subfolder of a benchmark test.
+#' Two versions of each prompt are shipped with the package: the original
+#' version (e.g. `evalprompt.txt`) and a second version suffixed with
+#' `"_v2"` (e.g. `evalprompt_v2.txt`). Use `version` to select which set of
+#' prompts to copy.
+#'
+#' @param test_id `character(1)` identifier for the test. The corresponding
+#'   test directory (created by [bench_folders()]) must already exist.
+#' @param output_dir `character(1)` path to the parent directory containing
+#'   the test folder. Defaults to the current working directory.
+#' @param version `character(1)` which version of the prompts to copy.
+#'   Either `""` for the original prompts, or `"_v2"` for the second
+#'   version. Defaults to `""`.
+#' @param overwrite `logical(1)` whether to overwrite existing files in the
+#'   destination `prompt` folder. Defaults to `TRUE`.
+#'
+#' @return `character()` the destination file paths that were written,
+#'   returned invisibly.
+#'
+#' @examples
+#' \dontrun{
+#' bench_folders("bioc-1-a", output_dir = tempdir())
+#' add_prompts("bioc-1-a", output_dir = tempdir(), version = "_v2")
+#' }
+#'
+#' @export
+add_prompts <- function(
+    test_id, output_dir = getwd(), version = c("", "_v2"), overwrite = TRUE
+) {
+    version <- match.arg(version)
+
+    test_dir <- file.path(output_dir, test_id)
+    if (!dir.exists(test_dir))
+        stop("Test directory does not exist. Run bench_folders() first.")
+
+    prompt_dir <- file.path(test_dir, "prompt")
+    if (!dir.exists(prompt_dir))
+        stop("'prompt' directory does not exist. Run bench_folders() first.")
+
+    source_dir <- system.file("extdata", "prompt", package = "llmbiobench")
+    if (source_dir == "")
+        stop("Could not find 'inst/extdata/prompt' in the package.")
+
+    all_files <- list.files(source_dir)
+
+    prompt_files <- if (version == "") {
+        all_files[!grepl("_v2\\.[^.]+$", all_files)]
+    } else {
+        all_files[grepl("_v2\\.[^.]+$", all_files)]
+    }
+
+    if (length(prompt_files) == 0)
+        stop("No prompt files found for version '", version, "'.")
+
+    src_paths <- file.path(source_dir, prompt_files)
+    dest_paths <- file.path(prompt_dir, prompt_files)
+
+    file.copy(src_paths, dest_paths, overwrite = overwrite)
+
+    invisible(dest_paths)
+}
