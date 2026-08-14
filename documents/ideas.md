@@ -55,6 +55,21 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 - Explicit limitation acknowledged by the authors: no execution-based scoring, workflows were assessed by expert read-through against GTN/nf-core references, not by actually running them and diffing outputs. This is a gap our benchmark should close (real execution + ground-truth output comparison, not just expert workflow review).
 - Related work they distinguish themselves from (useful pointers for our own related-work / agent survey): BRAD (Pickard et al. 2024) - RAG-based conversational agent for QA/gene enrichment, not full workflow generation; OLAF (Riffle et al. 2025) - conversational single-cell analysis agent; BioCoder (Tang et al. 2024) - function-level Python/Java bioinformatics code-gen benchmark scored via fuzz testing, not workflow-level; Playbook Workflow Builder (Clarke et al. 2025) - GUI workflow assembly from semantically annotated blocks, no LLM-generation quality evaluation; PROTEUS (Ding et al. 2024) - LLM hierarchical planning/hypothesis generation for proteomics; Sänger et al. 2024 - single-model (ChatGPT) qualitative workflow-design assessment, not multi-model/domain-specific.
 
+### Rezaei_2025
+
+- Title: Online Rubrics Elicitation from Pairwise Comparisons.
+- Authors: MohammadHossein Rezaei, Robert Vacareanu, Zihao Wang, Clinton Wang, Bing Liu, Yunzhong He, and Afra Feyza Akyurek.
+- Core idea: static rubrics are useful for evaluating open-ended LLM outputs but become incomplete as model behavior changes. The paper proposes OnlineRubrics, a method that dynamically adds new rubric criteria during training by comparing pairs of responses from a current policy and a control/reference policy.
+- Method: an LLM-based rubric extractor receives a prompt, two responses, and existing rubrics; it identifies meaningful response differences not already covered by the rubric and converts them into new weighted criteria. The paper emphasizes that elicited criteria must be grounded in the compared responses, not invented from outside knowledge.
+- Rubric structure: rubrics are composed of weighted, binary-checkable criteria. Each criterion receives a binary grade from an LLM grader, and the final reward/score is computed from weighted criterion satisfaction.
+- Rubric quality principles: the paper's rubric datasets use human-written criteria designed to be mutually exclusive and collectively exhaustive, atomic, objective, and self-contained. The appendix prompt additionally emphasizes binary yes/no criteria, sufficient detail for an uninformed grader, and splitting compound criteria into separate items to avoid all-or-nothing grading.
+- Datasets: two rubric datasets are used: Generalist Rubrics and Expert Rubrics. Generalist has 1,500 train samples with 15,528 rubrics and 487 eval samples with 5,003 rubrics. Expert has 1,864 train samples with 33,554 rubrics and 332 eval samples with 5,938 rubrics across math, biology, physics, and chemistry.
+- Verifier selection: the authors collected human evaluations of rubric-level scores and compared LLM graders. They chose GPT-4.1-mini as the default grader because it balanced agreement with human grades and inference cost. This is directly relevant to our LLM-judge calibration plan: judge model choice should be empirically checked, not assumed.
+- Results: training with rubric rewards outperformed a simple Likert-scale LLM-judge reward. Human-written offline rubrics generally outperformed synthetic rubrics. Adding OnlineRubrics to human-written rubrics further improved performance across expert and generalist evaluations, with reported gains up to 8 percentage points over training only with human-written rubrics.
+- Qualitative findings: elicited criteria often added evidence grounding, reproducibility, anti-gaming checks, practicality, real-world feasibility, structural organization, causal reasoning, and uncertainty handling. These categories map well to our desired workflow/code evaluation dimensions.
+- Relevance to our benchmark: supports moving beyond one global judge prompt and toward task-specific rubrics with explicit weighted criteria. Also motivates iterative rubric refinement: after comparing multiple agent outputs, we can add criteria that capture recurring failure modes, such as hardcoded paths, forbidden reference-file access, missing output files, inappropriate packages, non-reproducible commands, or excessive computation.
+- Caution for our use: OnlineRubrics is a training-time method for reward optimization, not directly an execution benchmark. We should adapt the rubric design principles and pairwise-output comparison idea, not assume their RL pipeline is needed for our first benchmark.
+
 #### Other
 
 ##### Reddit Thread: Tested 5 AI Scientist Platforms
@@ -132,6 +147,14 @@ https://drive.google.com/drive/folders/17JyyiBB73sazU758-RVTsJYBaYIMhCmU?usp=sha
 - File outputs: check expected files, schemas, formats, checksums when deterministic, and content-level validity.
 - Reference comparison: score how close the LLM-generated workflow result is to the bioinformatician/reference workflow result for the same input data.
 - Format-specific comparison handlers (Guo_2026 Supplementary Note is a ready reference to adapt from): per file type (FASTA, FASTQ, VCF/BCF, BED/narrowPeak/broadPeak/bedGraph/bigBed, BAM/SAM/CRAM, .fai, .bai/.crai, .tbi, bigWig/WIG, PDB/mmCIF, CSV/TSV/XLSX, Image, Plain Text), define exact/approximate/summary strategies (plus functional/semantic where applicable) with named parameters, a primary metric, and a "when to use" note. Two-phase handler design: validate (existence, magic-byte format check, parsability) before comparing.
+
+### Judge Evaluation
+
+- Current first-pass judge can compare agent outputs to the gold-standard reference answer, but a future upgraded judge should also inspect the submitted code/workflow used to produce the answer.
+- Code/workflow evaluation should check whether the agent used unnecessary steps, inappropriate tools, prohibited files, hardcoded absolute paths, unreproducible assumptions, excessive computation, deprecated packages, or avoidable side effects.
+- Add an independent grading rubric for each task that is not merely a comparison to the gold-standard output or the reference solution code. This rubric should use criteria that can be evaluated directly from the task statement, allowed inputs, generated code, and generated outputs.
+- Each rubric is composed of criteria. Each criterion should be clearly written, consistently phrased, atomic, self-contained, comprehensive, and reasonable.
+- Each criterion should have a weight, a pass/fail grade, and a numeric score.
 
 ### Hallucination and Negative Controls
 
