@@ -1,0 +1,15 @@
+{
+  "id": "a-1-7",
+  "question": "I want to convert my multi-line fasta file to single-line sequence format.",
+  "input_files": [
+    "data/multi_line.fa"
+  ],
+  "expected_output": [
+    {
+      "file": "single_line.fa",
+      "type": "fasta",
+      "description": ""
+    }
+  ],
+  "timeout_seconds": 3600
+}

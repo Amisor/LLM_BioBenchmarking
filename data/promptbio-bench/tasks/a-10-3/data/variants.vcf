@@ -1,0 +1,11 @@
+##fileformat=VCFv4.2
+##INFO=<ID=CONSEQUENCE,Number=.,Type=String,Description="Consequence term">
+##INFO=<ID=GENE,Number=.,Type=String,Description="Gene symbol">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Allele frequency">
+##INFO=<ID=CLINVAR,Number=.,Type=String,Description="ClinVar significance">
+##INFO=<ID=SIFT,Number=.,Type=String,Description="SIFT prediction">
+##INFO=<ID=POLYPHEN,Number=.,Type=String,Description="PolyPhen prediction">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chr17	43044295	rsTest1	A	G	.	PASS	CONSEQUENCE=stop_gained;GENE=BRCA1;AF=0;CLINVAR=Pathogenic;SIFT=NA;POLYPHEN=NA
+chr1	123456	rsTest2	G	A	.	PASS	CONSEQUENCE=synonymous_variant;GENE=GENE1;AF=0.05;CLINVAR=Benign;SIFT=tolerated;POLYPHEN=benign
+chr2	765432	rsTest3	C	T	.	PASS	CONSEQUENCE=missense_variant;GENE=GENE2;AF=0.00001;CLINVAR=;SIFT=deleterious;POLYPHEN=probably_damaging

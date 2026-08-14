@@ -1,0 +1,18 @@
+{
+  "id": "a-1-7",
+  "question": "I want to convert my multi-line fasta file to single-line sequence format.",
+  "ref_answer": [
+    "ref_answer/single_line.fa"
+  ],
+  "ref_script": [
+    "ref_script/linearize_fasta.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "single_line.fa",
+        "guidelines": "All sequence records must be present with each sequence on a single unbroken line; original headers must be preserved and case may differ."
+      }
+    ]
+  }
+}

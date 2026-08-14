@@ -4,14 +4,21 @@ export(add_data)
 export(add_prompts)
 export(bench_eval)
 export(bench_folders)
+export(bench_judge)
+export(bench_judge_tools)
 export(bench_llm)
 export(bench_llm_tools)
 export(bench_rubric)
+export(bench_run_suite)
 export(bench_setup)
 export(bench_task)
 export(bench_verify)
+export(import_promptbio_task)
 export(mechanical_rubric_criteria)
-importFrom(jsonlite,fromJSON)
+importFrom(jsonlite,
+  fromJSON,
+  write_json
+)
 importFrom(tools,file_ext)
 importFrom(utils,
   read.csv,

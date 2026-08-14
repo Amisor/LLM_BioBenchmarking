@@ -1,0 +1,18 @@
+{
+  "id": "a-1-1",
+  "question": "I have a forward sequence, can you help me convert it to reverse complementary sequence? The sequence is: AATTGGGACCAACACTAGAATATCACCCTCCCTCTGGTCCTGAGGGAGAGGAATCCTCCTGGGTTTCCAGATCCTG",
+  "ref_answer": [
+    "ref_answer/sequence.fasta"
+  ],
+  "ref_script": [
+    "ref_script/revcomp.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "sequence.fasta",
+        "guidelines": "Sequence must match the reference; case and line-wrap may differ."
+      }
+    ]
+  }
+}

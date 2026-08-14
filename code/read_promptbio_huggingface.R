@@ -55,6 +55,38 @@ download_promptbio_task_metadata <- function(task_id, destdir = "data/promptbio-
   invisible(paths)
 }
 
+download_promptbio_task_files <- function(task_id, destdir = "data/promptbio-bench") {
+  if (!requireNamespace("jsonlite", quietly = TRUE)) {
+    stop("Install jsonlite to read PromptBio-Bench JSON files.", call. = FALSE)
+  }
+
+  task_path <- file.path(destdir, "tasks", task_id, "task.json")
+  eval_path <- file.path(destdir, "tasks", task_id, "eval.json")
+
+  if (!file.exists(task_path) || !file.exists(eval_path)) {
+    download_promptbio_task_metadata(task_id, destdir)
+  }
+
+  task <- jsonlite::fromJSON(task_path, simplifyVector = FALSE)
+  eval <- jsonlite::fromJSON(eval_path, simplifyVector = FALSE)
+
+  # task$input_files / eval$ref_answer / eval$ref_script are each a list of
+  # path strings (or an empty list, e.g. a-1-1 has no input files at all).
+  paths <- unique(c(
+    vapply(task$input_files, identity, character(1)),
+    vapply(eval$ref_answer, identity, character(1)),
+    vapply(eval$ref_script, identity, character(1))
+  ))
+  paths <- paths[!file.exists(file.path(destdir, "tasks", task_id, paths))]
+
+  downloaded <- vapply(
+    paths,
+    function(path) download_promptbio_file(task_id, path, destdir),
+    character(1)
+  )
+  invisible(downloaded)
+}
+
 download_promptbio_all_metadata <- function(
   task_ids = list_promptbio_task_ids(),
   destdir = "data/promptbio-bench"
@@ -99,6 +131,11 @@ read_promptbio_task <- function(task_id) {
 #
 # Download task.json and eval.json for every task.
 # download_promptbio_all_metadata(task_ids)
+#
+# Download the actual data/ref_answer/ref_script files a specific task's
+# task.json/eval.json reference (fetches task.json/eval.json first if not
+# already present locally).
+# download_promptbio_task_files("a-1-1")
 
 # To download the full Hugging Face dataset, prefer the Hugging Face CLI.
 # The full dataset is large, so task-level downloads are usually better.

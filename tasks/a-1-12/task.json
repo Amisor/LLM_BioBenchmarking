@@ -1,0 +1,15 @@
+{
+  "id": "a-1-12",
+  "question": "I want to extract all Paenibacillus sequences from a large multi-FASTA file",
+  "input_files": [
+    "data/multifa.fa"
+  ],
+  "expected_output": [
+    {
+      "file": "sequence.fasta",
+      "type": "fasta",
+      "description": ""
+    }
+  ],
+  "timeout_seconds": 3600
+}

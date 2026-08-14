@@ -1,0 +1,4 @@
+CHROM	POS	ID	GENE	CONSEQUENCE	AF	CLINVAR	EVIDENCES	NOTES	CLASS
+chr17	43044295	rsTest1	BRCA1	stop_gained	0.0	Pathogenic	ClinVar_Pathogenic;PVS1;PM2	ClinVar reports pathogenic;predicted loss-of-function (PVS1);rare in population (AF=0.0)	Pathogenic
+chr1	123456	rsTest2	GENE1	synonymous_variant	0.05	Benign	ClinVar_Benign;BP7;BA1;BP4	ClinVar reports benign;synonymous variant (BP7);common in population (AF=0.05);computational evidence supports benign (BP4)	Benign
+chr2	765432	rsTest3	GENE2	missense_variant	1e-05		PM2;PP3	rare in population (AF=1e-05);computational evidence supports deleterious (PP3)	Pathogenic

@@ -15,7 +15,7 @@ for line in sys.stdin:
 		continue
 	try:
 		task = json.loads(line)
-		response = agent.go(task["prompt")
+		response = agent.go(task["prompt"])
 		result = {
 			"task_id": task["task_id"],
 			"response": response,

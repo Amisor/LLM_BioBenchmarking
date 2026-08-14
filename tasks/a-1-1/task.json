@@ -1,0 +1,13 @@
+{
+  "id": "a-1-1",
+  "question": "I have a forward sequence, can you help me convert it to reverse complementary sequence? The sequence is: AATTGGGACCAACACTAGAATATCACCCTCCCTCTGGTCCTGAGGGAGAGGAATCCTCCTGGGTTTCCAGATCCTG",
+  "input_files": [],
+  "expected_output": [
+    {
+      "file": "sequence.fasta",
+      "type": "fasta",
+      "description": "FASTA with header >reverse_complement"
+    }
+  ],
+  "timeout_seconds": 3600
+}

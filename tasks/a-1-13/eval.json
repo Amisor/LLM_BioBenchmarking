@@ -1,0 +1,18 @@
+{
+  "id": "a-1-13",
+  "question": "I have the gene TP53. Could you calculate, for each transcript, the total non-overlapping exon length, ensuring that only exact gene name matches are used (no fuzzy matching).",
+  "ref_answer": [
+    "ref_answer/TP53_transcript_exon_lengths.tsv"
+  ],
+  "ref_script": [
+    "ref_script/exon_length.py"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "TP53_transcript_exon_lengths.tsv",
+        "guidelines": "Each transcript row's total non-overlapping exon length must match the reference within +/-1 bp; column order and ID versioning may differ."
+      }
+    ]
+  }
+}

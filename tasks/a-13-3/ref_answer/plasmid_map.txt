@@ -1,0 +1,9 @@
+Plasmid Map
+====================
+Total Length: 440 bp
+
+Features:
+part1_promoter: 1-114 (114 bp)
+part2_gene: 115-214 (100 bp)
+part3_terminator: 215-325 (111 bp)
+part4_backbone: 326-440 (115 bp)

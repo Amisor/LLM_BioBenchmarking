@@ -18,8 +18,13 @@ per-model \code{data.frame}s of rubric criterion checks, \code{NULL} if no
 \code{eval_v2.json} is present). Both are also printed for convenience.
 }
 \description{
-Recomputes numeric ground truth for a test's tabular expected output(s)
-against every model's submission in its \verb{answer/} folder, and, if an
+Recomputes ground truth for a test's expected output(s) against every
+model's submission in its \verb{answer/} folder: strict numeric-matrix
+comparison for csv/tsv where the reference parses fully numeric, a
+relaxed mixed string/numeric table comparison otherwise, sequence-set
+comparison for fasta, scalar comparison for txt, and an explicit
+\code{NEEDS_JUDGE} verdict (rather than a silent skip) for any other
+extension with no mechanical comparator (png, vcf, bam, ...). If an
 \code{eval_v2.json} rubric is present, mechanically pre-checks whichever
 rubric criteria don't require an LLM judge (see
 \code{\link[=mechanical_rubric_criteria]{mechanical_rubric_criteria()}}), reporting which fraction of the rubric's

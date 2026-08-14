@@ -1,0 +1,11 @@
+Can you take a look at tasks/a-13-3/task.json and use the data in
+tasks/a-13-3/data/ to complete the task?
+
+Please save your response in:
+tasks/a-13-3/answer/{model_name_here}
+
+Inside that folder, include the requested output file and the script you used to create it.
+Replace {model_name_here} with the model currently being used.
+
+Please only use the task file and input data above. Do not use any code or history from previous conversations.
+Use paths relative to the repository root.

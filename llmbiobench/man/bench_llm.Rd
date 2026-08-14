@@ -85,14 +85,34 @@ loop over a small data frame of \code{provider}/\code{model} pairs).
 }
 \examples{
 \dontrun{
-bench_folders("bioc-1-a", output_dir = tempdir())
-bench_task("bioc-1-a", output_dir = tempdir(), question = "...", output_description = "...")
-add_prompts("bioc-1-a", output_dir = tempdir())
+bench_folders(test_id = "bioc-2-a", output_dir = "inst/benchmarks/")
+bench_task(
+    test_id = "bioc-2-a",
+    output_dir = "inst/benchmarks/",
+    question = "Using the provided RNA-seq gene-level SummarizedExperiment dataset (gse.rds), construct a DESeqDataSet object with design formula '~ cell + dex' (renaming donor to cell, condition to dex, setting levels 'untrt' and 'trt' with 'untrt' as reference). Pre-filter to retain genes with counts >= 10 in at least 4 samples, apply variance stabilizing transformation (vst) with blind=FALSE, and compute the Euclidean sample-to-sample distance matrix. Save the distance matrix with row names formatted as '<dex> - <cell>' and column names set to NULL.",
+    output_file = "sample_dist_matrix.csv",
+    output_description = "Euclidean sample distance matrix (8x8) computed from VST-transformed counts with rownames formatted as '<dex> - <cell>' (e.g. 'untrt - N61311') and without column names."
+)
+add_prompts("bioc-2-a", version = "_v2", output_dir = "inst/benchmarks/")
+## run script to generate gse.rds
+## source("inst/scripts/bioc-2-a.R")
+add_data(gse, "bioc-2-a", type = "rds", output_dir = "inst/benchmarks/")
+## copy ref_script into the test folder for reference
+## file.copy(
+##     "inst/scripts/sample_dist_matrix.R",
+##     "inst/benchmarks/bioc-2-a/ref_script/sample_dist_matrix.R"
+## )
+## ## add reference answer for comparison
+## file.copy(
+##     "inst/scripts/sample_dist_matrix.csv",
+##     "inst/benchmarks/bioc-2-a/ref_answer/sample_dist_matrix.csv"
+## )
+
 bench_llm(
-    "bioc-1-a",
+    "bioc-2-a",
     provider = "anthropic",
     model = "claude-opus-4-5",
-    output_dir = tempdir()
+    output_dir = "inst/benchmarks/"
 )
 }
 
