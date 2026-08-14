@@ -8,6 +8,7 @@ NULL
     openai = "chat_openai",
     anthropic = "chat_anthropic",
     google = "chat_google_gemini",
+    openrouter = "chat_openrouter",
     azure = "chat_azure_openai",
     bedrock = "chat_aws_bedrock",
     ollama = "chat_ollama",
@@ -198,8 +199,8 @@ bench_llm_tools <- function(test_dir, allow_write_prefix = "answer") {
 #'
 #' bench_llm(
 #'     "bioc-2-a",
-#'     provider = "anthropic",
-#'     model = "claude-opus-4-5",
+#'     provider = "openrouter",
+#'     model = "google/gemini-3-flash-preview",
 #'     output_dir = "inst/benchmarks/"
 #' )
 #'
