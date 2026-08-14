@@ -73,3 +73,59 @@ you construct an agent.
   key), and `Custom`. Confirm your credential has available quota before assuming a run failure is a
   code bug, an exhausted key fails with `openai.RateLimitError: insufficient_quota` (or the
   equivalent for other providers), not an install or syntax error.
+
+### STELLA agent
+
+These notes describe a conda-based local setup for
+[STELLA](https://github.com/zaixizhang/STELLA). Check the STELLA GitHub repository for other
+supported installation and usage methods.
+
+1. Clone STELLA outside this repository, then enter the STELLA directory:
+
+   ```bash
+   git clone https://github.com/zaixizhang/STELLA.git
+   cd STELLA
+   ```
+
+2. Create and activate a dedicated conda environment:
+
+   ```bash
+   conda create -n stella python=3.12 -y
+   conda activate stella
+   ```
+
+3. Install STELLA's requirements and the extra packages used during local testing:
+
+   ```bash
+   pip install -r requirements.txt
+   pip install mcp uv
+   pip install statsmodels biopython plotly torch torchvision
+   ```
+
+   Note: install `uv`, not the `uvx` package from PyPI. The `uvx` command is provided by `uv`.
+
+4. Create the API key file that STELLA expects:
+
+   ```bash
+   echo "OPENROUTER_API_KEY=your_key_here" > .env
+   ```
+
+   Replace `your_key_here` with a valid OpenRouter API key. Do not commit `.env` to GitHub.
+
+5. Launch STELLA from this repository root:
+
+   ```bash
+   conda activate stella
+   python ../STELLA/stella_core.py
+   ```
+
+   If STELLA is stored somewhere else, replace `../STELLA/stella_core.py` with the path to your
+   local `stella_core.py`.
+
+6. Open the local Gradio interface:
+
+   ```text
+   http://localhost:7860
+   ```
+
+   Use the benchmark task prompt in that local interface.
