@@ -1,8 +1,8 @@
-Can you take a look at tasks/bioc-1-a/task.json and use the data at
-tasks/bioc-1-a/data/gse.rds to complete the task?
+Can you take a look at tasks/{test_id}/task.json and use the data in
+tasks/{test_id}/data/ to complete the task?
 
 Please save your response in:
-tasks/bioc-1-a/answer/{model_name_here}
+tasks/{test_id}/answer/{model_name_here}
 
 Inside that folder, include the requested output file and the script you used to create it.
 Replace {model_name_here} with the model currently being used.

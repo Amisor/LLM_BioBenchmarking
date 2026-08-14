@@ -384,11 +384,14 @@ add_data <- function(
 #' Copy prompt templates into a benchmark test's prompt folder
 #'
 #' Copies the prompt template files bundled with the package (under
-#' `inst/extdata/prompt`) into the `prompt` subfolder of a benchmark test.
-#' Two versions of each prompt are shipped with the package: the original
-#' version (e.g. `evalprompt.txt`) and a second version suffixed with
-#' `"_v2"` (e.g. `evalprompt_v2.txt`). Use `version` to select which set of
-#' prompts to copy.
+#' `inst/extdata/prompt`) into the `prompt` subfolder of a benchmark test,
+#' substituting any `"{test_id}"` placeholder in the template text for the
+#' actual `test_id` (the templates otherwise still reference the specific
+#' task, e.g. `"bioc-1-a"`, they were first authored for). Two versions of
+#' each prompt are shipped with the package: the original version (e.g.
+#' `evalprompt.txt`) and a second version suffixed with `"_v2"` (e.g.
+#' `evalprompt_v2.txt`). Use `version` to select which set of prompts to
+#' copy.
 #'
 #' @param test_id `character(1)` identifier for the test. The corresponding
 #'   test directory (created by [bench_folders()]) must already exist.
@@ -411,9 +414,15 @@ add_data <- function(
 #'
 #' @export
 add_prompts <- function(
-    test_id, output_dir = getwd(), version = c("", "_v2"), overwrite = TRUE
+    test_id, output_dir = getwd(), version = "", overwrite = TRUE
 ) {
-    version <- match.arg(version)
+    # Not match.arg(): pmatch(), which match.arg() uses internally, never
+    # matches an empty string even against an identical empty-string choice
+    # (confirmed: pmatch("", c("", "_v2")) is NA), so match.arg() would
+    # always reject version = "" and the original (non-v2) prompts could
+    # never actually be selected through this function.
+    if (!identical(version, "") && !identical(version, "_v2"))
+        stop('version must be "" (the original prompts) or "_v2".')
 
     test_dir <- file.path(output_dir, test_id)
     if (!dir.exists(test_dir))
@@ -441,7 +450,17 @@ add_prompts <- function(
     src_paths <- file.path(source_dir, prompt_files)
     dest_paths <- file.path(prompt_dir, prompt_files)
 
-    file.copy(src_paths, dest_paths, overwrite = overwrite)
+    # The bundled templates use a "{test_id}" placeholder (matching their
+    # existing "{model_name_here}" convention) rather than being copied
+    # byte-for-byte, a raw file.copy() would silently point a NEW task's
+    # prompts at "bioc-1-a" (the task the templates were originally
+    # authored for), since that used to be hardcoded into the template text.
+    for (i in seq_along(src_paths)) {
+        if (!overwrite && file.exists(dest_paths[i])) next
+        content <- readLines(src_paths[i], warn = FALSE)
+        content <- gsub("{test_id}", test_id, content, fixed = TRUE)
+        writeLines(content, dest_paths[i])
+    }
 
     invisible(dest_paths)
 }
