@@ -191,3 +191,11 @@ Neither reviewed paper validated its judge: Guo_2026/promptbio-bench's LLM judge
 ### Reporting
 - Publish the calibration study itself (methodology + numbers) as a benchmark artifact, not just the resulting judge scores; that is the actual differentiator from Guo_2026's zero-test, zero-calibration judge.
 - Document judge failure modes found during calibration, e.g. overconfidence, sycophancy toward longer/more verbose answers, sensitivity to formatting or ordering.
+
+### First real (non-synthetic) calibration data point: `tasks/bioc-1-a`
+
+Marcel independently built a full loop on `tasks/bioc-1-a` (the DESeq2 sample-distance-matrix task): four real models (Claude-Sonnet-5, Gemini-3.7-Flash, gpt-5, MAI-Code-1.1-Flash) each solved the task via their own native chat interface (`prompt/evalprompt.txt`), then an LLM judge (`prompt/judgeprompt.txt`) compared each answer's CSV against the reference and wrote `results.md` plus a per-model `summary.md`.
+
+This task's ground truth is a numeric CSV (an `eval.json` numeric-tolerance comparison per Guo_2026's own taxonomy), so it never strictly needed an LLM judge, which makes it a clean calibration check: `code/verify_bioc_1_a_judge.R` independently recomputes max/mean absolute error against the reference for all four answers. Result: **all four numbers matched the LLM judge's claimed numbers to displayed precision**, including the one genuine near-miss failure, MAI-Code-1.1-Flash extracted a raw/rounded count matrix instead of constructing `dds` directly from the `SummarizedExperiment`, dropping `tximeta`'s `avgTxLength` offsets, and both the LLM judge and the independent recomputation agree on `max_abs_error ~1.068`, well outside the `1e-3` tolerance.
+
+This is a stronger data point than the synthetic pilot (`data/judge_calibration/pilot/`): a real model produced a real, subtly-wrong analysis (not a mismatched-pair negative control), and the LLM judge's arithmetic checked out against independent recomputation. Worth extending this same eval/judge-prompt pattern to more tasks as they're added, it sidesteps the Biomni/enterprise-credential blocker entirely by using each model's native interface directly.

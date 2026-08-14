@@ -1,0 +1,7 @@
+# Python virtual environments
+.venv/
+__pycache__/
+*.pyc
+
+# Biomni's own downloaded data lake / benchmark files (large, not our content)
+data/biomni_data/
