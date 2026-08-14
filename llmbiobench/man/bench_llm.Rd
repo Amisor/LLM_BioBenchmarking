@@ -25,7 +25,7 @@ contain a \code{task.json} (from \code{\link[=bench_task]{bench_task()}}) and, i
 used, a copied prompt file (from \code{\link[=add_prompts]{add_prompts()}}).}
 
 \item{provider}{\code{character(1)} which ellmer chat backend to use. One of
-'openai', 'anthropic', 'google', 'azure', 'bedrock', 'ollama', 'databricks', 'groq', 'perplexity', 'deepseek', matching
+'openai', 'anthropic', 'google', 'openrouter', 'azure', 'bedrock', 'ollama', 'databricks', 'groq', 'perplexity', 'deepseek', matching
 the constructor names in ellmer's \verb{chat_*()} family.}
 
 \item{model}{\code{character(1)} the model name to pass to the chosen
@@ -110,8 +110,8 @@ add_data(gse, "bioc-2-a", type = "rds", output_dir = "inst/benchmarks/")
 
 bench_llm(
     "bioc-2-a",
-    provider = "anthropic",
-    model = "claude-opus-4-5",
+    provider = "openrouter",
+    model = "google/gemini-3-flash-preview",
     output_dir = "inst/benchmarks/"
 )
 }
