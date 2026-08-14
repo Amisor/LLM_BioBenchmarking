@@ -309,3 +309,119 @@ Marcel independently built a full loop on `tasks/bioc-1-a` (the DESeq2 sample-di
 This task's ground truth is a numeric CSV (an `eval.json` numeric-tolerance comparison per Guo_2026's own taxonomy), so it never strictly needed an LLM judge, which makes it a clean calibration check: `code/verify_bioc_1_a_judge.R` independently recomputes max/mean absolute error against the reference for all four answers. Result: **all four numbers matched the LLM judge's claimed numbers to displayed precision**, including the one genuine near-miss failure, MAI-Code-1.1-Flash extracted a raw/rounded count matrix instead of constructing `dds` directly from the `SummarizedExperiment`, dropping `tximeta`'s `avgTxLength` offsets, and both the LLM judge and the independent recomputation agree on `max_abs_error ~1.068`, well outside the `1e-3` tolerance.
 
 This is a stronger data point than the synthetic pilot (`data/judge_calibration/pilot/`): a real model produced a real, subtly-wrong analysis (not a mismatched-pair negative control), and the LLM judge's arithmetic checked out against independent recomputation. Worth extending this same eval/judge-prompt pattern to more tasks as they're added, it sidesteps the Biomni/enterprise-credential blocker entirely by using each model's native interface directly.
+
+# Unified Benchmark Evaluation Architecture
+
+## Current Implementation
+
+``` text
+eval.json
+    ↓
+reference output
+    ↓
+candidate output
+    ↓
+numeric comparator
+    ↓
+mechanical rubric checks
+    ↓
+NEEDS_JUDGE for everything else
+```
+
+------------------------------------------------------------------------
+
+## Proposed Generalized Architecture
+
+``` mermaid
+flowchart TD
+    A["Benchmark Task Spec"]
+
+    A --> B["Agent Execution"]
+    A --> C["Evaluation"]
+
+    B --> D["Plan"]
+    B --> E["Code"]
+    B --> F["Trace"]
+
+    D --> G["Candidate Outputs"]
+    E --> G
+    F --> G
+
+    C --> H["Evaluator Registry"]
+
+    G --> H
+
+    H --> I["Mechanical Evaluators"]
+    H --> J["Domain / Result Evaluators"]
+    H --> K["Semantic / Judge Evaluators"]
+
+    I --> I1["File Present"]
+    I --> I2["Parseable"]
+    I --> I3["Paths"]
+    I --> I4["Leakage"]
+    I --> I5["Script"]
+
+    J --> J1["Matrix / List / Labels"]
+    J --> J2["Embedding"]
+    J --> J3["Clustering"]
+    J --> J4["Variants"]
+    J --> J5["DE Results"]
+
+    K --> K1["Plan Quality"]
+    K --> K2["Biological Logic"]
+    K --> K3["Code Quality"]
+    K --> K4["Tool Choice"]
+    K --> K5["Interpretation"]
+
+    I --> L["Unified Rubric"]
+    J --> L
+    K --> L
+
+    L --> M["Task + Dimension Scores"]
+    M --> N["Robustness / Failure Diagnostics"]
+```
+
+------------------------------------------------------------------------
+
+## Evaluation Pipeline
+
+``` text
+Benchmark Task Spec
+        │
+        ├── Agent Execution
+        │     ├── Plan
+        │     ├── Code
+        │     └── Trace
+        │
+        └── Evaluation
+               │
+               ├── Candidate Outputs
+               └── Evaluator Registry
+                      ├── Mechanical Evaluators
+                      │      • File present
+                      │      • Parseable
+                      │      • Paths
+                      │      • Leakage
+                      │      • Script
+                      │
+                      ├── Domain / Result Evaluators
+                      │      • Matrix/List/Labels
+                      │      • Embedding
+                      │      • Clustering
+                      │      • Variants
+                      │      • DE Results
+                      │
+                      └── Semantic / Judge Evaluators
+                             • Plan quality
+                             • Biological logic
+                             • Code quality
+                             • Tool choice
+                             • Interpretation
+
+All evaluator outputs are aggregated into a **Unified Rubric**, producing:
+
+- Task score
+- Dimension scores
+- Robustness diagnostics
+- Failure diagnostics
+```
