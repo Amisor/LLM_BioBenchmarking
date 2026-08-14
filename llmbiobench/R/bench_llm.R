@@ -93,7 +93,9 @@ bench_llm_tools <- function(test_dir, allow_write_prefix = "answer") {
         read_file = ellmer::tool(
             read_file,
             "Read the full contents of a text file, given a path relative to the test directory.",
-            path = ellmer::type_string("Path relative to the test directory, e.g. 'task.json' or 'data/gse.rds'.")
+            arguments = list(
+                path = ellmer::type_string("Path relative to the test directory, e.g. 'task.json' or 'data/gse.rds'.")
+            )
         ),
         write_file = ellmer::tool(
             write_file,
@@ -102,13 +104,17 @@ bench_llm_tools <- function(test_dir, allow_write_prefix = "answer") {
                 "test directory. Only paths under '", allow_write_prefix,
                 "/' may be written."
             ),
-            path = ellmer::type_string("Destination path relative to the test directory, e.g. 'answer/gpt-4o/result.csv'."),
-            content = ellmer::type_string("The full text content to write to the file.")
+            arguments = list(
+                path = ellmer::type_string("Destination path relative to the test directory, e.g. 'answer/gpt-4o/result.csv'."),
+                content = ellmer::type_string("The full text content to write to the file.")
+            )
         ),
         list_files = ellmer::tool(
             list_files,
             "List files under a directory, given a path relative to the test directory.",
-            path = ellmer::type_string("Directory path relative to the test directory. Defaults to the test directory root.")
+            arguments = list(
+                path = ellmer::type_string("Directory path relative to the test directory. Defaults to the test directory root.")
+            )
         )
     )
 }
