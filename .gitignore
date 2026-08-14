@@ -5,3 +5,13 @@ __pycache__/
 
 # Biomni's own downloaded data lake / benchmark files (large, not our content)
 data/biomni_data/
+
+# STELLA generated outputs
+.gradio/
+agent_outputs/
+
+debug_data.R
+process_data.R
+run_process.sh
+run_process_v2.sh
+run_process_v3.sh

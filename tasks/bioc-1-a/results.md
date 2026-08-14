@@ -26,6 +26,7 @@ Using the provided RNA-seq gene-level `SummarizedExperiment` dataset (`data/gse.
 | **Gemini-3.7-Flash** | Yes | Yes | PASS (`<dex> - <cell>`) | $8 \times 8$ | $4.26 \times 10^{-14}$ | $2.15 \times 10^{-14}$ | **PASS** | **PASS** | [`answer/Gemini-3.7-Flash/summary.md`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/Gemini-3.7-Flash/summary.md) |
 | **gpt-5** | Yes | No | PASS (`<dex> - <cell>`) | $8 \times 8$ | $4.26 \times 10^{-14}$ | $2.15 \times 10^{-14}$ | **PASS** | **PASS** | [`answer/gpt-5/summary.md`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/gpt-5/summary.md) |
 | **MAI-Code-1.1-Flash** | Yes | No | PASS (`<dex> - <cell>`) | $8 \times 8$ | $1.068174$ | $0.376443$ | **FAIL** | **FAIL** | [`answer/MAI-Code-1.1-Flash/summary.md`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/MAI-Code-1.1-Flash/summary.md) |
+| **STELLA_gemini_3_flash** | Yes | Yes | PASS (`<dex> - <cell>`) | $8 \times 8$ | $7.82 \times 10^{-14}$ | $2.78 \times 10^{-14}$ | **PASS** | **PASS** | [`answer/STELLA_gemini_3_flash/summary.md`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/STELLA_gemini_3_flash/summary.md) |
 
 ---
 
@@ -50,3 +51,8 @@ Using the provided RNA-seq gene-level `SummarizedExperiment` dataset (`data/gse.
 - **Verdict**: **FAIL**
 - **Artifacts**: [`sample_dist_matrix.csv`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/MAI-Code-1.1-Flash/sample_dist_matrix.csv)
 - **Root Cause**: Extracted a raw/rounded count matrix (`DESeqDataSetFromMatrix(round(assay(gse)), ...)`) rather than constructing `dds` directly from `gse`. This dropped `tximeta`'s `avgTxLength` assay, causing `vst(dds, blind = FALSE)` to calculate standard library size factors instead of transcript length corrections ($\max \Delta = 1.068174 > 10^{-3}$).
+
+### 3.5 [STELLA_gemini_3_flash](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/STELLA_gemini_3_flash)
+- **Verdict**: **PASS**
+- **Artifacts**: [`solution.R`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/STELLA_gemini_3_flash/solution.R), [`sample_dist_matrix.csv`](file:///home/mramos/gh/LLM_BioBenchmarking/tasks/bioc-1-a/answer/STELLA_gemini_3_flash/sample_dist_matrix.csv)
+- **Analysis**: Correctly created `DESeqDataSet` directly from `gse` with formula `~ cell + dex`, mapped conditions to `'untrt'` (reference) and `'trt'`, filtered with `rowSums(counts(dds) >= 10) >= 4`, computed Euclidean distances on VST assay, and saved matrix without column headers. Matches the reference within tolerance ($\max \Delta \approx 7.82 \times 10^{-14} \le 10^{-3}$).
