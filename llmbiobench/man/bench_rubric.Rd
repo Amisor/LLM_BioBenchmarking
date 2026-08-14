@@ -10,6 +10,7 @@ bench_rubric(
   evalfile = "eval_v2.json",
   question = NULL,
   guidelines = NULL,
+  expected_output = NULL,
   has_row_names = FALSE,
   custom_criteria = list()
 )
@@ -31,7 +32,11 @@ test directory. Defaults to \code{"eval_v2.json"}.}
 \item{guidelines}{\code{character(1)} optional scoring guidelines applied to
 each expected output file that the user names interactively. If \code{NULL}
 (the default), the user is prompted for guidelines separately for each
-output file.}
+output file. Ignored if \code{expected_output} is supplied.}
+
+\item{expected_output}{\code{list} optional, passed through to \code{\link[=bench_eval]{bench_eval()}}:
+a non-interactive alternative to naming output files one at a time at
+the console. See \code{\link[=bench_eval]{bench_eval()}}'s \code{expected_output} argument.}
 
 \item{has_row_names}{\code{logical(1)} passed to \code{\link[=mechanical_rubric_criteria]{mechanical_rubric_criteria()}}.}
 

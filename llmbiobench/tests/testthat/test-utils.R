@@ -96,6 +96,52 @@ test_that("bench_eval() writes an eval.json with the reference file lists", {
     expect_true(file.exists(file.path(tmp, "t-1", "eval.json")))
 })
 
+test_that("bench_eval(expected_output = ...) populates scoring$expected_output non-interactively", {
+    # Regression test: bench_eval()'s expected_output list used to be
+    # buildable only via readline(), which returns "" immediately in a
+    # non-interactive session (confirmed: no hang, just an empty string),
+    # so the loop always exited with zero entries and every downstream
+    # bench_verify() check silently had nothing to compare. expected_output
+    # is the fix: a direct, non-interactive way to supply that list.
+    tmp <- local_test_dir()
+    on.exit(unlink(tmp, recursive = TRUE), add = TRUE)
+    bench_folders("t-1", output_dir = tmp)
+    writeLines("a,b\n1,2", file.path(tmp, "t-1", "ref_answer", "column_means.csv"))
+    writeLines("# ref", file.path(tmp, "t-1", "ref_script", "solution.R"))
+
+    eval <- bench_eval(
+        "t-1", output_dir = tmp,
+        question = "Compute the mean of each column.",
+        expected_output = list(list(
+            file = "column_means.csv",
+            guidelines = "Values must match within 1e-3."
+        ))
+    )
+
+    expect_length(eval$scoring$expected_output, 1)
+    expect_equal(eval$scoring$expected_output[[1]]$file, "column_means.csv")
+    expect_equal(eval$scoring$expected_output[[1]]$guidelines, "Values must match within 1e-3.")
+
+    written <- jsonlite::fromJSON(file.path(tmp, "t-1", "eval.json"), simplifyVector = FALSE)
+    expect_equal(written$scoring$expected_output[[1]]$file, "column_means.csv")
+})
+
+test_that("bench_rubric(expected_output = ...) passes it through to bench_eval()", {
+    tmp <- local_test_dir()
+    on.exit(unlink(tmp, recursive = TRUE), add = TRUE)
+    bench_folders("t-1", output_dir = tmp)
+    writeLines("a,b\n1,2", file.path(tmp, "t-1", "ref_answer", "column_means.csv"))
+    writeLines("# ref", file.path(tmp, "t-1", "ref_script", "solution.R"))
+
+    eval_v2 <- bench_rubric(
+        "t-1", output_dir = tmp, question = "q",
+        expected_output = list(list(file = "column_means.csv", guidelines = "within 1e-3"))
+    )
+
+    expect_length(eval_v2$scoring$expected_output, 1)
+    expect_equal(eval_v2$scoring$expected_output[[1]]$file, "column_means.csv")
+})
+
 test_that("bench_eval() warns when ref_answer/ref_script are empty", {
     tmp <- local_test_dir()
     on.exit(unlink(tmp, recursive = TRUE), add = TRUE)

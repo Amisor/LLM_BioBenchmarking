@@ -15,3 +15,7 @@ process_data.R
 run_process.sh
 run_process_v2.sh
 run_process_v3.sh
+
+# R CMD check / build artifacts
+llmbiobench.Rcheck/
+llmbiobench_*.tar.gz

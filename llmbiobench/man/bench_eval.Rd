@@ -9,7 +9,8 @@ bench_eval(
   output_dir = getwd(),
   evalfile = "eval.json",
   question = NULL,
-  guidelines = NULL
+  guidelines = NULL,
+  expected_output = NULL
 )
 }
 \arguments{
@@ -29,7 +30,17 @@ test directory. Defaults to \code{"eval.json"}.}
 \item{guidelines}{\code{character(1)} optional scoring guidelines applied to
 each expected output file that the user names interactively. If \code{NULL}
 (the default), the user is prompted for guidelines separately for each
-output file.}
+output file. Ignored if \code{expected_output} is supplied.}
+
+\item{expected_output}{\code{list} optional, a non-interactive alternative to
+naming output files one at a time at the console: a list of
+\code{list(file = ..., guidelines = ...)} entries, one per expected output
+file. If \code{NULL} (the default), the user is prompted interactively to
+build this list, which only works at an interactive console; anything
+run as a script (including this exact usage inside a vignette) needs
+\code{expected_output} supplied directly, since \code{readline()} returns an
+empty string immediately in a non-interactive session, ending the
+prompt loop with no files added.}
 }
 \value{
 \code{list} the eval object that was written to \code{evalfile}, returned
@@ -49,7 +60,10 @@ bench_eval(
     "bioc-1-a",
     output_dir = tempdir(),
     question = "Compute the mean of each column.",
-    guidelines = "Values must match the reference within 1e-3."
+    expected_output = list(list(
+        file = "column_means.csv",
+        guidelines = "Values must match the reference within 1e-3."
+    ))
 )
 }
 

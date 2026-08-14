@@ -167,7 +167,16 @@ bench_task <- function(
 #' @param guidelines `character(1)` optional scoring guidelines applied to
 #'   each expected output file that the user names interactively. If `NULL`
 #'   (the default), the user is prompted for guidelines separately for each
-#'   output file.
+#'   output file. Ignored if `expected_output` is supplied.
+#' @param expected_output `list` optional, a non-interactive alternative to
+#'   naming output files one at a time at the console: a list of
+#'   `list(file = ..., guidelines = ...)` entries, one per expected output
+#'   file. If `NULL` (the default), the user is prompted interactively to
+#'   build this list, which only works at an interactive console; anything
+#'   run as a script (including this exact usage inside a vignette) needs
+#'   `expected_output` supplied directly, since `readline()` returns an
+#'   empty string immediately in a non-interactive session, ending the
+#'   prompt loop with no files added.
 #'
 #' @return `list` the eval object that was written to `evalfile`, returned
 #'   invisibly.
@@ -179,14 +188,17 @@ bench_task <- function(
 #'     "bioc-1-a",
 #'     output_dir = tempdir(),
 #'     question = "Compute the mean of each column.",
-#'     guidelines = "Values must match the reference within 1e-3."
+#'     expected_output = list(list(
+#'         file = "column_means.csv",
+#'         guidelines = "Values must match the reference within 1e-3."
+#'     ))
 #' )
 #' }
 #'
 #' @export
 bench_eval <- function(
     test_id, output_dir = getwd(), evalfile = "eval.json",
-    question = NULL, guidelines = NULL
+    question = NULL, guidelines = NULL, expected_output = NULL
 ) {
     test_dir <- file.path(output_dir, test_id)
     if (!dir.exists(test_dir))
@@ -211,31 +223,36 @@ bench_eval <- function(
     if (length(ref_script_files) == 0)
         warning("No files found in 'ref_script' folder.")
 
-    expected_output <- list()
-    repeat {
-        file_name <- readline(
-            prompt = paste(
-                "Provide the name of an expected output file",
-                "(leave blank to stop adding files): "
-            )
-        )
-        if (file_name == "")
-            break
-
-        file_guidelines <- if (is.null(guidelines)) {
-            readline(
+    expected_output <- if (!is.null(expected_output)) {
+        expected_output
+    } else {
+        collected <- list()
+        repeat {
+            file_name <- readline(
                 prompt = paste(
-                    "Provide scoring guidelines for", file_name, ": "
+                    "Provide the name of an expected output file",
+                    "(leave blank to stop adding files): "
                 )
             )
-        } else {
-            guidelines
-        }
+            if (file_name == "")
+                break
 
-        expected_output[[length(expected_output) + 1]] <- list(
-            file = file_name,
-            guidelines = file_guidelines
-        )
+            file_guidelines <- if (is.null(guidelines)) {
+                readline(
+                    prompt = paste(
+                        "Provide scoring guidelines for", file_name, ": "
+                    )
+                )
+            } else {
+                guidelines
+            }
+
+            collected[[length(collected) + 1]] <- list(
+                file = file_name,
+                guidelines = file_guidelines
+            )
+        }
+        collected
     }
 
     eval <- list(

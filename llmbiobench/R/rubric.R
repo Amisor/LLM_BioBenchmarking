@@ -99,7 +99,10 @@ mechanical_rubric_criteria <- function(has_row_names = FALSE) {
 #' @param guidelines `character(1)` optional scoring guidelines applied to
 #'   each expected output file that the user names interactively. If `NULL`
 #'   (the default), the user is prompted for guidelines separately for each
-#'   output file.
+#'   output file. Ignored if `expected_output` is supplied.
+#' @param expected_output `list` optional, passed through to [bench_eval()]:
+#'   a non-interactive alternative to naming output files one at a time at
+#'   the console. See [bench_eval()]'s `expected_output` argument.
 #' @param has_row_names `logical(1)` passed to [mechanical_rubric_criteria()].
 #' @param custom_criteria `list` of additional, task-specific rubric
 #'   criterion objects (each with `id`, `criterion`, `weight`, `score_type`,
@@ -130,12 +133,13 @@ mechanical_rubric_criteria <- function(has_row_names = FALSE) {
 #' @export
 bench_rubric <- function(
     test_id, output_dir = getwd(), evalfile = "eval_v2.json",
-    question = NULL, guidelines = NULL, has_row_names = FALSE,
-    custom_criteria = list()
+    question = NULL, guidelines = NULL, expected_output = NULL,
+    has_row_names = FALSE, custom_criteria = list()
 ) {
     base_eval <- bench_eval(
         test_id, output_dir = output_dir, evalfile = "__bench_rubric_tmp.json",
-        question = question, guidelines = guidelines
+        question = question, guidelines = guidelines,
+        expected_output = expected_output
     )
     # bench_eval() already wrote a throwaway file for its own bookkeeping;
     # remove it, this function writes the real rubric-bearing eval file.
