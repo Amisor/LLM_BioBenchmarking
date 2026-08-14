@@ -1,0 +1,131 @@
+{
+  "id": "bioc-1-a",
+  "question": "Using the provided RNA-seq gene-level SummarizedExperiment dataset (gse.rds), construct a DESeqDataSet object with design formula '~ cell + dex' (renaming donor to cell, condition to dex, setting levels 'untrt' and 'trt' with 'untrt' as reference). Pre-filter to retain genes with counts >= 10 in at least 4 samples, apply variance stabilizing transformation (vst) with blind=FALSE, and compute the Euclidean sample-to-sample distance matrix. Save the distance matrix with row names formatted as '<dex> - <cell>' and column names set to NULL.",
+  "ref_answer": [
+    "ref_answer/sample_dist_matrix.csv"
+  ],
+  "ref_script": [
+    "ref_script/sample_dist_matrix.R"
+  ],
+  "scoring": {
+    "expected_output": [
+      {
+        "file": "sample_dist_matrix.csv",
+        "guidelines": "The sample distance matrix values must match the reference Euclidean distances computed on VST-transformed counts within a small numerical tolerance (e.g. 1e-3); rownames must match the '<dex> - <cell>' format."
+      }
+    ],
+    "rubric_scoring": {
+      "score_type": "weighted_binary",
+      "criterion_grade": "pass_fail",
+      "criterion_score": "pass earns the criterion weight; fail earns 0",
+      "overall_score": "sum of criterion scores divided by sum of criterion weights"
+    },
+    "rubric": [
+      {
+        "id": "required_output_present",
+        "criterion": "The answer folder contains the required output file sample_dist_matrix.csv.",
+        "weight": 1,
+        "score_type": "binary",
+        "evidence": "Inspect the answer folder."
+      },
+      {
+        "id": "output_is_numeric_8x8_matrix",
+        "criterion": "The output file is parseable as an 8 by 8 numeric distance matrix.",
+        "weight": 2,
+        "score_type": "binary",
+        "evidence": "Read the submitted sample_dist_matrix.csv."
+      },
+      {
+        "id": "output_matches_reference_values",
+        "criterion": "The numeric distance values match the reference sample_dist_matrix.csv within tolerance 1e-3.",
+        "weight": 5,
+        "score_type": "binary",
+        "evidence": "Compare the submitted sample_dist_matrix.csv against ref_answer/sample_dist_matrix.csv."
+      },
+      {
+        "id": "row_names_follow_required_format",
+        "criterion": "The output matrix row names are formatted as '<dex> - <cell>' for each sample.",
+        "weight": 2,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted sample_dist_matrix.csv."
+      },
+      {
+        "id": "script_present",
+        "criterion": "The answer folder contains a submitted script that can be inspected to understand how sample_dist_matrix.csv was generated.",
+        "weight": 1,
+        "score_type": "binary",
+        "evidence": "Inspect the answer folder."
+      },
+      {
+        "id": "uses_correct_input_file",
+        "criterion": "The submitted script reads tasks/bioc-1-a/data/gse.rds as the input dataset.",
+        "weight": 3,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "uses_correct_design_formula",
+        "criterion": "The submitted script constructs a DESeqDataSet using design formula ~ cell + dex.",
+        "weight": 4,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "derives_cell_and_dex_columns",
+        "criterion": "The submitted script derives cell from donor and dex from condition before constructing the DESeqDataSet.",
+        "weight": 4,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "sets_untrt_reference_level",
+        "criterion": "The submitted script sets dex levels to include 'untrt' and 'trt' and uses 'untrt' as the reference level.",
+        "weight": 3,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "uses_required_prefilter",
+        "criterion": "The submitted script filters to retain genes with counts >= 10 in at least 4 samples.",
+        "weight": 4,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "uses_deseq2_vst",
+        "criterion": "The submitted script applies DESeq2 variance stabilizing transformation with blind = FALSE before computing distances.",
+        "weight": 4,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "computes_euclidean_sample_distances",
+        "criterion": "The submitted script computes Euclidean sample-to-sample distances from the VST-transformed assay values.",
+        "weight": 4,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "uses_relative_paths",
+        "criterion": "The submitted script uses repository-relative or task-relative paths and does not hardcode user-specific absolute paths.",
+        "weight": 2,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "avoids_reference_leakage",
+        "criterion": "The submitted script does not read eval.json, eval_v2.json, ref_answer, ref_script, or any existing answer folder.",
+        "weight": 5,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      },
+      {
+        "id": "avoids_unnecessary_steps",
+        "criterion": "The submitted script avoids unrelated analyses, extra model fitting, plotting, package installation, network access, or other steps not needed to produce the requested distance matrix.",
+        "weight": 2,
+        "score_type": "binary",
+        "evidence": "Inspect the submitted script."
+      }
+    ]
+  }
+}
