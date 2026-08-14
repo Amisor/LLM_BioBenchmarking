@@ -1,0 +1,20 @@
+Can you look at each folder inside @[answer] and evaluate the results using @[eval_v2.json]?
+
+Use the rubric in @[eval_v2.json]. For each criterion, assign:
+- pass/fail
+- numeric score
+- rationale
+
+Compute the weighted overall score as:
+sum of criterion scores / sum of criterion weights
+
+For each answer folder, write or update summary.md in that same folder with:
+- output_comparison
+- criterion_scores table
+- weighted_score
+- final_pass
+- rationale
+
+The judge should compare submitted outputs to the gold standard files listed in @[eval_v2.json], and should inspect submitted scripts when rubric criteria require code/workflow evaluation.
+
+Do not modify the submitted output files or scripts.

@@ -1,0 +1,5 @@
+Can you look at @[answer] folder and summarize the results using @[eval.json]
+by comparing each of their answers to the gold standard which can be found at
+@[ref_answer/sample_dist_matrix.csv]  and save each summary in the respective
+@[answer] folder.
+

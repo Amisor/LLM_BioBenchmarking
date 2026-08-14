@@ -10,6 +10,7 @@ bench_task(
   taskfile = "task.json",
   timeout = 3600,
   question = NULL,
+  output_file = NULL,
   output_description = NULL
 )
 }
@@ -29,6 +30,11 @@ Defaults to \code{3600}.}
 \item{question}{\code{character(1)} optional task description. If \code{NULL}
 (the default), the user is prompted interactively.}
 
+\item{output_file}{\code{character(1)} optional name of the expected output
+file (e.g. \code{"sample_dist_matrix.csv"}). If \code{NULL} (the default), the
+user is prompted interactively. Its extension is recorded as the
+output \code{type}.}
+
 \item{output_description}{\code{character(1)} optional description of the
 expected task output. If \code{NULL} (the default), the user is prompted
 interactively.}
@@ -41,7 +47,8 @@ invisibly.
 Builds and writes a \code{task.json} file describing a benchmark task,
 including the task question, the list of input data files, and a
 description of the expected output. Prompts the user interactively for
-the question and output description unless supplied directly.
+the question, the expected output file name, and the output description
+unless supplied directly.
 }
 \examples{
 \dontrun{
@@ -50,6 +57,7 @@ bench_task(
     "bioc-1-a",
     output_dir = tempdir(),
     question = "Compute the mean of each column.",
+    output_file = "column_means.csv",
     output_description = "A CSV file with one row per column mean."
 )
 }
