@@ -3,5 +3,14 @@
 export(add_data)
 export(bench_eval)
 export(bench_folders)
+export(bench_rubric)
 export(bench_setup)
 export(bench_task)
+export(bench_verify)
+export(mechanical_rubric_criteria)
+importFrom(jsonlite,fromJSON)
+importFrom(tools,file_ext)
+importFrom(utils,
+  read.csv,
+  write.csv
+)

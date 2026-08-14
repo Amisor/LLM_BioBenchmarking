@@ -50,7 +50,8 @@ bench_folders <- function(test_id, output_dir = getwd()) {
 #' Builds and writes a `task.json` file describing a benchmark task,
 #' including the task question, the list of input data files, and a
 #' description of the expected output. Prompts the user interactively for
-#' the question and output description unless supplied directly.
+#' the question, the expected output file name, and the output description
+#' unless supplied directly.
 #'
 #' @param test_id `character(1)` identifier for the test. The corresponding
 #'   test directory (created by [bench_folders()]) must already exist.
@@ -62,6 +63,10 @@ bench_folders <- function(test_id, output_dir = getwd()) {
 #'   Defaults to `3600`.
 #' @param question `character(1)` optional task description. If `NULL`
 #'   (the default), the user is prompted interactively.
+#' @param output_file `character(1)` optional name of the expected output
+#'   file (e.g. `"sample_dist_matrix.csv"`). If `NULL` (the default), the
+#'   user is prompted interactively. Its extension is recorded as the
+#'   output `type`.
 #' @param output_description `character(1)` optional description of the
 #'   expected task output. If `NULL` (the default), the user is prompted
 #'   interactively.
@@ -76,6 +81,7 @@ bench_folders <- function(test_id, output_dir = getwd()) {
 #'     "bioc-1-a",
 #'     output_dir = tempdir(),
 #'     question = "Compute the mean of each column.",
+#'     output_file = "column_means.csv",
 #'     output_description = "A CSV file with one row per column mean."
 #' )
 #' }
@@ -83,7 +89,7 @@ bench_folders <- function(test_id, output_dir = getwd()) {
 #' @export
 bench_task <- function(
     test_id, output_dir = getwd(), taskfile = "task.json", timeout = 3600,
-    question = NULL, output_description = NULL
+    question = NULL, output_file = NULL, output_description = NULL
 ) {
     test_dir <- file.path(output_dir, test_id)
     if (!dir.exists(test_dir))
@@ -102,6 +108,13 @@ bench_task <- function(
     datafiles <- list.files(
         path = file.path(output_dir, test_id, "data")
     )
+    out_file <- if (is.null(output_file)) {
+        readline(
+            prompt = "Provide the name of the expected output file: "
+        )
+    } else {
+        output_file
+    }
     desc <- if (is.null(output_description)) {
         readline(
             prompt = paste(
@@ -116,9 +129,12 @@ bench_task <- function(
         question = quest,
         input_files = datafiles,
         expected_output = list(
-            file = 
+            list(
+                file = out_file,
+                type = tools::file_ext(out_file),
+                description = desc
+            )
         ),
-        description = desc,
         timeout_seconds = timeout
     )
 
@@ -283,6 +299,9 @@ bench_setup <- function(
             "you want to benchmark:"
         )
     )
+    out_file <- readline(
+        prompt = "Provide the name of the expected output file: "
+    )
     desc <- readline(
         prompt = paste(
             "Provide a description of the expected task output: "
@@ -295,6 +314,7 @@ bench_setup <- function(
         taskfile = taskfile,
         timeout = timeout,
         question = quest,
+        output_file = out_file,
         output_description = desc
     )
 
@@ -315,17 +335,19 @@ bench_setup <- function(
 #' the `data` subfolder of a benchmark test, as either a CSV or an RDS file.
 #'
 #' @param data_object the R object to write. Its name (via
-#'   [deparse(substitute())][substitute]) is currently not used to name the
-#'   output file; the object is written to the `data` folder itself.
+#'   [deparse(substitute())][substitute]) is used to name the output file,
+#'   unless `file_name` is supplied.
 #' @param test_id `character(1)` identifier for the test. The corresponding
 #'   test directory (created by [bench_folders()]) must already exist.
 #' @param type `character(1)` output format, either `"csv"` or `"rds"`.
 #'   Defaults to `"csv"`.
 #' @param output_dir `character(1)` path to the parent directory containing
 #'   the test folder. Defaults to the current working directory.
+#' @param file_name `character(1)` optional file name (without extension)
+#'   to use instead of `data_object`'s deparsed name. Useful when
+#'   `data_object` is not a simple variable (e.g. the result of a pipeline).
 #'
-#' @return `NULL`, invisibly. Called for its side effect of writing the data
-#'   file.
+#' @return `character(1)` the path the data file was written to, invisibly.
 #'
 #' @examples
 #' \dontrun{
@@ -335,18 +357,26 @@ bench_setup <- function(
 #'
 #' @export
 add_data <- function(
-    data_object, test_id, type = c("csv", "rds"), output_dir = getwd()
+    data_object, test_id, type = c("csv", "rds"), output_dir = getwd(),
+    file_name = NULL
 ) {
-    data_object_name <- deparse(substitute(data_object))
+    data_object_name <- if (is.null(file_name)) {
+        deparse(substitute(data_object))
+    } else {
+        file_name
+    }
     type <- match.arg(type)
     data_dir <- file.path(output_dir, test_id, "data")
     if (!dir.exists(data_dir))
         stop("'data' directory does not exist. Run bench_folders() first.")
+
+    dest_path <- file.path(data_dir, paste0(data_object_name, ".", type))
 
     writer <- switch(
         type,
         csv = function(data, path) write.csv(data, path, row.names = TRUE),
         rds = function(data, path) saveRDS(data, path)
     )
-    writer(data_object, data_dir)
+    writer(data_object, dest_path)
+    invisible(dest_path)
 }

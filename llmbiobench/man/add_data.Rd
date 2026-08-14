@@ -4,12 +4,18 @@
 \alias{add_data}
 \title{Add a data object to a benchmark test's data folder}
 \usage{
-add_data(data_object, test_id, type = c("csv", "rds"), output_dir = getwd())
+add_data(
+  data_object,
+  test_id,
+  type = c("csv", "rds"),
+  output_dir = getwd(),
+  file_name = NULL
+)
 }
 \arguments{
 \item{data_object}{the R object to write. Its name (via
-\link[=substitute]{deparse(substitute())}) is currently not used to name the
-output file; the object is written to the \code{data} folder itself.}
+\link[=substitute]{deparse(substitute())}) is used to name the output file,
+unless \code{file_name} is supplied.}
 
 \item{test_id}{\code{character(1)} identifier for the test. The corresponding
 test directory (created by \code{\link[=bench_folders]{bench_folders()}}) must already exist.}
@@ -19,10 +25,13 @@ Defaults to \code{"csv"}.}
 
 \item{output_dir}{\code{character(1)} path to the parent directory containing
 the test folder. Defaults to the current working directory.}
+
+\item{file_name}{\code{character(1)} optional file name (without extension)
+to use instead of \code{data_object}'s deparsed name. Useful when
+\code{data_object} is not a simple variable (e.g. the result of a pipeline).}
 }
 \value{
-\code{NULL}, invisibly. Called for its side effect of writing the data
-file.
+\code{character(1)} the path the data file was written to, invisibly.
 }
 \description{
 Writes an R object (e.g. a reference dataset, or a reference answer) to
