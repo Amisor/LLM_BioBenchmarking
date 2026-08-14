@@ -1,0 +1,15 @@
+Package: llmbiobench
+Title: Setup benchmark testing for LLMs
+Version: 0.0.0.9000
+Authors@R: 
+    person("BiocCoding", "Collaborations", , "bioccoding@bioconductor.org", role = c("aut", "cre"))
+Description: Create folders and json files for benchmarking accuracy of LLMs. The
+  package is designed to be used in conjunction with providers such as ChatGPT,
+  Gemini, Claude, etc. The package makes use of the 'ellmer' package to
+  facilitate the benchmarking process. 
+License: Artistic-2.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports: 
+    jsonlite
+Config/roxygen2/version: 8.1.0
