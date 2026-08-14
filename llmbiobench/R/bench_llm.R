@@ -185,6 +185,16 @@ bench_llm_tools <- function(test_dir, allow_write_prefix = "answer") {
 #' ## run script to generate gse.rds
 #' ## source("inst/scripts/bioc-2-a.R")
 #' add_data(gse, "bioc-2-a", type = "rds", output_dir = "inst/benchmarks/")
+#' ## copy ref_script into the test folder for reference
+#' ## file.copy(
+#' ##     "inst/scripts/sample_dist_matrix.R",
+#' ##     "inst/benchmarks/bioc-2-a/ref_script/sample_dist_matrix.R"
+#' ## )
+#' ## ## add reference answer for comparison
+#' ## file.copy(
+#' ##     "inst/scripts/sample_dist_matrix.csv",
+#' ##     "inst/benchmarks/bioc-2-a/ref_answer/sample_dist_matrix.csv"
+#' ## )
 #'
 #' bench_llm(
 #'     "bioc-2-a",
